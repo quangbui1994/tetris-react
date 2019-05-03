@@ -1,0 +1,29 @@
+{
+  "name": "first-assignment",
+  "version": "1.0.0",
+  "description": "first-assignment",
+  "main": "aboutus.html",
+  "scripts": {
+    "start": "npm run lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite-server": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuangBui94/bootstrap-first-assignment.git"
+  },
+  "author": "Quang Bui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuangBui94/bootstrap-first-assignment/issues"
+  },
+  "homepage": "https://github.com/QuangBui94/bootstrap-first-assignment#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
