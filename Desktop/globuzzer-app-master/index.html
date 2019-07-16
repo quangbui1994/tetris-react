@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="https://kit.fontawesome.com/5efb6e6d64.js"></script>
+    </head>
+    <body>
+        <nav class="Navigation nav-bar">
+            <div class="logo">
+                <img src="./assets/img/globuzzer-logo.png" alt="Globuzzer Logo">
+            </div>
+            <div class="DrawerToggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-nav">
+                <ul>
+                        <li><a href="#job-post">JOBS</a></li>
+                        <li><a href="#all-article-here">ARTICLES</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="#">PRICING</a></li>
+                        <li><a href="company-login/sign-in.html" id="navbar-sign-in-button">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header class="Header">
+            <div class="left-banner">
+                <div class="IntroductionItem left">
+                    <p class="item--title">For Jobseekers</p>
+                    <p class="item--description">SkillScanner connects English Speaking Talents with job opportunities in the Nordics</p>
+                    <button class="introBtnLeft Header-button"type="button" >View jobs</button>
+                </div>
+            </div>
+            <div class="right-banner">
+                <div class="IntroductionItem right">
+                    <p class="item--title">For companies</p>
+                    <p class="item--description">Post your job offers for free and connect opportunities with passionate talents on SkillScanner!</p>
+                    <button class="introBtnRight Header-button" type="button">Register</button>
+                    <a href="/company-login/c-sign-in-up">Sign in</a>
+                </div>
+            </div>
+            <div class="dark-layer"></div>
+            <div class="sideDrawer">
+                <div class="sideDrawer-content">
+                    <div class="close-btn">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <i class="icon ion-ios-briefcase"></i>
+                            <a>Jobs</a>
+                        </li>
+                        <li>
+                            <i class="icon ion-ios-book"></i>
+                            <a>Articles</a>
+                        </li>
+                        <li>
+                            <i class="icon ion-ios-pricetag"></i>
+                            <a>Pricing</a>
+                        </li>
+                        <li>
+                            <i class="icon ion-ios-log-in"></i>
+                            <a>Sign in</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <i class="icon ion-md-close"></i> -->  
+            </div>
+        </header>
+        <main>
+            <div class="MainContext">
+                <div class="contextItemHolder">
+                    <div class="MainContextItem">
+                        <p class="item--number">+15000</p>
+                        <p class="item--word">Subscribers</p>
+                    </div>
+                    <div class="MainContextItem">
+                        <p class="item--number">26</p>
+                        <p class="item--word">Partners</p>
+                    </div>
+                    <div class="MainContextItem">
+                        <p class="item--number">4</p>
+                        <p class="item--word">Locations</p>
+                    </div>
+                </div>
+                <div class="arrow" style="left: 10%">
+                    <div class="arrow-top arrow-left-top"></div>
+                    <div class="arrow-bottom arrow-left-bottom"></div>
+                </div> 
+                <div class="arrow" style="left: 90%">
+                    <div class="arrow-top arrow-right-top"></div>
+                    <div class="arrow-bottom arrow-right-bottom"></div>
+                </div> 
+            </div>
+            <div class="FilterSearch mr-auto" id="Job">
+                <div class="dropdown-options">
+                    <div class="dropdown-bounder">
+                        <div class="dropdown">
+                            <button 
+                                class="btn dropdown-toggle" 
+                                type="button" 
+                                id="dropdownMenuButton" 
+                                data-toggle="dropdown" 
+                                aria-haspopup="true" 
+                                aria-expanded="false">All Categories  
+                            </button>
+                            <div class="dropdown-menu keep-open" aria-labelledby="dropdownMenuButton">
+                                <label class="dropdown-container">
+                                    <input type="checkbox"/>
+                                    <span class="checkmark"></span>
+                                    <p>Business Intelligence</p> 
+                                </label>
+                                <label class="dropdown-container">
+                                    <input type="checkbox"/>
+                                    <span class="checkmark"></span>
+                                    <p>Business Development</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-bounder">
+                        <div class="dropdown">
+                            <button 
+                                class="btn dropdown-toggle" 
+                                type="button" 
+                                id="dropdownMenuButton" 
+                                data-toggle="dropdown" 
+                                aria-haspopup="true" 
+                                aria-expanded="false">All Categories  
+                            </button>
+                            <div class="dropdown-menu keep-open" aria-labelledby="dropdownMenuButton">
+                                <label class="dropdown-container">
+                                    <input type="checkbox"/>
+                                    <span class="checkmark"></span>
+                                    <p>Business Intelligence</p> 
+                                </label>
+                                <label class="dropdown-container">
+                                    <input type="checkbox"/>
+                                    <span class="checkmark"></span>
+                                    <p>Business Development</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-bounder">
+                        <div class="dropdown">
+                            <button 
+                                class="btn dropdown-toggle" 
+                                type="button" 
+                                id="dropdownMenuButton" 
+                                data-toggle="dropdown" 
+                                aria-haspopup="true" 
+                                aria-expanded="false">All Categories  
+                            </button>
+                            <div class="dropdown-menu keep-open" aria-labelledby="dropdownMenuButton">
+                                <label class="dropdown-container">
+                                    <input type="checkbox"/>
+                                    <span class="checkmark"></span>
+                                    <p>Business Intelligence</p> 
+                                </label>
+                                <label class="dropdown-container">
+                                    <input type="checkbox"/>
+                                    <span class="checkmark"></span>
+                                    <p>Business Development</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn--secondary">Post job offer</button>
+                <div class="view-more">View more</div>
+            </div>
+            <div class="JobBoard">
+                <div class="JobItems">
+                    <div class="item--cover">
+                        <!-- <img src="/assets/img/SimCorp.png" alt="Job Photo"/> -->
+                        <div class="item--tag">Business</div>
+                    </div>
+                    <button class="btn--third" >Apply now</button>
+                    <div class="item--description">
+                        <div class="row justify-content-between">
+                            <div class="item item--description__cpn">
+                                <i class="icon ion-ios-briefcase"></i>
+                                <p>Solita</p>
+                            </div>
+                            <div class="item item--description__place">
+                                <i class="icon ion-md-pin"></i>
+                                <p>Gothenburg</p> 
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="item item--description__position">
+                                <i class="icon ion-ios-person"></i>
+                                <p>Fulltime</p> 
+                            </div>
+                            <div class="item item--description__position">
+                                <i class="icon ion-ios-person"></i>
+                                <p>Paid</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Partners">
+                <h2>Our Partners</h2>
+                <div class="partner-holder">
+                    <div class="arrow" style="left: 5%">
+                        <div class="arrow-top arrow-left-top"></div>
+                        <div class="arrow-bottom arrow-left-bottom"></div>
+                    </div>                     
+                    <div class="PartnerItems">
+                        <div class="partner--box--group">
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner2.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                        </div>
+                    </div>
+                    <div class="arrow" style="left: 95%">
+                        <div class="arrow-top arrow-right-top"></div>
+                        <div class="arrow-bottom arrow-right-bottom"></div>
+                    </div>                 
+                </div> 
+            </div>
+            <div class="Articles" id="Articles">
+                <h2>Latest articles</h2>
+                <div class="articles--section">
+                    <div class="ArticleItems">
+                        <div class="article--cover"></div>
+                        <div class="article--info">
+                            <h3>Things you need to know about business etiquette in Sweden</h3>
+                            <p>If you are moving to Sweden for work and attending your first business meeting, read SkillScanner's tips for business etiquette...</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                    <div class="ArticleItems">
+                        <div class="article--cover"></div>
+                        <div class="article--info">
+                            <h3>Things you need to know about business etiquette in Sweden</h3>
+                            <p>If you are moving to Sweden for work and attending your first business meeting, read SkillScanner's tips for business etiquette...</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                    <div class="ArticleItems">
+                        <div class="article--cover"></div>
+                        <div class="article--info">
+                            <h3>Things you need to know about business etiquette in Sweden</h3>
+                            <p>If you are moving to Sweden for work and attending your first business meeting, read SkillScanner's tips for business etiquette...</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                    <div class="ArticleItems">
+                        <div class="article--cover"></div>
+                        <div class="article--info">
+                            <h3>Things you need to know about business etiquette in Sweden</h3>
+                            <p>If you are moving to Sweden for work and attending your first business meeting, read SkillScanner's tips for business etiquette...</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                    <div class="ArticleItems">
+                        <div class="view-all-articles">view all articles</div>
+                    </div>
+                </div>
+                <!--FOR DESKTOP-->
+                <!-- <div class="more-article-holder">
+                    <a href="https://globuzzer.mn.co/topics/196924" target="_blank" className="more-article-box">More articles</a> 
+                </div> -->
+            </div>
+            <!--FOR MOBILE ONLY-->
+            <div class="article-nav">
+                <div id="0" class="article-nav-point"></div>
+                <div id="1" class="article-nav-point"></div>
+                <div id="2" class="article-nav-point"></div>
+                <div id="3" class="article-nav-point"></div>
+                <div id="4" class="article-nav-point">
+                    <div class="inner-nav-point"></div>
+                </div>
+            </div>            
+        </main>
+        <footer class="Footer">
+            <div class="info-1 info">
+                <p>SKILLSCANNER</p>
+                <p>Skyttevägen 29, Saltsjöbaden,Sweden</p>
+                <p>+46 73 555 5134</p>
+                <p>info@globuzzer.com</p>
+            </div>
+            <div class="info-2 info">
+                <a href="#">- Jobs</a>
+                <a href="#">- Articles</a>
+                <a href="#">- Pricing</a>
+                <a href="#">- Sign in</a>
+            </div>
+            <div class="info-3 info">
+                <a href="#">Terms and conditions</a>
+                <a href="#">Privacy policy</a>
+            </div>
+            <div class="info-4 info">
+                <p>Contact Links</p>
+            </div>
+            <div class="rights-reserved-holder">
+                <p>© 2019 All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous">
+        </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.js"></script> 
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

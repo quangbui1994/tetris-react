@@ -1,0 +1,692 @@
+/* For mobile phone */
+@media all and (max-width: 480px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    *,
+    *::after,
+    *::before {
+        box-sizing: inherit;
+    }
+
+    body {
+        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 1.6rem;
+    }
+
+    html {
+        box-sizing: border-box;
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+    }
+
+    a,
+    a:hover {
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    /*--NAVIGATION--*/
+
+    .Navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        height: 6rem;
+        padding: 1rem 2rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: all .3s ease;
+        z-index: 20;
+    }
+
+    .logo {
+        width: 3rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .Navigation img {
+        width: 100%;
+        height: 5rem;
+    }
+
+    .DrawerToggle {
+        width: 3rem;
+        height: 4rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 5px 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .DrawerToggle div {
+        width: 80%;
+        height: 1px;
+        background-color: #fff;
+    }
+
+    .DrawerToggle div:nth-child(2) {
+        width: 60%;
+    }
+
+    /*--INTRODUCTION--*/
+
+    .left-banner {
+        background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('https://images.unsplash.com/photo-1516807947649-1054add6bc97?ixlib=rb-0.3.5…EyMDd9&s=11be050…&auto=format&fit=crop&w=1049&q=80');
+        height: 50rem;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        filter: grayscale(30%);
+        transition: all .3s ease;
+        z-index: 3;
+    }
+
+    .left-changed {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 50rem;
+        transition: all .3s ease;
+    }
+
+    .left-changed::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(255, 34, 34, 0.651), rgba(255, 34, 34, 0.651)), url('https://images.unsplash.com/photo-1516807947649-1054add6bc97?ixlib=rb-0.3.5…EyMDd9&s=11be050…&auto=format&fit=crop&w=1049&q=80');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+        opacity: 1;
+        transition: all .3s ease;
+    }
+
+    .right-banner {
+        background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(https://images.unsplash.com/photo-1523871762770-87bda6d9ab58?ixlib=rb-0.3.5…EyMDd9&s=651c083…&auto=format&fit=crop&w=1185&q=80);
+        height: 50rem;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        filter: grayscale(30%);
+        transition: all .3s ease;
+        z-index: 3;
+    }
+
+    .right-changed {
+        position: absolute;
+        top: 50rem;
+        left: 0;
+        height: 50rem;
+        transition: all .3s ease;
+    }
+
+    .right-changed::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(0, 114, 176, 0.5), rgba(0, 114, 176, 0.5)), url('https://images.unsplash.com/photo-1523871762770-87bda6d9ab58?ixlib=rb-0.3.5…EyMDd9&s=651c083…&auto=format&fit=crop&w=1185&q=80');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+        opacity: 1;
+        transition: all .3s ease;
+    }
+
+    .IntroductionItem {
+        position: relative;
+        height: 100%;
+        padding: 5px;
+        color: #fff;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .IntroductionItem a {
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .IntroductionItem button {
+        width: 15rem;
+        height: 4.5rem;
+        border: 1px solid gainsboro;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease;
+        font-weight: 300;
+        font-size: 1.7rem;
+        color: #fff;
+        line-height: 2.2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        background-color: transparent;
+    }
+
+    .active {
+        color: #777 !important;
+        background-color: #fff !important;
+    }
+
+    .item--title {
+        margin: 0;
+        line-height: 3.7rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 3rem;
+        margin-bottom: 2.3rem;
+        margin-top: 6rem;
+    }
+
+    .item--description {
+        margin-bottom: 3.2rem;
+        max-width: 50rem;
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+
+    .left {
+        left: 0%;
+    }
+
+    .right {
+        left: 0%;
+    }
+
+    .dark-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2));
+        transition: all 2s ease;
+    }
+
+    /*--SIDEDRAWER--*/
+
+    .sideDrawer {
+        position: fixed;
+        top: 0;
+        right: -100rem;
+        width: 55%;
+        height: 100vh;
+        z-index: 30;
+        background-color: grey;
+        transition: all .8s ease;
+    }
+
+    .sideDrawer i {
+        color: #fff;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 2.5rem;
+        margin: 0 1rem;
+    }
+
+    .sideDrawer ul {
+        margin-top: 3rem;
+    }
+
+    .sideDrawer li {
+        margin: 16px 0;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .sideDrawer a {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .sideDrawer li:last-child a {
+        text-transform: initial;
+    }
+
+    .sideDrawer-content {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 20;
+        background: linear-gradient(rgba(252, 13, 28, 0.6), rgb(0, 0, 0));
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .close-btn div {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        transition: all .2s ease;
+    }
+
+    .close-btn div:first-child {
+        transform: rotate(45deg);
+    }
+
+    .close-btn div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .close-btn div:last-child {
+        transform: rotate(135deg);
+    }
+
+
+
+    .sideDrawerOpen {
+        animation: sideDrawerOpen .8s ease forwards;
+    }
+
+    .sideDrawerClose {
+        animation: sideDrawerClose 2s ease;
+    }
+
+    @keyframes sideDrawerOpen {
+        0% {
+            opacity: 0;
+            right: -100rem;
+        }
+
+        100% {
+            opacity: 1;
+            right: 0;
+        }
+    }
+
+    @keyframes sideDrawerClose {
+        0% {
+            opacity: 1;
+            right: 0;
+        }
+
+        100% {
+            opacity: 0;
+            right: -100rem;
+        }
+    }
+}
+
+
+
+/*For desktop (in grogress)*/
+/**/
+@media all and (min-width: 1025px) {
+    html{
+        scroll-behavior: smooth;
+    }
+    * {
+        margin: 0;
+        font-family: 'Montserrat', 'sans-serif';
+        box-sizing: border-box;
+    }
+    /*navigation bar design goes here*/
+    .sideDrawer{
+        display: none;
+    }
+    .grey-navbar{
+        background-color: rgba(128, 128, 128, 0.6);
+        z-index: 21;
+        position: fixed;
+        width: 100%;
+    }
+    img{
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .Navigation{
+        z-index: 20;
+        position: fixed;
+        height: 60px; 
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        padding: 0 25px;
+        transition: all .3s ease;
+    }
+    .logo {
+        padding: 5px 0;
+        height: 100%;
+
+    }
+    #navbar-sign-in-button{
+        transition: all 0.3s ease;
+        padding: 14px;
+    }
+    /*Sign in button changes*/
+    .change-to-button{ 
+        background-color: red;
+        border-radius: 12px;
+    }
+
+
+    .DrawerToggle li{
+        display: inline;
+        display: block;
+        padding: 20px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: center;
+
+    }
+    .DrawerToggle a{
+        color: white;
+        text-decoration: none;
+        transition: font-size .5s ease;
+    }
+
+    .DrawerToggle li:hover {
+        border-bottom: 1px red solid;
+        font-size: 18px;
+    }
+
+
+
+    .DrawerToggle ul{
+        display: flex;
+        height: 100%;
+    }
+    /*header decoration goes here*/
+    .Header{
+        display: inline-flex;
+        position: relative;
+        top: 0px;
+        width: 100%;
+        display: flex;
+        font-weight: 100;
+        height: 710px;
+    }
+    .Header .fixed{
+        background-attachment: fixed;
+    }
+    .item--description{
+        font-size: 20px;
+        line-height: 32px;
+        width: 350px;
+    }
+    .Header p{
+        font-size: 20px;
+        line-height: 32px;
+        width: 350px;
+        align-items: center;
+    }
+    .Header-button {
+        height: 45px;
+        width: 150px;
+        font-size: 18px;
+        background-color: transparent;
+        border-radius: 17px;
+        border: 1px white solid;
+        color: white;
+        position: relative;
+        font-style:none;
+        top: 51px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        transition: all 1s ease;
+        font-weight: 300; 
+        margin-bottom: 10px;
+        text-decoration: none !important;
+    }
+    .introBtnLeft{
+        font-style: normal;
+        font-weight: 18px;
+        line-height: 40px;
+        margin: 0px;
+        justify-content: center;
+    }
+    .introBtnRight{
+        font-style: normal;
+        font-weight: 18px;
+        line-height: 40px;
+        margin: 0px;
+        justify-content: center;
+    }
+    
+    .Sign-in{
+        position: relative;
+        top: 60px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-top: 5px;
+        color: white !important;
+    }
+    .Sign-in-decor{
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 18px;
+        color: white;
+    }
+    .item--title{
+        font-size: 42px !important;
+        line-height: 51px !important;
+        font-style: normal !important;
+        font-weight: lighter !important;
+        margin-bottom: 53px !important;
+    }
+
+    .left-banner{
+        position: relative;
+        margin: 0;
+        background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('https://images.unsplash.com/photo-1516807947649-1054add6bc97?ixlib=rb-0.3.5…EyMDd9&s=11be050…&auto=format&fit=crop&w=1049&q=80');
+        filter: grayscale(30%);
+        height: 100%;
+        width: 85%;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        transition:; all 1.2s ease;
+        transition-delay: 0s;
+        left: -25%;
+    }
+
+    .IntroductionItem{
+        
+        width: 100%;
+        height: 100%;
+        z-index: 18;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 1s ease;
+        padding: 100px;
+    }
+    .left:hover{
+        background-color: rgba(255,6,6,0.4);
+    }
+    .left:hover .introBtnLeft{
+        background-color: white;
+        color: black;
+    }
+    .left-content{
+        height: 90%;
+        display: flex;
+        width: 70%;
+        left: 20%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 1.3s;
+        opacity: 1;
+        font-size: 20px;
+        position: relative;
+        text-align: center;
+    }
+
+
+    .right-banner{
+        position: absolute;
+        background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(https://images.unsplash.com/photo-1523871762770-87bda6d9ab58?ixlib=rb-0.3.5…EyMDd9&s=651c083…&auto=format&fit=crop&w=1185&q=80);
+        background-size: cover;
+        height: 100%;
+        width: 50%;
+        background-position: center;
+        transition: all 1.2s ease;
+        transition-delay: 0s;
+        left: 50%;
+    }
+    .right-container-transform{
+        transform: translateX(-35%);
+    }
+
+    .right-container-content{    
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 1s ease;
+        margin: auto;
+
+    }
+
+    .right:hover{
+        background-color: rgba(30,155,255,0.4);
+    }
+    .right:hover .introBtnRight{
+        background-color: white;
+        color: black;
+    }
+    .right-darken-layer-turn-blue{
+        background-color: rgba(0, 114, 176, 0.5);
+    }
+    .IntroductionItem{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        transition: 1.3s;
+        opacity: 1;
+        font-size: 20px;
+        text-align: center;
+    }
+    .IntroductionItem a{
+        text-decoration: none;
+        color: white;
+        position: absolute;
+        bottom: 190px;
+        font-size: 13px;
+    }
+    /*navigation bar design goes here*/
+    .grey-navbar{
+        background-color: rgba(128, 128, 128, 0.6);
+        z-index: 21;
+        position: fixed;
+        width: 100%;
+    }
+    img{
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .nav-bar{
+        z-index: 20;
+        position: fixed;
+        height: 60px; 
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        padding: 0 25px;
+        transition: all .3s ease;
+    }
+    .logo {
+        padding: 5px 0;
+        height: 100%;
+
+    }
+    #navbar-sign-in-button{
+        transition: all 0.3s ease;
+        padding: 14px;
+    }
+    /*Sign in button changes*/
+    .change-to-button{ 
+        background-color: red;
+        border-radius: 12px;
+    }
+
+
+    .DrawerToggle li{
+        display: inline;
+        display: block;
+        padding: 20px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: center;
+
+    }
+    .DrawerToggle a{
+        color: white;
+        text-decoration: none;
+        transition: font-size .5s ease;
+    }
+
+    .DrawerToggle li:hover {
+        border-bottom: 1px red solid;
+        font-size: 18px;
+    }
+
+
+
+    .DrawerToggle ul{
+        display: flex;
+        height: 100%;
+    }
+}
+
