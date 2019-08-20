@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f8fa1e39.chunk.css",
+    "main.js": "/static/js/main.77cd0b4a.chunk.js",
+    "main.js.map": "/static/js/main.77cd0b4a.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.d35a4a07.chunk.js": "/static/js/2.d35a4a07.chunk.js",
+    "static/js/2.d35a4a07.chunk.js.map": "/static/js/2.d35a4a07.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7d411d8cd1d44d485017dca10d590f19.js": "/precache-manifest.7d411d8cd1d44d485017dca10d590f19.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.f8fa1e39.chunk.css.map": "/static/css/main.f8fa1e39.chunk.css.map",
+    "static/media/App.css": "/static/media/buildings-city-cityscape-417192.b07728cc.jpg"
+  }
+}
