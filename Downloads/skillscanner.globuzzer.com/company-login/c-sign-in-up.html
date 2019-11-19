@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Company Sign In/Up</title>
+
+    <link rel="stylesheet" href="c-sign-in-up.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/dropzone.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="si-panel-holder" id="si-panel-holder">
+            <div class="sign-in-container">
+                <div class="si-content">
+                    <a href="/"></a>
+    
+                    <p class="sign-in-to-SkillScanner">Sign in to SkillScanner</p>
+                    <p class="the-connected-talents">The connected talents in Nordics</p>
+                    <div class="si-form">
+                        <div style="position: relative">
+                            <input type="text" name="si-email" id="si-email" placeholder="Email" onkeyup="$('#warning-incorrect-input-for-si-email').removeClass('show-warning-incorrect-input')">
+    
+                            <div class="warning-incorrect-input" id="warning-incorrect-input-for-si-email">
+                                <p>Enter a valid e-mail</p>
+                            </div>
+                        </div>
+    
+    
+                        <div style="position: relative">
+                            <input type="password" name="si-password" id="si-password" placeholder="Password" onkeyup="$('#warning-incorrect-input-for-si-password').removeClass('show-warning-incorrect-input')">
+    
+                            <div class="warning-incorrect-input" id="warning-incorrect-input-for-si-password">
+                                <p>Provide a password</p>
+                            </div>
+                        </div>
+                        <div class="forgot-password-holder">
+                            <a class="forgot-password-style" href="/html/forget-password.html">Forgot your password?</a>
+                            <div class="forgot-pass-underline"></div>
+                        </div>
+    
+                        <div style="position: relative; margin: auto">
+                            <button class="si-bttn" id="si">Sign In</button>
+    
+                            <div class="error-holder">
+                                <p id="error-display"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="mobile-introduce-sign-up-holder">
+                            <p>Don't have an account yet?</p>
+                            <button onclick="ClickSignUp()">SIGN UP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="si-description">
+                <h1>Share your job offers on SkillScanner</h1>
+                <p class="the-connected-talents"></p>
+                <p>Don't have an account yet?</p>
+                <button type="button" onclick="ClickSignUp()">SIGN UP</button>
+            </div>
+        </div>
+        
+
+        <div class="su-panel-holder" id="su-panel-holder">
+            <div class="su-description" id="sign-up-description">
+                <h1>Share your job offers on SkillScanner</h1>
+                <p class="the-connected-talents">The connected talents in Nordics</p>
+                <p>Already registered?</p>
+
+                <button id="sign-in-button" onclick="ClickSignIn()">SIGN IN</button>
+            </div>
+
+            <div class="sign-up-container" id="sign-up-container">
+                <div class="su-form" id="sign-up-form">
+                    <a href="/"></a>
+                    <h2>Create account</h2>
+
+                    <div style="position: relative">
+                        <input type="text" name="su-company-name" id="company-name" placeholder="Company*" onkeyup="$('#warning-incorrect-input-for-su-name').removeClass('show-warning-incorrect-input')" required>
+                        <div class="warning-incorrect-input" id="warning-incorrect-input-for-su-name">
+                            <p>Please fill this</p>
+                        </div>
+                    </div>
+
+                    <div style="position: relative">
+                        <input type="email" name="su-email" id="su-email" placeholder="Email*" onkeyup="$('#warning-incorrect-input-for-su-email').removeClass('show-warning-incorrect-input')" required>
+
+                        <div class="warning-incorrect-input" id="warning-incorrect-input-for-su-email">
+                            <p>Enter a valid e-mail</p>
+                        </div>
+                    </div>
+
+                    <div style="position: relative">
+                        <div class="su-country-button" id="su-country-button">
+                            <p id="su-country">Select country *</p>
+
+                            <div class="su-country-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+
+                            <div class="su-country-content-holder" id="su-country-content-holder"> 
+                                <div class="su-country-text" onclick="ChooseSuCountry('Sweden')">
+                                    <p>Sweden</p>
+                                </div>
+
+                                <div class="su-country-text" onclick="ChooseSuCountry('Finland')">
+                                    <p>Finland</p>
+                                </div>
+
+                                <div class="su-country-text" onclick="ChooseSuCountry('Denmark')">
+                                    <p>Denmark</p>
+                                </div>
+
+                                <div class="su-country-text" onclick="ChooseSuCountry('Norway')">
+                                    <p>Norway</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="warning-incorrect-input" id="warning-incorrect-input-for-su-country">
+                            <p>Select one</p>
+                        </div>
+                    </div>
+                    
+                    <div style="position: relative">
+                        <input type="text" name="su-location" id="location" placeholder="City*" onkeyup="$('#warning-incorrect-input-for-su-location').removeClass('show-warning-incorrect-input')" required>
+
+                        <div class="warning-incorrect-input" id="warning-incorrect-input-for-su-location">
+                            <p>Please fill this</p>
+                        </div>
+                    </div>
+
+                    <div style="position: relative">
+                        <input type="password" name="su-password" id="password" placeholder="Password*" onkeyup="$('#warning-incorrect-input-for-su-password').removeClass('show-warning-incorrect-input')" required>
+
+                        <p id="password-security-warning"></p>
+
+                        <div class="warning-incorrect-input" id="warning-incorrect-input-for-su-password">
+                            <p>Please fill this</p>
+                        </div>
+                    </div>
+                    
+                    <div style="position: relative">
+                        <input type="password" name="su-repassword" id="repassword" placeholder="Repeat Password*" onkeyup="$('#warning-incorrect-input-for-su-repass').removeClass('show-warning-incorrect-input')" required>
+
+                        <div class="warning-incorrect-input" id="warning-incorrect-input-for-su-repass">
+                            <p>Please fill this</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex;justify-content: center">
+                    <button class="su-bttn" id="su">SIGN UP</button>
+                </div>
+
+                <div class="mobile-introduce-sign-up-holder">
+                    <p>Already have an account?</p>
+                    <button onclick="ClickSignIn()">SIGN IN</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="su-complete-panel-holder" id="su-complete-panel-holder">
+            <a class="skillscanner-logo" href="/"></a>
+
+            <p class="congratz-text">Congratulations!</p>
+
+            <p class="register-text">You are now registered at SkillScanner</p>
+
+            <div class="mobile-your-current-plant">
+                <p>Your current plan is</p><p>FREE</p>
+            </div>
+
+            <p class="mobile-your-plan-includes">Your plan includes:</p>
+
+            <p class="mobile-your-plan-option">Limited job offers</p>
+            <div class="mobile-option-underline"></div>
+
+            <p class="mobile-your-plan-option">Access to dashboard</p>
+            <div class="mobile-option-underline-2"></div>
+
+            <p class="mobile-your-plan-option">The lifespans of job offers are limited</p>
+            <div class="mobile-option-underline-3"></div>
+
+            <div class="go-to-dashboard-holder" onclick="window.location='/company-dashboard/'">
+                <p>Go to your dashboard</p>
+
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="12" height="12" fill="url(#pattern0)"/>
+                    <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0" transform="scale(0.02)"/>
+                    </pattern>
+                    <image id="image0" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAADmwAAA5sBPN8HMQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADgSURBVGiB7dnBCoJAEIDhsRcMMiiIsmO+ddgl6ObRtL9DQrDSwSXc2WH+oweZDxXdVcTz9ATsgRa4AWXqeaICCuDBtx44pJ4rqgCSLwbYjcObwJRAF2BeQJ16ttk5RmvA1jEac4zWRszTMdpyjNYcozXHaM0apgKGANOT4x7AD0wTc67Vv4ebWSsiQ3CsSDFIdMCG6cdlXrcWcGS6edE5YumsIE6O0JAVRGUFEb61HbF4VhBnC4gLnzWFI5JmBVE7QkN8FkX5/wwFmuwRIiLAPXuEiAiwHq/KNatnwvPm9wY8ZUsSbCu40QAAAABJRU5ErkJggg=="/>
+                    </defs>
+                </svg>
+            </div>
+
+            <p class="need-an-upgrade">Need an upgrade?</p>
+            <p class="see-our-packages">See our packages</p>
+
+            <div class="mobile-package-holder">
+                <div class="left-mobile-icon-holder">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+            
+                <div class="package-holder">
+                            
+                    <div class="package">
+                        <div class="top-line">
+                        </div>
+                        <p class="value-text">FREE</p>
+                        <div class="values-holder"><p class="value-number">0</p><p class="value-unit">€/month</p></div>
+
+                        <div class="description-holder">
+                            <p>Limited job offers</p>
+                        </div>
+                        <div class="description-holder">
+                            <p>Access to dashboard</p>
+                        </div>
+                        <div class="description-holder">
+                            <p>The lifespans of job offers are limited</p>
+                        </div>
+
+                        <div class="footer">
+                            <p>Your current plan</p>
+                        </div>
+                    </div> 
+                    
+                    <div class="package">
+                        <div class="top-line-2">
+                        </div>
+                        <p class="value-text">PLUS</p>
+                        <div class="values-holder"><p class="value-number">0</p><p class="value-unit">€/month</p></div>
+
+                        <div class="description-holder">
+                            <p>Unlimited job offers</p>
+                        </div>
+                        <div class="description-holder">
+                            <p>Access to dashboard</p>
+                        </div>
+                        <div class="description-holder">
+                            <p>The lifespan of job offers are unlimited</p>
+                        </div>
+
+                        <div class="footer-2">
+                            <div class="upgrade-holder-2" onclick="window.open('/company-dashboard/plan-payment.html?purchaseType=upgradeToPlus')">
+                                <p>Upgrade</p>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="package">
+                        <div class="top-line-3">
+                        </div>
+                        <p class="value-text">PREMIUM</p>
+                        <div class="values-holder"><p class="value-number">0</p><p class="value-unit">€/month</p></div>
+
+                        <div class="description-holder">
+                            <p>Unlimited job offers</p>
+                        </div>
+                        <div class="description-holder">
+                            <p>Access to dashboard</p>
+                        </div>
+                        <div class="description-holder">
+                            <p>The lifespan of job offers are unlimited</p>
+                        </div>
+                        <div class="description-holder">
+                            <p>Analytics of job offers provided</p>
+                        </div>
+
+                        <div class="footer-2">
+                            <div class="upgrade-holder-3" onclick="window.open('/company-dashboard/plan-payment.html?purchaseType=upgradeToPremium')">
+                                <p>Upgrade</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="right-mobile-icon-holder">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-firestore.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+    authDomain: "skillscanner-73181.firebaseapp.com",
+    databaseURL: "https://skillscanner-73181.firebaseio.com",
+    projectId: "skillscanner-73181",
+    storageBucket: "skillscanner-73181.appspot.com",
+    messagingSenderId: "269557896133"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4&libraries=places"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<script type="text/javascript" src="../js/company-sign-in-up/company-sign-in.js"></script>
+<script type="text/javascript" src="../js/company-sign-in-up/company-sign-up.js"></script>
+
+<script>
+    
+</script>
+
+</html>

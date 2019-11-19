@@ -1,0 +1,939 @@
+* {
+
+  font-family: sans-serif;
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+
+
+label {
+
+  display: block;
+
+}
+
+
+
+button {
+
+  border: none;
+
+  outline: none;
+
+}
+
+
+
+a {
+
+  text-decoration: none;
+
+}
+
+
+
+table {
+
+  margin-top: 30px;
+
+  text-align: left;
+
+  border-spacing: 0;
+
+}
+
+
+
+thead th {
+
+  background-color: rgb(252, 13, 28);
+
+  color: white;
+
+  border: none;
+
+  text-transform: uppercase;
+
+}
+
+
+
+th, td {
+
+  padding: 5px;
+
+  border: 1px solid white;
+
+  width: 160px;
+
+  font-size: 12px;
+
+}
+
+
+
+tr:nth-child(even) {
+
+  background-color: white;
+
+}
+
+
+
+tr:nth-child(odd) {
+
+  background-color: #f1f1f1;
+
+}
+
+
+
+.hover-table tr:hover {
+
+  background-color: #d7d7d7;
+
+  cursor: pointer;
+
+}
+
+
+
+.container {
+
+  display: flex;
+
+  align-items: center;
+
+  text-align: center;
+
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  width: 100%;
+
+  background-color: #eaeaea;
+
+  padding: 20px;
+
+}
+
+
+
+.container form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 20px;
+
+  background-color: white;
+
+  width: 40%;
+
+  border-radius: 10px;
+
+  margin: 10px;
+
+}
+
+
+
+.CNC-Cancel-Submit-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.button.submit-button {
+
+  width: 130px;
+
+  height: 37px;
+
+  margin: 10px;
+
+}
+
+
+
+
+.container form input,
+
+.container form textarea,
+
+select {
+
+  width: 280px;
+
+  border: 1px solid #e7d3cf;
+
+  padding: 5px;
+
+  margin: 5px auto;
+
+  outline: none;
+
+  transition: 0.5s ease;
+
+}
+
+
+
+table select {
+
+  width: auto;
+
+}
+
+
+
+textarea {
+
+  height: 125px;
+
+  font-size: 12px;
+
+}
+
+
+
+input:focus, textarea:focus, select:focus {
+
+  border-color: #dd736c;
+
+}
+
+
+
+.button, .download-button {
+
+  padding: 10px;
+
+  transition: 0.5s ease;
+
+}
+
+
+
+.download-button {
+
+  margin-right: 5px;
+
+}
+
+
+
+.download-button:hover {
+
+  background-color: #cecbcb;
+
+  cursor: pointer;
+
+}
+
+
+
+.flex {
+
+  display: flex;
+
+}
+
+
+
+.button {
+
+  display: inline-table;
+
+  height: 100%;
+
+  line-height: initial;
+
+  font-size: 12px;
+
+  margin: 5px auto;
+
+  background-color: rgb(252, 13, 28);
+
+  color: white;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+}
+
+
+
+.button:hover {
+
+  cursor: pointer;
+
+  background-color: #a85554;
+
+}
+
+
+
+.container form .button.disabled {
+
+  opacity: 0.7;
+
+}
+
+
+
+.container form .button.disabled:hover {
+
+  background-color: #dd736c;
+
+  cursor: default;
+
+}
+
+
+
+.article-li {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  list-style: none;
+
+  background: white;
+
+  padding: 10px;
+
+  margin: 10px;
+
+  width: 700px;
+
+}
+
+
+
+.article-li p {
+
+  font-size: 12px;
+
+  line-height: 25px;
+
+}
+
+
+
+.article-li img, .article-li > div {
+
+  text-align: left;
+
+  width: 50%;
+
+  margin: 5px;
+
+}
+
+
+
+.article-li > div {
+
+  padding-left: 20px;
+
+}
+
+
+
+.article-li img {
+
+  height: 250px;
+
+  object-fit: cover;
+
+}
+
+
+
+.button-container {
+
+  display: flex;
+
+  width: 100%;
+
+  margin-top: 5px;
+
+}
+
+
+
+.article-li .button {
+
+  margin: 0 15px 0 0;
+
+  width: 80px;
+
+  text-align: center;
+
+}
+
+
+
+.container .horizontal-form {
+
+  flex-direction: row;
+
+  padding: 20px;
+
+  width: 60%;
+
+  justify-content: center;
+
+  background-color: white;
+
+}
+
+
+
+.container .horizontal-form select {
+
+  width: 350px;
+
+}
+
+
+
+.navbar {
+
+  position: fixed;
+
+  z-index: 1;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 5px;
+
+  height: 55px;
+
+  width: 100%;
+
+  background-color: white;
+
+}
+
+
+
+.navbar .button {
+
+  margin: 5px;
+
+  height: 35px;
+
+}
+
+
+
+.container h1 {
+
+  margin-top: 80px;
+
+}
+
+
+
+#addTag img {
+
+  width: 20px;
+
+  height: 20px;
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  margin-left: 5px;
+
+
+
+}
+
+
+
+#tag-area {
+
+  display: flex;
+
+  flex-direction: column;
+
+
+
+}
+
+
+
+.avatar {
+
+  height: 100%;
+
+  margin-left: 10px;
+
+  margin-right: 10px;
+
+  overflow: hidden;
+
+  object-fit: contain;
+
+}
+
+
+
+.avatar img {
+
+  position: relative;
+
+  height: 100%;
+
+}
+
+
+
+.navbar .left-side {
+
+  display: flex;
+
+  align-items: center;
+
+  height: 100%;
+
+}
+
+
+
+.country-section-wrapper {
+  position: relative;
+  width: 120px;
+  height: 60%;
+  margin: 10px 30px;
+}
+
+
+
+.country-section-wrapper :hover .country-section-content-wrapper{
+  display: block;
+}
+
+
+
+/* for future use if want to toggle on/off the dropdown when clicking on its options */
+.country-section-content-wrapper-onclick {
+  display: none;
+}
+
+
+
+.country-section-dropdown {
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+.dropdown-flag{
+  width: 30px;
+  margin-left: 10px;
+}
+
+
+
+.country-section-dropdown p{
+  margin: 0px 10px;
+  font-size: 14px;
+}
+
+
+
+.country-section-content-wrapper{
+  position: absolute;
+  display: none;
+  top: 27px;
+  width: 100%;
+  left: 0;
+}
+
+
+
+.country-section-dropdown-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 150px;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: gray;
+  background: white;
+}
+
+
+
+.country-section-dropdown-content a {
+  height: 25%;
+}
+
+
+
+.dropdown-option{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.dropdown-option:hover {
+  background: lightgray;
+}
+
+
+
+.searchbar {
+
+  display: flex;
+
+}
+
+
+
+.filter {
+
+  margin-left: 50px;
+
+  top: -5px;
+
+  height: 40px;
+
+  position: relative;
+
+}
+
+
+
+.warning {
+
+  margin: 5px;
+
+  font-size: 12px;
+
+  color: #9b9090;
+
+}
+
+
+
+.article-list {
+
+  line-height: 30px;
+
+}
+
+
+
+.small-grey-caption {
+
+  font-size: 12px;
+
+  color: grey;
+
+}
+
+
+
+.green-text {
+
+  color: green;
+
+}
+
+
+
+.red-text {
+
+  color: red;
+
+}
+
+
+
+.green-text:hover, .red-text:hover {
+
+  cursor: pointer;
+
+  text-decoration: underline;
+
+}
+
+
+
+.space-between-box {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 30px;
+
+}
+
+
+
+.space-between-box .button {
+
+  margin: 0;
+
+}
+
+
+
+.space-between-box input, .space-between-box select {
+
+  padding: 5px 20px;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  border: 1px solid #e7d3cf;
+
+  font-size: 12px;
+
+  margin: 0;
+
+}
+
+
+
+.space-between-box select {
+
+  width: auto;
+
+  margin-left: 5px;
+
+}
+
+
+
+.space-between-box select:hover {
+
+  cursor: pointer;
+
+}
+
+
+
+.custom-select {
+
+  position: relative;
+
+  width: 120px;
+
+  text-align: left;
+
+  font-size: 12px;
+
+  background-color: white;
+
+  margin-left: 5px;
+
+}
+
+
+
+.select-box {
+
+  text-align: center;
+
+  padding: 10px 20px;
+
+  border: 1px solid #e7d3cf;
+
+}
+
+
+
+.select-box:hover {
+
+  cursor: pointer;
+
+}
+
+
+
+.filter-box {
+
+  display: none;
+
+  position: absolute;
+
+  padding: 10px;
+
+  background-color: white;
+
+  left: 0;
+
+  right: 0;
+
+  border: 1px solid #e7d3cf;
+
+}
+
+
+
+.modal {
+
+  position: fixed;
+
+  width: 100%;
+
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.46);
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+
+.modal-box {
+
+  width: 300px;
+
+  min-height: 200px;
+
+  background-color: white;
+
+  text-align: center;
+
+  padding: 20px;
+
+}
+
+
+
+td a {
+
+  margin-right: 5px;
+
+}
+
+
+
+td i:hover {
+
+  cursor: pointer;
+
+}
+
+
+
+.job-edit-tab{
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(95, 93, 93, 0.815);
+  z-index: 13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-post-edit-container{
+  height: 550px;
+  width: 300px;
+  justify-self: center;
+  top: 20%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(112, 112, 112);
+  border-radius: 5px;
+}
+
+.job-post-edit-container-visible{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-post-edit-container-invisible{
+  display: none;
+}
+
+.job-post-edit-container .edit-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  flex-direction: column;
+  color: white;
+}
+
+.edit-form input,
+
+.edit-form textarea{
+
+  width: 280px;
+
+  border: 1px solid #e7d3cf;
+
+  padding: 5px;
+
+  margin: 5px auto;
+
+  outline: none;
+
+  transition: 0.5s ease;
+
+}
+
+.edit-form .button.disabled {
+
+  opacity: 0.7;
+
+}
+
+
+
+.edit-form .button.disabled:hover {
+
+  background-color: #dd736c;
+
+  cursor: default;
+
+}

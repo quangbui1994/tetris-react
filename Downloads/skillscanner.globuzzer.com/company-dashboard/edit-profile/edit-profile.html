@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./edit-profile.css">
+    </head>
+    <body>
+        <nav class="Navigation nav-bar">
+            <div class="logo">
+                <a href="../../index.html"><img src="../images/ss-logo-version_Fotor.png" alt="Globuzzer Logo"></a>            
+            </div>
+                <div class="dropdown show">
+                    <a class="btn dropdown-toggle" href="./preview-profile/profile.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="icon ion-ios-contact"></i>
+                    </a>
+                    
+                    <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="./edit-profile.html">Edit profile</a>
+                        <a class="dropdown-item" href="#">Log out</a>
+                    </div> -->
+                </div>
+                <a href="../../company-login/c-sign-in-up.html" onclick="Logout()">Log out</a>
+
+                <!-- <div class="dropdown show">
+                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="DrawerToggle">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="../post-a-job/post-a-job.html">Post a job</a>
+                        <a class="dropdown-item" href="../job-list/job-list.html">Job list</a>
+                        <a class="dropdown-item" href="./job-application.html">Job applications</a>
+                        <a class="dropdown-item" href="../your-plan/your-plan.html">Your plan</a>
+                    </div>
+                </div> -->
+        </nav>
+        <div class="left-holder">
+            <div class="left-navbar">
+                <a class="label-postJob"  href="../post-a-job.html">
+                    <p>Post a job</p>
+                </a>
+                <a href="../job-list.html" class="label-jobList">
+                    <p>Job list</p>
+                </a>
+                <a href="../job-application.html" class="label-jobApp">
+                    <p>Job applications</p>
+                </a>
+                <a href="../my-plan.html" class="label-jobPlan">
+                    <p>Your plan</p>
+                </a>
+
+            </div>
+        </div>
+        <div class="vertical-line"></div>
+        <main>
+            <ol class="breadcrumb">
+                    <i class="fas fa-home"></i>
+                    <li class="breadcrumb-item breadcrumb-dashboard"><a href="../index.html">Dashboard</a></li>
+                    <li class="breadcrumb-item breadcrumb-dashboard active">Edit profile</li>
+            </ol>
+            <div class="profile-holder">
+                
+                
+                <div class="company-detail">
+                    <h2>Edit profile</h2>
+                    <!-- section 1 -->
+                    <h3>Company details</h3>
+                    <div class="horizontal-line"></div>
+
+                    <p>Company name</p>
+                    <input type="text" id="company-name">
+
+                    <p>Website</p>
+                    <input type="text" id="company-website" placeholder="Company website">
+
+                    <p>Email (*)</p>
+                    <input type="text" id="company-email" >
+                    <h5>If you change this we will send you an email at your new address to confirm it. The new address will not become active until confirmed.</h5>
+
+                    <p>New password</p>
+                    <input type="password" placeholder="********">
+                    <div class="pass-strength">
+                        <div class="strength-block"></div>
+                        <div class="strength-block"></div>
+                        <div class="strength-block"></div>
+                        <div class="strength-block"></div>
+                        <a class="strength-infor">
+                            <i class="fas fa-info"></i>
+                        </a>
+                    </div>
+                    <div class="pass-strength-infor">
+                        <!-- very weak -->
+                        <div class="pass-strength">
+                            <div class="strength-block very-weak"></div>
+                            <div class="strength-block"></div>
+                            <div class="strength-block"></div>
+                            <div class="strength-block"></div>
+                            <div class="strength-infor">
+                                <i class="fas fa-info"></i>
+                            </div>
+                        </div>
+                        <p>Very weak</p>
+                        <!-- weak -->
+                        <div class="pass-strength">
+                            <div class="strength-block weak"></div>
+                            <div class="strength-block weak"></div>
+                            <div class="strength-block"></div>
+                            <div class="strength-block"></div>
+                            <a class="strength-infor">
+                                <i class="fas fa-info"></i>
+                            </a>
+                        </div>
+                        <p>Weak</p>
+                        <!-- good enough -->
+                        <div class="pass-strength">
+                            <div class="strength-block good"></div>
+                            <div class="strength-block good"></div>
+                            <div class="strength-block good"></div>
+                            <div class="strength-block"></div>
+                            <a class="strength-infor">
+                                <i class="fas fa-info"></i>
+                            </a>
+                        </div>
+                        <p>Good</p>
+                        <!-- strong -->
+                        <div class="pass-strength">
+                            <div class="strength-block strong"></div>
+                            <div class="strength-block strong"></div>
+                            <div class="strength-block strong"></div>
+                            <div class="strength-block strong"></div>
+                            <a class="strength-infor">
+                                <i class="fas fa-info"></i>
+                            </a>
+                        </div>
+                        <p>Strong</p>
+                    </div>
+
+                    <p>Company logo (only .jpg .png)</p>
+                    <div class="drop-zone">
+                        <input type="file" id="logo-drop-title" accept="image/*" onchange="loadEvent()" style="display: none">
+                        <label for="logo-drop-title" class="logo-drop-title">
+                            <p>Drop files here</p>
+                            <div class="icon-holder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <button>Browse file</button>
+                            </div>
+                        </label>   
+                    </div>
+
+                    <p>Cover image (only .jpg .png)</p>
+                    <div class="drop-zone">
+                        <input type="file" id="image-drop-title" accept="image/*" style="display: none;">
+                        <label for="image-drop-title" class="image-drop-title">
+                            <p>Drop files here</p>
+                            <div class="icon-holder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <button>Browse file</button>
+                            </div>
+                        </label>  
+                    </div>
+
+                    <p>Company description</p>
+                    <div id="editor-description"></div>
+
+                    <!-- section 2:location -->
+                    <h3>Location</h3>
+                    <div class="horizontal-line"></div>
+
+                    <p>City or Town</p>
+                    <input type="text" id="company-city" placeholder="Stockholm">
+
+                    <p>Postcode</p>
+                    <input type="text" id="company-postcode" placeholder="Postal code">
+
+                    <p>Country</p>
+                    <input type="text" id="company-country" placeholder="Sweden">
+
+                    <!-- Section 3:contact person -->
+                    <h3>Contact person</h3>
+                    <div class="horizontal-line"></div>
+
+                    <p>Name</p>
+                    <input type="text" id="contact-name" placeholder="John Doe">
+
+                    <p>Position</p>
+                    <input type="text" id="contact-position" placeholder="HR manager">
+
+                    <p>Email</p>
+                    <input type="text" id="contact-email" placeholder="John.Doe@gmail.com">
+
+                    <p>Phone</p>
+                    <input type="text" id="contact-phone" placeholder="+358 000 000 000">
+                    <!-- End section: button -->
+                    <div class="button-holder">
+                        <a href="./preview-profile/profile.html"><button id="preview-profile">Preview</button></a> 
+                        <a href="../index.html">Cancel</a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-firestore.js"></script>
+
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+            authDomain: "skillscanner-73181.firebaseapp.com",
+            databaseURL: "https://skillscanner-73181.firebaseio.com",
+            projectId: "skillscanner-73181",
+            storageBucket: "skillscanner-73181.appspot.com",
+            messagingSenderId: "269557896133"
+        };
+        firebase.initializeApp(config);
+        </script>
+
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+        <!-- Initialize Quill editor -->
+        <script>
+            var Font = Quill.import('formats/font');
+            // We do not add Aref Ruqaa since it is the default
+            Font.whitelist = ['Montserrat', 'roboto'];
+            Quill.register(Font, true);
+            var quill = new Quill('#editor-description', {
+                theme: 'snow',
+                placeholder: 'Add descriptions here (max 600 characters)'
+            });
+        </script>
+        
+
+        <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="./edit-profile.js"></script>
+        <script src="../../js/dashboard.js"></script>
+        <script src="../scripts/navbar/navbar.js"></script>
+    </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+    <link rel="stylesheet" href="./css/dropzone.css">
+
+    <link href="./scripts/window-date-picker-master/dist/css/window-date-picker.css" rel="stylesheet">
+
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="nav-bar-container">
+        <a class="ss-logo" target="_blank" href="/"></a>
+    
+        <div class="my-account-holder">
+            <!-- <p>My account</p> -->
+    
+            <div onclick="openAccountSettingsMobile()">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="42" height="42" fill="url(#pattern0)"/>
+                <defs>
+                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0" transform="scale(0.02)"/>
+                </pattern>
+                <image id="image0" width="50" height="50" xlink:href="data:image/png;base64,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"/>
+                </defs>
+            </svg>
+            </div>
+            
+            <p onclick="Logout()">Log out</p>
+
+            <div class="mobile-bars-icon" onclick="openCategoriesMobile()">
+            <i class="fas fa-bars fa-lg"></i>
+            </div>
+        </div>
+    
+        <div class="mobile-account-settings-content-holder">
+            <div class="mobile-account-settings-holder" id="mobile-account-settings-holder">
+            <div class="mobile-account-setting-button">
+                <p>Edit profile</p>
+            </div>
+    
+            <div class="mobile-account-setting-button" onclick="Logout()">
+                <p>Log out</p>
+            </div>
+            </div>
+        </div>
+    
+        <div class="mobile-categories-content-holder">
+            <div class="mobile-categories-holder" id="mobile-categories-holder">
+                <div class="mobile-category-option-button" onclick="window.location='/admin-dashboard/post-a-job.html'">
+                <p>Post a job</p>
+                </div>
+                <div class="mobile-category-option-button" onclick="window.location='/admin-dashboard/job-list.html'">
+                <p>Job list</p>
+                </div>
+                <div class="mobile-category-option-button" onclick="window.location='/admin-dashboard/job-application.html'">
+                <p>Job applications</p>
+                </div>
+                <div class="mobile-category-option-button" onclick="window.location='/admin-dashboard/post-an-article.html'">
+                    <p>Post an article</p>
+                  </div>
+                  <div class="mobile-category-option-button" onclick="window.location='/admin-dashboard/article-list.html'">
+                    <p>Article list</p>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-holder">
+        <div class="you-are-here-holder">
+            <i class="fas fa-home"></i>
+            <p class="you-are-here-reset-text-style" style="cursor: pointer" onclick="window.location='/admin-dashboard/'">Dashboard</p>
+            <i class="fas fa-caret-right your-are-here-highlight"></i>
+            <p class="you-are-here-reset-text-style your-are-here-highlight">Your plan</p>
+        </div>
+
+        <div class="right-side-categories-holder">
+            <div class="right-side-category" onclick="window.location='/admin-dashboard/post-a-job.html'">
+                <p>Post a job</p>
+            </div>
+            <div class="right-side-category" onclick="window.location='/admin-dashboard/job-list.html'">
+                <p>Job list</p>
+            </div>
+            <div class="right-side-category" onclick="window.location='/admin-dashboard/job-application.html'">
+                <p>Job applications</p>
+            </div>
+            <div class="right-side-category" onclick="window.location='/admin-dashboard/post-an-article.html'">
+                <p>Post an article</p>
+            </div>
+            <div class="right-side-category" onclick="window.location='/admin-dashboard/article-list.html'">
+                <p>Article list</p>
+            </div>
+        </div>
+
+        <div class="vertical-separator-line">
+        </div>
+
+        <div class="my-plan-holder">
+            <p class="my-plan-text">Your plan</p>
+            <div class="my-plan-underline"></div>
+
+            <div class="my-plan-content-holder">
+                <p class="your-current-plan">Your current plan is</p>
+
+                <div class="my-plan-current-plan-holder" id="my-plan-current-plan-holder">
+                    <!-- <div class="my-plan-current-plan-banner">
+                        <p>FREE</p>
+                    </div>
+
+                    <div class="my-plan-current-plan-options">
+                        <div class="my-plan-current-plan-option-holder">
+                            <p>Limited job offers</p>
+
+                            <div class="my-plan-current-plan-option-underline"></div>
+                        </div>
+
+                        <div class="my-plan-current-plan-option-holder">
+                            <p>Access to dashboard</p>
+
+                            <div class="my-plan-current-plan-option-underline"></div>
+                        </div>
+
+                        <div class="my-plan-current-plan-option-holder">
+                            <p>The lifespans of job offers are limited</p>
+
+                            <div class="my-plan-current-plan-option-underline"></div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <p class="upgrade-now-text" id="upgrade-now-text"></p>
+
+                <div class="my-plan-upgrade-card-holder">
+                    <div class="my-plan-upgrade-card" id="my-plan-upgrade-card-1">
+                        <!-- <div class="my-plan-upgrade-card-top-line-for-plus"></div>
+
+                        <div class="my-plan-upgrade-card-content">
+                            <p class="my-plan-upgrade-card-content-package-title">PLUS</p>
+
+                            <div class="value-holder">
+                                <p class="value">9.99</p>
+                                <p class="unit">€/month</p>
+                            </div>
+
+                            <div class="option-description">
+                                <p>Unlimited job offers</p>
+                            </div>
+
+                            <div class="option-description">
+                                <p>Access to dashboard</p>
+                            </div>
+
+                            <div class="option-description">
+                                <p>The lifespans of job offers are unlimited</p>
+                            </div>
+
+                            <div class="upgrade-button-for-plus" onclick="window.location = '/dmc-SkillScanner-remake-second/html/company-payment.html?plan=free&purchaseType=upgradeToPlus'">
+                                <p>Upgrade</p>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="my-plan-upgrade-card" id="my-plan-upgrade-card-2">
+                        <!-- <div class="my-plan-upgrade-card-top-line-for-premium"></div>
+
+                        <div class="my-plan-upgrade-card-content">
+                            <p class="my-plan-upgrade-card-content-package-title">premium</p>
+
+                            <div class="value-holder">
+                                <p class="value">12.99</p>
+                                <p class="unit">€/month</p>
+                            </div>
+
+                            <div class="option-description">
+                                <p>Unlimited job offers</p>
+                            </div>
+
+                            <div class="option-description">
+                                <p>Access to dashboard</p>
+                            </div>
+
+                            <div class="option-description">
+                                <p>The lifespans of job offers are unlimited</p>
+                            </div>
+
+                            <div class="option-description">
+                                <p>Analytics of job offers provided</p>
+                            </div>
+
+                            <div class="upgrade-button-for-premium" onclick="window.location = '/dmc-SkillScanner-remake-second/html/company-payment.html?plan=free&purchaseType=upgradeToPremium'">
+                                <p>Upgrade</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-firestore.js"></script>
+
+<script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+    authDomain: "skillscanner-73181.firebaseapp.com",
+    databaseURL: "https://skillscanner-73181.firebaseio.com",
+    projectId: "skillscanner-73181",
+    storageBucket: "skillscanner-73181.appspot.com",
+    messagingSenderId: "269557896133"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="./scripts/dropzone/dropzone.js"></script>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="./scripts/my-plan/myPlan.js"></script>
+
+<script src="./scripts/window-date-picker-master/dist/js/window-date-picker.js"></script>
+
+<script src="./scripts/navbar/navbar.js"></script>
+
+</html>

@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SkillScanner</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div id="myModal" class="modal fade">
+    <div class="modal-content">
+        <h1>Welcome</h1>
+        <h3>Please Select Your Country</h3>
+        <a id="DKx" class="country-option"><img src="./icons/denmark.png" alt="denmark"><span>Denmark</span></a>
+        <a id="FIx" class="country-option"><img src="./icons/finland.png" alt="finland"><span>Finland</span></a>
+        <a id="NOx" class="country-option"><img src="./icons/norway.png" alt="norway"><span>Norway</span></a>
+        <a id="SEx" class="country-option"><img src="./icons/sweden.png" alt="sweden"><span>Sweden</span></a>
+    </div>
+</div>
+<div id="filter-modal"></div>
+<header>
+    <nav>
+        <div class="logo"><img src="./images/logo.png" alt="logo" height="48">
+        </div>
+        <div class="navList">
+            <a id="list" style="font-size:1.5rem;" class="icon">&#9776;</a>
+            <div class="list">
+                <a href="">HOME</a>
+                <!--<a href="">SERVICE</a>-->
+                <a href="about.html">ABOUT</a>
+                <!--<a href="">THE TEAM</a>-->
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </div>
+        <div class="selectCountry">
+            <span class="header"><span id="country"> Select Country</span><i class="fa fa-caret-down"
+                                                                             aria-hidden="true"></i></span>
+            <div class="countryList">
+                <a id="DK" class="country-option-li"><img src="./icons/denmark.png"
+                                                          alt="denmark"><span>Denmark</span></a>
+                <a id="FI" class="country-option-li"><img src="./icons/finland.png"
+                                                          alt="finland"><span>Finland</span></a>
+                <a id="NO" class="country-option-li"><img src="./icons/norway.png" alt="norway"><span>Norway</span></a>
+                <a id="SE" class="country-option-li"><img src="./icons/sweden.png" alt="sweden"><span>Sweden</span></a>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="infoS">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                    <p>ed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <button>Join us</button>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="infoS">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                    <p>ed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <button>Join us</button>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="infoS">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                    <p>ed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <button>Join us</button>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="infoS">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                    <p>ed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <button>Join us</button>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="infoS">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                    <p>ed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <button>Join us</button>
+                </div>
+            </div>
+
+            <div class="dots">
+                <span onclick="currentDiv(0)" class="dot"></span>
+                <span onclick="currentDiv(1)" class="dot"></span>
+                <span onclick="currentDiv(2)" class="dot"></span>
+                <span onclick="currentDiv(3)" class="dot"></span>
+                <span onclick="currentDiv(4)" class="dot"></span>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="sponsers">
+        <h1>Who are we working with/ Our Sponsors </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</p>
+        <div class="sponserC">
+            <div class="Sscroll"></div>
+        </div>
+        <div class="sponser">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/004.png" alt="">
+                        <p>sponsor 1</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/004.png" alt="">
+                        <p>sponsor 2</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/004.png" alt="">
+                        <p>sponsor 3</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/004.png" alt="">
+                        <p>sponsor 4</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/004.png" alt="">
+                        <p>sponsor 5</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/004.png" alt="">
+                        <p>sponsor 6</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/004.png" alt="">
+                        <p>sponsor 7</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/004.png" alt="">
+                        <p>sponsor 8</p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit ed do eiusmod tempor</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sections">
+        <h1>SkillScanner Sections</h1>
+        <hr>
+
+        <a class="show-section jobs roll" href="#section" id="show-jobs">
+            <div class="secD">
+                <h2>JOBS</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <button class="JB">Learn more</button>
+            </div>
+        </a>
+        <a class="show-section events roll" href="#section" id="show-articles">
+            <div class="secD">
+                <h2>ARTICLES</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <button class="EB">Learn more</button>
+            </div>
+        </a>
+        <a class="show-section articls roll" href="#section" id="show-events">
+            <div class="secD">
+                <h2>EVENTS</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <button class="AB">Learn more</button>
+            </div>
+        </a>
+        <a class="show-section jot roll" href="#section" id="show-join">
+            <div class="secD">
+                <h2>JOIN OUR TEAM</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <button class="JTB">Learn more</button>
+            </div>
+        </a>
+
+        <a style="display: none" class="hide-first show-section feeds roll" href="#section" id="show-feeds">
+            <div class="secD">
+                <h2>FEEDS</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <button class="FB">Learn more</button>
+            </div>
+        </a>
+
+        <!--a style="display: none" id="show-share" class="hide-first show-section feeds roll" href="#section">
+            <div class="show-section secD">
+                <h2>SHARE TALENT</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <button class="FB">Learn more</button>
+            </div>
+        </a-->
+        <button id="view-more" class="secV">View More</button>
+    </div>
+
+    <div id="section" class="section jobs">
+        <h2 id="section-title" class="title-s">JOBS</h2>
+        <p class="title-p"><i><img src="./icons/ellipse/ellipse.png"></i>Lorem ipsum on yksinkertaisesti<i><img
+                src="./icons/ellipse/ellipse.png"></i></p>
+
+        <div class="sectionT">
+            <div class="section-content" id="jobs">
+                <h3 class="section-heading">Jobs available</h3>
+                <div class="row">
+                    <div class="col-1">
+                        <div class="input-container">
+                            <img src="./icons/finland.png" alt="finland" class="input-icon">
+                            <ul style="display: none" class="country-dropdown">
+                                <li><img id="FIjobs" src="./icons/finland.png" alt="finland" class="input-icon-li"></li>
+                                <li><img id="NOjobs" src="./icons/norway.png" alt="norway" class="input-icon-li"></li>
+                                <li><img id="SEjobs" src="./icons/sweden.png" alt="sweden" class="input-icon-li"></li>
+                                <li><img id="DKjobs" src="./icons/denmark.png" alt="denmark" class="input-icon-li"></li>
+                            </ul>
+                            <input type="text" placeholder="Search here" class="search-input-field">
+                        </div>
+                        <div class="filter-box">
+                            <div class="filter-container">
+                                <h3 class="filter-heading">Filter By</h3>
+                                <div class="filter-checkbox-container">
+                                    <h2 class="filter-checkbox-heading">Position</h2>
+                                    <div class="checkboxes">
+                                        <h2 style="display: none" class="responsive-filter-heading">Position</h2>
+                                        <label class="filter-checkbox">
+                                            <input type="checkbox" value="internship" class="positionFilter">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-value">Internship</span>
+                                        </label>
+                                        <label class="filter-checkbox">
+                                            <input type="checkbox" value="fulltime" class="positionFilter">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-value">Full time</span>
+                                        </label>
+                                    </div>
+                                    <div class="expand-icon">
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-container">
+                                <h3 class="filter-heading">Filter By</h3>
+                                <div class="filter-checkbox-container">
+                                    <h2 class="filter-checkbox-heading">Job Category</h2>
+                                    <div class="checkboxes">
+                                        <h2 style="display: none" class="responsive-filter-heading">Job Category</h2>
+                                        <label class="filter-checkbox">
+                                            <input type="checkbox" value="it" class="categoryFilter">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-value">IT</span>
+                                        </label>
+                                        <label class="filter-checkbox">
+                                            <input type="checkbox" value="marketing" class="categoryFilter">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-value">Marketing</span>
+                                        </label>
+                                    </div>
+                                    <div class="expand-icon">
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-container">
+                                <h3 class="filter-heading">Filter By</h3>
+                                <div class="filter-checkbox-container">
+                                    <h2 class="filter-checkbox-heading">Regions</h2>
+                                    <div class="checkboxes">
+                                        <h2 style="display: none" class="responsive-filter-heading">Regions</h2>
+                                        <label class="filter-checkbox">
+                                            <input type="checkbox" value="copenhagen" class="cityFilter">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-value">Copenhagen</span>
+                                        </label>
+                                        <label class="filter-checkbox">
+                                            <input type="checkbox" value="aalborg" class="cityFilter">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-value">Aalborg</span>
+                                        </label>
+                                    </div>
+                                    <div class="expand-icon">
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="clear-filters white-btn">Clear filters</button>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <ul class="list-card-ul" id="jobs-container">
+                            <li class="list-card-image">
+                                <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                                <div>
+                                    <h2 class="list-card-heading">
+                                        JOB Title
+                                        <span class="small-header">Location</span>
+                                        <span class="small-header">Job type</span>
+                                    </h2>
+                                    <p class="list-card-desc">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                    </p>
+                                    <a href="#" class="white-btn">Learn more</a>
+                                </div>
+                            </li>
+                            <li class="list-card-image">
+                                <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                                <div>
+                                    <h2 class="list-card-heading">
+                                        JOB Title
+                                        <span class="small-header">Location</span>
+                                        <span class="small-header">Job type</span>
+                                    </h2>
+                                    <p class="list-card-desc">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                    </p>
+                                    <a href="#" class="white-btn">Learn more</a>
+                                </div>
+                            </li>
+                            <li class="list-card-image">
+                                <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                                <div>
+                                    <h2 class="list-card-heading">
+                                        JOB Title
+                                        <span class="small-header">Location</span>
+                                        <span class="small-header">Job type</span>
+                                    </h2>
+                                    <p class="list-card-desc">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                    </p>
+                                    <a href="#" class="white-btn">Learn more</a>
+                                </div>
+                            </li>
+                            <li class="list-card-image">
+                                <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                                <div>
+                                    <h2 class="list-card-heading">
+                                        JOB Title
+                                        <span class="small-header">Location</span>
+                                        <span class="small-header">Job type</span>
+                                    </h2>
+                                    <p class="list-card-desc">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                    </p>
+                                    <a href="#" class="white-btn">Learn more</a>
+                                </div>
+                            </li>
+                            <li class="list-card-image">
+                                <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                                <div>
+                                    <h2 class="list-card-heading">
+                                        JOB Title
+                                        <span class="small-header">Location</span>
+                                        <span class="small-header">Job type</span>
+                                    </h2>
+                                    <p class="list-card-desc">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                    </p>
+                                    <a href="#" class="white-btn">Learn more</a>
+                                </div>
+                            </li>
+                            <li class="list-card-image">
+                                <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                                <div>
+                                    <h2 class="list-card-heading">
+                                        JOB Title
+                                        <span class="small-header">Location</span>
+                                        <span class="small-header">Job type</span>
+                                    </h2>
+                                    <p class="list-card-desc">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                    </p>
+                                    <a href="#" class="white-btn">Learn more</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none" class="section-content" id="articles">
+                <div class="title-bar">
+                    <h3 class="section-heading">Top Articles</h3>
+                    <div class="filter-container">
+                        <div>
+                            <label for="sections-filter-articles" class="filter-select-label">
+                                Filter by
+                            </label>
+                            <select id="sections-filter-articles" class="filter-select">
+                                <option>Sections</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="sponsors-filter-articles" class="filter-select-label">
+                                Filter by
+                            </label>
+                            <select id="sponsors-filter-articles" class="filter-select">
+                                <option>Sponsors</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <ul class="list-card-ul" id="article-container">
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: none" class="section-content" id="events">
+                <div class="title-bar">
+                    <div class="input-container">
+                        <img src="./icons/finland.png" alt="finland" class="input-icon">
+                        <ul style="display: none" class="country-dropdown">
+                            <li><img id="FIevents" src="./icons/finland.png" alt="finland" class="input-icon-li"></li>
+                            <li><img id="NOevents" src="./icons/norway.png" alt="norway" class="input-icon-li"></li>
+                            <li><img id="SEevents" src="./icons/sweden.png" alt="sweden" class="input-icon-li"></li>
+                            <li><img id="DKevents" src="./icons/denmark.png" alt="denmark" class="input-icon-li"></li>
+                        </ul>
+                        <input type="text" placeholder="Search here" class="search-input-field">
+                    </div>
+                    <div class="filter-container">
+                        <div>
+                            <label for="location-filter-events" class="filter-select-label">
+                                Filter by
+                            </label>
+                            <select id="location-filter-events" class="filter-select">
+                                <option>Location</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="category-filter-events" class="filter-select-label">
+                                Filter by
+                            </label>
+                            <select id="category-filter-events" class="filter-select">
+                                <option>Category</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="section-heading small">Discover events nearby</h3>
+                <div class="event-card-container" id="event-container">
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-date"><p>2</p>
+                            <p>Jan</p></div>
+                        <div class="event-type">Free event</div>
+                        <div class="event-description">
+                            <h2 class="event-title">Event title</h2>
+                            <p>additional information, place, date</p>
+                            <p>#tags1 #tags2</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-date"><p>2</p>
+                            <p>Jan</p></div>
+                        <div class="event-type">Free event</div>
+                        <div class="event-description">
+                            <h2 class="event-title">Event title</h2>
+                            <p>additional information, place, date</p>
+                            <p>#tags1 #tags2</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-date"><p>2</p>
+                            <p>Jan</p></div>
+                        <div class="event-type">Free event</div>
+                        <div class="event-description">
+                            <h2 class="event-title">Event title</h2>
+                            <p>additional information, place, date</p>
+                            <p>#tags1 #tags2</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-date"><p>2</p>
+                            <p>Jan</p></div>
+                        <div class="event-type">Free event</div>
+                        <div class="event-description">
+                            <h2 class="event-title">Event title</h2>
+                            <p>additional information, place, date</p>
+                            <p>#tags1 #tags2</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-date"><p>2</p>
+                            <p>Jan</p></div>
+                        <div class="event-type">Free event</div>
+                        <div class="event-description">
+                            <h2 class="event-title">Event title</h2>
+                            <p>additional information, place, date</p>
+                            <p>#tags1 #tags2</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-date"><p>2</p>
+                            <p>Jan</p></div>
+                        <div class="event-type">Free event</div>
+                        <div class="event-description">
+                            <h2 class="event-title">Event title</h2>
+                            <p>additional information, place, date</p>
+                            <p>#tags1 #tags2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none" class="section-content" id="join">
+                <div class="title-bar">
+                    <h3 class="section-heading">Teams available</h3>
+                    <div class="input-container">
+                        <img src="./icons/finland.png" alt="finland" class="input-icon">
+                        <ul style="display: none" class="country-dropdown">
+                            <li><img id="FIjoin" src="./icons/finland.png" alt="finland" class="input-icon-li"></li>
+                            <li><img id="NOjoin" src="./icons/norway.png" alt="norway" class="input-icon-li"></li>
+                            <li><img id="SEjoin" src="./icons/sweden.png" alt="sweden" class="input-icon-li"></li>
+                            <li><img id="DKjoin" src="./icons/denmark.png" alt="denmark" class="input-icon-li"></li>
+                        </ul>
+                        <input type="text" placeholder="Search here" class="search-input-field">
+                    </div>
+                    <div class="filter-container">
+                        <div>
+                            <label for="sponsors-filter-join" class="filter-select-label">
+                                Filter by
+                            </label>
+                            <select id="sponsors-filter-join" class="filter-select">
+                                <option>Job Category</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-card-ul">
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                    <li class="list-card-image">
+                        <img class="card-image" src="images/articleImge.png" alt="article-image"/>
+                        <div>
+                            <h2 class="list-card-heading">Title</h2>
+                            <p class="list-card-desc">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <a href="#" class="white-btn">Learn more</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: none" class="section-content" id="feeds">
+                <div class="title-bar">
+                    <div class="input-container">
+                        <img src="./icons/finland.png" alt="finland" class="input-icon">
+                        <ul style="display: none" class="country-dropdown">
+                            <li><img id="FIfeeds" src="./icons/finland.png" alt="finland" class="input-icon-li"></li>
+                            <li><img id="NOfeeds" src="./icons/norway.png" alt="norway" class="input-icon-li"></li>
+                            <li><img id="SEfeeds" src="./icons/sweden.png" alt="sweden" class="input-icon-li"></li>
+                            <li><img id="DKfeeds" src="./icons/denmark.png" alt="denmark" class="input-icon-li"></li>
+                        </ul>
+                        <input type="text" placeholder="Search here" class="search-input-field">
+                    </div>
+                    <div class="filter-container">
+                        <div>
+                            <label for="location-filter-feeds" class="filter-select-label">
+                                Filter by
+                            </label>
+                            <select id="location-filter-feeds" class="filter-select">
+                                <option>Location</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="category-filter-feeds" class="filter-select-label">
+                                Filter by
+                            </label>
+                            <select id="category-filter-feeds" class="filter-select">
+                                <option>Category</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="section-heading small">Our Stories</h3>
+                <div class="event-card-container" id="feed-container">
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-description centered">
+                            <h2 class="event-title yellow">Story title</h2>
+                            <p>additional information, place, date</p>
+                            <a href="#" class="yellow-btn">Read more</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-description centered">
+                            <h2 class="event-title yellow">Story title</h2>
+                            <p>additional information, place, date</p>
+                            <a href="#" class="yellow-btn">Read more</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-description centered">
+                            <h2 class="event-title yellow">Story title</h2>
+                            <p>additional information, place, date</p>
+                            <a href="#" class="yellow-btn">Read more</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-description centered">
+                            <h2 class="event-title yellow">Story title</h2>
+                            <p>additional information, place, date</p>
+                            <a href="#" class="yellow-btn">Read more</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-description centered">
+                            <h2 class="event-title yellow centered">Story title</h2>
+                            <p>additional information, place, date</p>
+                            <a href="#" class="yellow-btn">Read more</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img class="event-image" src="images/articleImge.png" alt="event-image">
+                        <div class="event-description centered">
+                            <h2 class="event-title yellow">Story title</h2>
+                            <p>additional information, place, date</p>
+                            <a href="#" class="yellow-btn">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <h2>Sponsorship Information</h2>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+    <button>Contact us</button>
+    <div class="hr-line"></div>
+
+
+    <div class="navFooterList">
+        <div class="footerList">
+            <a>Home</a>
+            <a>Privacy</a>
+            <a>Terms & Conditions</a>
+            <a>About us</a>
+            <a>Contact us</a>
+        </div>
+        <div class="socialMedia">
+            <a><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+            <a><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+    <!--  <div class="navFooterList">
+         <div class="socialMedia">
+             <a><i></i>HOME</a>
+             <a><i></i>SERVICE</a>
+             <a><i></i>ABOUT</a>
+             <a><i></i>THE TEAM</a>
+             <a><i></i>CONTACT</a>
+         </div>
+     </div> -->
+
+
+</div>
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<!--script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script-->
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+<script>
+  // Firebase init
+  var config = {
+    apiKey: "AIzaSyBcAj3NWiSwyG6o3y-1A8iS8giq6QIFHJQ",
+    authDomain: "adminarea-f80be.firebaseapp.com",
+    databaseURL: "https://adminarea-f80be.firebaseio.com",
+    projectId: "adminarea-f80be",
+    storageBucket: "adminarea-f80be.appspot.com",
+    messagingSenderId: "247177845883"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/fetch-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

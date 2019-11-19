@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Globuzzer Remake</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.min.css">
+        <link rel="stylesheet" href="path/to/swiper.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- Facebook display -->
+        <meta property="og:url"           content="https://staging1.globuzzer.com/globuzzer-app-remake/urltes.html" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="Algorithm Test Specialist" />
+        <meta property="og:description"   content="Helsinki, Finland" />
+        <meta property="fb:app_id"        content="2352379188372286" />
+        <meta property="og:image"         content="https://staging1.globuzzer.com/globuzzer-app-remake/assets/img/articles2.jpg"/>
+        <meta property ="og:image:width" content="600">
+        <meta property ="og:image:height" content="400">
+    </head>
+    </head>
+    <body>
+        <!-- Navigation bar goes here -->
+        <nav class="Navigation nav-bar">
+            <div class="logo">
+                <a href="#" style="text-decoration: none;">
+                    <img src="./assets/img/globuzzer-logo.png" alt="Globuzzer Logo">
+                </a>
+                
+            </div>
+            <div class="DrawerToggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-nav">
+                <ul>
+                        <li><a href="#JobBoard1">JOBS</a></li>
+                        <li><a href="#Articles">ARTICLES</a></li>
+                        <li><a href="company-dashboard/company-dashboard.html">PRICING</a></li>
+                        <li><a href="company-login/sign-in.html" id="navbar-sign-in-button" class="navbar-sign-in-button">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Header left and right goes here -->
+        <header class="Header">
+            <!-- Left header banner -->
+            <div class="left-banner">
+                <div class="IntroductionItem left">
+                    <p class="item--title">For Jobseekers</p>
+                    <p class="item--description">SkillScanner connects English Speaking Talents with job opportunities in the Nordics</p>
+                    <button onclick="window.location.href='#JobBoard'" class="introBtnLeft Header-button"type="button" id="view-job-mobile">View jobs</button>
+                    <button onclick="window.location.href='#JobBoard1'" class="introBtnLeft Header-button"type="button" id="view-job-desktop">View jobs</button>
+                </div>
+            </div>
+            <!-- Right header banner -->
+            <div class="right-banner">
+                <div class="IntroductionItem right">
+                    <p class="item--title">For companies</p>
+                    <p class="item--description">Post your job offers for free and connect opportunities with passionate talents on SkillScanner!</p>
+                    <button class="introBtnRight Header-button" type="button">Register</button>
+                    <a href="./company-login/sign-in.html">Sign in</a>
+                </div>
+                <div class="hidden-right-banner" style="display: none">
+                        <!-- Navigator holder -->
+                        <div class="step-navigator-holder">
+                            <h3>For companies</h3>
+                            <div class="step-nav-point-holder">
+                                <!-- step 1 -->
+                                <div class="step-nav-point" id="step-nav1">
+                                    <p>1</p>
+                                    <div class="step-nav-title">
+                                        <p>Register your company</p>
+                                    </div>
+                                </div>
+                                <div class="step-straight-line"></div>
+                                <!-- Step 2 -->
+                                <div class="step-nav-point" id="step-nav2">
+                                    <p>2</p>
+                                    <div class="step-nav-title">
+                                        <p>Publish your first job advert</p>
+                                    </div>
+                                </div>
+                                <div class="step-straight-line"></div>
+                                <!-- Step 3 -->
+                                <div class="step-nav-point" id="step-nav3">
+                                    <p>3</p>
+                                    <div class="step-nav-title">
+                                        <p>Access your dashboard</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- The container with hidden div will appear here -->
+                
+                        
+                        <!-- Step 1: company registration -->
+                        <div class="company-registration-holder">
+                            <p>* Mandatory fields</p>
+                            <!-- Filling form -->
+                            <div class="company-regist-field">
+                                <div>
+
+                                    <div class="warning-incorrect-input" id="company-name-validation">
+                                        <p>Please fill this</p>
+                                    </div>
+                                    <input type="text" id="company-name" placeholder="Company name *" onkeyup="$('#company-name-validation').removeClass('show-warning-incorrect-input')">
+                                </div>
+                                <div>
+                                    <div class="warning-incorrect-input" id="company-email-validation">
+                                        <p>Please fill this</p>
+                                    </div>
+                                    <input type="email" id="company-email" placeholder="Email *" onkeyup="$('#company-email-validation').removeClass('show-warning-incorrect-input')">
+                                </div>
+                                <div>
+                                    <div class="warning-incorrect-input" id="company-country-validation">
+                                        <p>Please select one</p>
+                                    </div>
+                                    <div class="company-regist-select-country" id="select-country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <p>Select country *</p>
+                                        <div class="company-regist-select-country-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div> 
+                                        <div id="company-regist-select-country-dropdown" class="dropdown-menu">
+                                            <div class="country dropdown-item" id="finland">Finland</div>
+                                            <div class="country dropdown-item" id="denmark">Denmark</div>
+                                            <div class="country dropdown-item" id="norway">Norway</div>
+                                            <div class="country dropdown-item" id="sweden">Sweden</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="warning-incorrect-input" id="company-city-validation">
+                                        <p>Please fill this</p>
+                                    </div>
+                                    <input type="text" id="company-city-input" placeholder="City *" onkeyup="$('#company-city-validation').removeClass('show-warning-incorrect-input')" autocomplete="off">
+                                </div>
+                                <div>
+                                    <div class="warning-incorrect-input" id="company-pass-validation">
+                                        <p>Please fill this</p>
+                                    </div>
+                                    <input type="password" id="company-pass" placeholder="Password *" onkeyup="$('#company-pass-validation').removeClass('show-warning-incorrect-input')" autocomplete="off">
+                                </div>
+                                <div>
+                                    <div class="warning-incorrect-input" id="company-repass-validation">
+                                        <p>Please fill this</p>
+                                    </div>
+                                    <input type="password" id="company-repass" placeholder="Repeat password *" onkeyup="$('#company-repass-validation').removeClass('show-warning-incorrect-input')" autocomplete="off">
+                                </div>
+                            </div>
+                            <!-- button goes here -->
+                            <div class="register-button-holder">
+                                <input type="submit" class="company-create-account-button" id="company-create-account-button" value="Create Account">
+                                    
+                                
+                                <div class="company-sign-in-holder">
+                                    <a class="company-sign-in" href="company-login/sign-in.html">
+                                        Sign in
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Step 2: public company's first job holder -->
+                        <div class="public-first-job-holder" style='display: none;'>
+                            <div class="first-job-holder-field">
+                                <p>* Mandatory fields</p>
+                                <!-- The upper selector goes here -->
+                                <div class="column-divide">
+                                    <!-- Job title -->
+                                    <div class="step2-row text-input">
+                                        <div class="warning-incorrect-input" id="job-title-validation">
+                                            <p>Please fill this</p>
+                                        </div>
+                                        <input type="text" id="job-title" placeholder="Job title *" onkeyup="$('#job-title-validation').removeClass('show-warning-incorrect-input')" autocomplete="off">
+                                    </div>
+                                    <!-- job category -->
+                                    <div class="step2-row">
+                                        <div class="warning-incorrect-input" id="job-category-validation">
+                                            <p>Please choose this</p>
+                                        </div>
+                                        <div class="job-category-selection" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="job-category">
+                                            <p>Category *</p>
+                                            <div class="company-regist-select-country-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div> 
+                                            <div id="job-category-selection-dropdown" class="dropdown-menu" onkeyup="$('#job-category-validation').removeClass('show-warning-incorrect-input')" autocomplete="off">
+                                                <div class="dropdown-item" id="backEndDev">Back End Developer</div>
+                                                <div class="dropdown-item" id="frontEndDev">Front End Developer</div>
+                                                <div class="dropdown-item" id="fullStackDev">Full Stack Developer</div>
+                                                <div class="dropdown-item" id="androidDev">Android Developer</div>
+                                                <div class="dropdown-item" id="iosDev">iOS Developer</div>
+                                                <div class="dropdown-item" id="businessDev">Business Development</div>
+                                                <div class="dropdown-item" id="businessIntel">Business Intelligence</div>
+                                                <div class="dropdown-item" id="customerSer">Customer Service</div>
+                                                <div class="dropdown-item" id="designJob">Design</div>
+                                                <div class="dropdown-item" id="marketingCom">Marketing & Communication</div>
+                                                <div class="dropdown-item" id="projectMana">Project Management</div>
+                                                <div class="dropdown-item" id="salesJob">Sales</div>
+                                                <div class="dropdown-item" id="othersJob">Others</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Country select-->
+                                    <div class="step2-row">
+                                        <div class="warning-incorrect-input" id="job-country-validation">
+                                            <p>Please choose this</p>
+                                        </div>
+                                        <div class="job-country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="job-country">
+                                            <p>Country *</p>
+                                            <div class="company-regist-select-country-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div> 
+                                            <div id="company-regist-select-country-dropdown" class="dropdown-menu">
+                                                <div class="country dropdown-item" id="step2-finland">Finland</div>
+                                                <div class="country dropdown-item" id="step2-denmark">Denmark</div>
+                                                <div class="country dropdown-item" id="step2-norway">Norway</div>
+                                                <div class="country dropdown-item" id="step2-sweden">Sweden</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- City typing -->
+                                    <div class="step2-row text-input">
+                                        <div class="warning-incorrect-input" id="job-city-validation">
+                                            <p>Please fill this</p>
+                                        </div>
+                                        <input type="text" id="city-title" placeholder="City *" onkeyup="$('#job-city-validation').removeClass('show-warning-incorrect-input')" autocomplete="off">
+                                    </div>
+                                    <!-- Position select -->
+                                    <div class="step2-row">
+                                        <div class="warning-incorrect-input" id="job-position-validation">
+                                            <p>Please choose this</p>
+                                        </div>
+                                        <div class="job-position" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="job-position">
+                                            <p>Position *</p>
+                                            <div class="company-regist-select-country-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div> 
+                                            <div id="company-regist-select-position-dropdown" class="dropdown-menu">
+                                                <div class="position dropdown-item" id="intern">Intern</div>
+                                                <div class="position dropdown-item" id="trainee">Trainee</div>
+                                                <div class="position dropdown-item" id="fullTime">Full-time</div>
+                                                <div class="position dropdown-item" id="partTime">Part-time</div>
+                                                <div class="position dropdown-item" id="contract">Contract</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Salary select -->
+                                    <div class="step2-row">
+                                        <div class="warning-incorrect-input" id="job-salary-validation">
+                                            <p>Please choose this</p>
+                                        </div>
+                                        <div class="job-salary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="job-salary">
+                                            <p>Salary *</p>
+                                            <div class="company-regist-select-country-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div> 
+                                            <div id="company-regist-select-salary-dropdown" class="dropdown-menu salary-dropdown">
+                                                <div class="salary dropdown-item" id="paid">Paid</div>
+                                                <div class="salary dropdown-item" id="unPaid">Unpaid</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Drop image holder -->
+                                    <div class="step2-row image-custom">
+                                        <div class="warning-incorrect-input" id="job-cv-validation" style="width: 140px">
+                                            <p >Please drop an image</p>
+                                        </div>
+                                        <input type="file" id="image-drop-title" accept="image/*" style="display: none;">
+                                        <label for="image-drop-title" class="image-drop-title" id="image-drop-display" onkeyup="$('#job-cv-validation').removeClass('show-warning-incorrect-input')">
+                                            <p>Drop an image</p>
+                                            <i class="far fa-file-alt"></i>
+                                        </label>
+                                        
+                                    </div>
+                                    <!-- dealine date -->
+                                    <div class="step2-row" id="deadline-holder" >
+                                        <div class="warning-incorrect-input" id="job-letter-validation" style="width: 140px">
+                                            <p>Please add a deadline</p>
+                                        </div>
+                                        <input type="date" id="deadline-title">
+                                        
+                                        <div class="image-drop-title" id="deadline-display" >
+                                            <p>Application deadline *</p>
+                                            <i class="far fa-calendar-alt"></i>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- The typing description go here -->
+                                <div class="text-area">
+                                    <div class="texting-job"  style="height: 100px;">
+                                        <textarea placeholder="Add description here (max 150 words)" maxlength="900" id="job-description"  style="height: 90px !important;"></textarea>
+                                        <div class="warning-incorrect-input">
+                                            <p>Exceed 150 words</p>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="texting-job" style="height: 100px;">
+                                        <div class="warning-incorrect-input">
+                                            <p>Exceed 75 words</p>
+                                        </div>
+                                        <textarea placeholder="Add requirement here (max 75 words)" maxlength="450" id="job-requirement" style="height: 90px !important;"></textarea>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="step2-button">
+                                <button class="step2-skip">
+                                    Skip
+                                </button>
+                                <button class="step2-publish" id="step2-publish">
+                                    Publish
+                                </button>
+                                
+                            </div>
+                        </div>
+                        <!-- Step 3: access dashboard holder -->
+                        <div class="access-dashboard-holder" style="display: none;">
+                            <div class="step3-navigation">
+                                <div class=" step3-button preview-job-post">
+                                    <p>Preview your job post
+                                    <i class="fas fa-chevron-right"></i>
+                                    </p>
+                                </div>
+                                <div class="step3-button go-to-dashboard">
+                                    <p>Go to your dashboard
+                                    <i class="fas fa-chevron-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="see-our-package">See our packages for companies</p>
+                            <div class="company-packages">
+                                <!-- package 1 -->
+                                <div class="indicator left-indicator">
+                                    <i class="icon ion-ios-arrow-back"></i>
+                                </div>
+                                <div class="package">
+                                    <div class="top-line1"></div>
+                                    <p class="package-title">FREE</p>
+                                    <div class="package-price">
+                                        <p>0</p>
+                                        <p>€/month</p>                                    
+                                    </div>
+                                    <div class="package-content-holder">
+                                        <div class="package-content">
+                                          <p> 1 job offer per week</p>  
+                                        </div>
+                                        <div class="package-content">
+                                          <p>The job offer's life is 7 days</p>  
+                                        </div>
+                                        <div class="package-content">
+                                          <p> Dashboard access to manage job offers</p>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- package 2 -->
+                                <div class="package plus-package">
+                                    <div class="top-line2"></div>
+                                    <p class="package-title">PLUS</p>
+                                    <div class="package-price">
+                                        <p>9.99</p>
+                                        <p>€/month</p>                                    
+                                    </div>
+                                    <div class="package-content-holder">
+                                        <div class="package-content">
+                                          <p> Unlimited job offers</p>  
+                                        </div>
+                                        <div class="package-content">
+                                          <p>Job offer's life is unlimited</p>  
+                                        </div>
+                                        <div class="package-content">
+                                          <p> Dashboard access to manage job offers</p>  
+                                        </div>
+                                    </div>
+                                    <div class="package-upgrade-button2">
+                                        <button ><a href="https://www.skillscanner.globuzzer.com/company-dashboard/plan-payment.html?purchaseType=upgradeToPlus">Upgrade</a></button>
+                                    </div>
+                                </div>
+                                <!-- package 3 -->
+                                <div class="package premium-package">
+                                    <div class="top-line3"></div>
+                                    <p class="package-title">PREMIUM</p>
+                                    <div class="package-price">
+                                        <p>12.99</p>
+                                        <p>€/month</p>                                    
+                                    </div>
+                                    <div class="package-content-holder">
+                                        <div class="package-content">
+                                          <p>Unlimited job offers</p>  
+                                        </div>
+                                        <div class="package-content">
+                                          <p>Job offer's life is unlimited</p>  
+                                        </div>
+                                        <div class="package-content">
+                                          <p> Dashboard access to manage job offers</p>  
+                                        </div>
+                                        <div class="package-content">
+                                          <p> Job analytics</p>  
+                                        </div>
+                                    </div>
+                                    <div class="package-upgrade-button3">
+                                        <button><a href="https://www.skillscanner.globuzzer.com/company-dashboard/plan-payment.html?purchaseType=upgradeToPremium"> Upgrade</a></button>
+                                    </div>
+                                </div>
+                                <div class="indicator right-indicator">
+                                    <i class="icon ion-ios-arrow-forward"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- layer cover the whole page -->
+            <div class="dark-layer"></div>
+            <div class="dark-layer-desktop"></div>
+            <!-- sideDrawer for mobile -->
+            <div class="sideDrawer">
+                <div class="sideDrawer-content">
+                    <div class="close-btn">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <i class="icon ion-ios-briefcase"></i>
+                            <a href="#JobBoard">Jobs</a>
+                        </li>
+                        <li>
+                            <i class="icon ion-ios-book"></i>
+                            <a href="#Articles">Articles</a>
+                        </li>
+                        <li>
+                            <i class="icon ion-ios-pricetag"></i>
+                            <a href="./company-dashboard/company-dashboard.html">Pricing</a>
+                        </li>
+                        <li>
+                            <i class="icon ion-ios-log-in"></i>
+                            <a href="./company-login/sign-in.html">Sign in</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <i class="icon ion-md-close"></i> -->  
+            </div>
+        </header>
+
+        <main>
+            <!-- Information bar -->
+            <div class="MainContext">
+                <div class="contextItemHolder">
+                    <div class="MainContextItem">
+                        <p class="item--number">+15000</p>
+                        <p class="item--word">Subscribers</p>
+                    </div>
+                    <div class="MainContextItem">
+                        <p class="item--number">26</p>
+                        <p class="item--word">Partners</p>
+                    </div>
+                    <div class="MainContextItem">
+                        <p class="item--number">4</p>
+                        <p class="item--word">Locations</p>
+                    </div>
+                </div>
+                <!-- <div class="arrow" style="left: 10%">
+                    <div class="arrow-top arrow-left-top"></div>
+                    <div class="arrow-bottom arrow-left-bottom"></div>
+                </div> 
+                <div class="arrow" style="left: 90%">
+                    <div class="arrow-top arrow-right-top"></div>
+                    <div class="arrow-bottom arrow-right-bottom"></div>
+                </div>  -->
+            </div>
+            <!-- Job search -->
+            <div class="the-whole-job-board">
+                <!-- Filter goes first -->
+                <div class="FilterSearch mr-auto" id="Job">
+                    <!-- Left filter -->
+                    <div class="dropdown-options">
+                        <div class="dropdown-bounder">
+                            <div class="dropdown">
+                                <button
+                                    class="btn dropdown-toggle" 
+                                    type="button" 
+                                    id="dropdownMenuButton" 
+                                    data-toggle="dropdown" 
+                                    aria-haspopup="true" 
+                                    aria-expanded="false">All Categories  
+                                </button>
+                                <div class="dropdown-menu keep-open" aria-labelledby="dropdownMenuButton">
+                                    <label class="dropdown-container">
+                                        <input type="checkbox" name="business">
+                                        <span class="checkmark"></span>
+                                        <p>Business Intelligence</p> 
+                                    </label>
+                                    <label class="dropdown-container">
+                                        <input type="checkbox" name="IT"/>
+                                        <span class="checkmark"></span>
+                                        <p>IT support</p>
+                                    </label>
+                                    <label class="dropdown-container">
+                                        <input type="checkbox"/>
+                                        <span class="checkmark"></span>
+                                        <p>Full Stack Developer</p> 
+                                    </label>
+                                    <label class="dropdown-container">
+                                        <input type="checkbox"/>
+                                        <span class="checkmark"></span>
+                                        <p>Business Development</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-bounder">
+                            <div class="dropdown">
+                                <button 
+                                    class="btn dropdown-toggle" 
+                                    type="button" 
+                                    id="dropdownMenuButton" 
+                                    data-toggle="dropdown" 
+                                    aria-haspopup="true" 
+                                    aria-expanded="false">Choose a country  
+                                </button>
+                                <div class="dropdown-menu keep-open" aria-labelledby="dropdownMenuButton">
+                                    <label class="dropdown-container">
+                                        <input type="checkbox" name="Sweden"/>
+                                        <span class="checkmark"></span>
+                                        <p>Sweden</p> 
+                                    </label>
+                                    <label class="dropdown-container">
+                                        <input type="checkbox" name="Finland"/>
+                                        <span class="checkmark"></span>
+                                        <p>Finland</p>
+                                    </label>
+                                    <label class="dropdown-container">
+                                        <input type="checkbox" name="Norway"/>
+                                        <span class="checkmark"></span>
+                                        <p>Norway</p>
+                                    </label>
+                                    <label class="dropdown-container">
+                                        <input type="checkbox"/>
+                                        <span class="checkmark"></span>
+                                        <p>Denmark</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-bounder">
+                            <div class="dropdown">
+                                <button 
+                                    class="btn dropdown-toggle" 
+                                    type="button" 
+                                    id="dropdownMenuButton" 
+                                    data-toggle="dropdown" 
+                                    aria-haspopup="true" 
+                                    aria-expanded="false">Choose a location  
+                                </button>
+                                <div class="dropdown-menu keep-open choose-location" aria-labelledby="dropdownMenuButton">
+                                    <!-- <label class="dropdown-container">
+                                        <input type="checkbox"/>
+                                        <span class="checkmark"></span>
+                                        <p>Helsinki, Finland</p> 
+                                    </label> -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right filter: post job offer button -->
+                    <button class="btn--secondary"><a href="./company-login/sign-in.html">Post job offer</a></button>
+                </div>
+                <!-- Job board on mobile -->
+                <div id="JobBoard" class="JobBoard">
+                    <!-- Job card 1 -->
+                    <div class="JobItems">
+                        <div class="item--cover">
+                            <div class="item--tag">Business</div>
+                        </div>
+                        <button class="btn--third apply-job">Apply now</button>
+                        <div class="item--description">
+                            <div class="row justify-content-between">
+                                <div class="item item--description__cpn">
+                                    <i class="icon ion-ios-briefcase"></i>
+                                    <p>Solita</p>
+                                </div>
+                                <div class="item item--description__place">
+                                    <i class="icon ion-md-pin"></i>
+                                    <p>Gothenburg</p> 
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="item item--description__position">
+                                    <i class="icon ion-ios-person"></i>
+                                    <p>Fulltime</p> 
+                                </div>
+                                <div class="item item--description__position">
+                                    <i class="icon ion-logo-usd"></i>
+                                    <p>Paid</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="JobItems">
+                        <div class="item--cover">
+                            <div class="item--tag">Business</div>
+                        </div>
+                        <button class="btn--third apply-job" >Apply now</button>
+                        <div class="item--description">
+                            <div class="row justify-content-between">
+                                <div class="item item--description__cpn">
+                                    <i class="icon ion-ios-briefcase"></i>
+                                    <p>Solita</p>
+                                </div>
+                                <div class="item item--description__place">
+                                    <i class="icon ion-md-pin"></i>
+                                    <p>Gothenburg</p> 
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="item item--description__position">
+                                    <i class="icon ion-ios-person"></i>
+                                    <p>Fulltime</p> 
+                                </div>
+                                <div class="item item--description__position">
+                                    <i class="icon ion-logo-usd"></i>
+                                    <p>Paid</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="JobItems">
+                        <div class="item--cover">
+                            <div class="item--tag">Business</div>
+                        </div>
+                        <button class="btn--third apply-job">Apply now</button>
+                        <div class="item--description">
+                            <div class="row justify-content-between">
+                                <div class="item item--description__cpn">
+                                    <i class="icon ion-ios-briefcase"></i>
+                                    <p>Solita</p>
+                                </div>
+                                <div class="item item--description__place">
+                                    <i class="icon ion-md-pin"></i>
+                                    <p>Gothenburg</p> 
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="item item--description__position">
+                                    <i class="icon ion-ios-person"></i>
+                                    <p>Fulltime</p> 
+                                </div>
+                                <div class="item item--description__position">
+                                    <i class="icon ion-logo-usd"></i>
+                                    <p>Paid</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="apply-modal"></div>
+                    <div class="job-application-form">
+                        <div class="description-job">
+                            <div class="job-title">
+                                <h2>Data Engineers</h2>
+                            </div>
+                            <div class="job-company">
+                                <p>Solita</p>
+                            </div>
+                            <div class="job-table">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td>Location</td>
+                                        <td>Job type</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gothenburg, Sweden</td>
+                                        <td>Full-time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Salary</td>
+                                        <td>Apply latest by</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paid</td>
+                                        <td>22.5.2019</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="job-header">Job Description</div>
+                            <div class="job-content">As a Data Engineer you will build technical solutions that consist of data models, data integration, storage and cloud based data pipeline. You will work 90-95% hands-on with configuration, integration, installation, scripting and 5-10% with designing architectures and explaining the solution to customers and team members. You will sit at the same table with the top leadership of our customers, IT and business decision-makers and data experts and use your skills and vision to support the development of our customers’ business.</div>
+                            <div class="job-header">Requirement</div>
+                            <div class="job-content">Have experience and interest in cloud technologies (especially in AWS, Azure, Google Cloud).<br>
+                                    Have experience in one or more of the following: data modelling, data warehousing, databases (SQL/NoSQL) and ETL/ELT. Experience in data warehouse automation in considered as a plus.<br>
+                                    Can build data pipelines in one of the following programming languages: Python, R or Java.<br>
+                                    Are familiar with the software development practices such as version control and CI/CD.</div>
+                            <div class="job-form"></div>
+                            <div class="job-application-footer">
+                                <p>Share this job:</p>
+                                <div class="share-links">
+                                    <i class="icon ion-logo-facebook"></i>
+                                    <i class="icon ion-ios-link copy-uri"></i>
+                                    <div class="copy-success">Copied!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divide-line"></div>
+                        <div class="admin-application">
+                            <h2>Apply now</h2>
+                            <form>
+                                <p class="mandatory-heading">*Mandatory fields</p>
+                                <div>
+                                    <input class="application-required" type="text" name="Firstname" placeholder="First name*" onkeyup="$(this).siblings('.warning-incorrect-input').removeClass('show-warning-incorrect-input')">
+                                    <div class="warning-incorrect-input">
+                                        <p>Please fill this</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input class="application-required" type="text" name="Lastname" placeholder="Last name*" onkeyup="$(this).siblings('.warning-incorrect-input').removeClass('show-warning-incorrect-input')">
+                                    <div class="warning-incorrect-input">
+                                        <p>Please fill this</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input id="application-email" class="application-required" type="email" name="Email" placeholder="Email*" onkeyup="$(this).siblings('.warning-incorrect-input').removeClass('show-warning-incorrect-input')">
+                                    <div class="warning-incorrect-input">
+                                        <p>Wrong format</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input class="application-required" type="number" name="Phone number" placeholder="Phone number*" onkeyup="$(this).siblings('.warning-incorrect-input').removeClass('show-warning-incorrect-input')">
+                                    <div class="warning-incorrect-input" id="application-required">
+                                        <p>Please fill this</p>
+                                    </div>
+                                </div>
+                                <input type="text" name="Location" placeholder="Location">
+                                <textarea name="description" placeholder="Tell us more about yourself (max 150 characters)"></textarea>
+                                <div class="conditions-terms">
+                                    <input class="terms-checkbox" type="checkbox" id="terms" name="terms" value="terms">
+                                    <span class="application-checkmark"></span>
+                                    <label for="terms">I accept all terms & conditions*</label>
+                                    <div class="warning-incorrect-input">
+                                        <p>Please accept the terms & conditions</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="back">Back</button>
+                                    <button class="apply">Apply</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="apply-box">
+                            <p>Apply via the company website</p>
+                            <button><a href="https://arcticsecurity.com/about/careers/software-developer/"> Apply here</a></button>
+                            <div class="close-apply-modal">
+                                <i class="icon ion-ios-close"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-more">View more</div>
+                </div>
+
+                <!-- Job board on desktop -->
+
+                <div class="jb-content-container" id="JobBoard1">
+
+                    <!-- card 1 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+                            
+                                <button class="apply-now-button apply-now-button-login">APPLY NOW</button>
+                            
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label it-label">IT</div>
+                        </div>
+                        <div class="jb-card-header">                        
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> SkillScanner</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Helsinki</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> Android Developer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- card 2 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+                           
+                                <button class="apply-now-button apply-now-button-notLogin">APPLY NOW</button>
+                            
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label business-label">Business</div>
+                        </div>
+                        <div class="jb-card-header">
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> SkillScanner</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Helsinki</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> Android Developer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Card 3 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+                            
+                                <button class="apply-now-button apply-now-button-login">APPLY NOW</button>
+                            
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label it-label">IT</div>
+                        </div>
+                        <div class="jb-card-header">
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> SkillScanner</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Helsinki</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> Android Developer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Card 4 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+                           
+                                <button class="apply-now-button apply-now-button-notLogin">APPLY NOW</button>
+                            
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label it-label">IT</div>
+                        </div>
+                        <div class="jb-card-header">
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> SkillScanner</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Helsinki</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> Android Developer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Card 5 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+                           
+                                <button class="apply-now-button apply-now-button-login">APPLY NOW</button>
+                            
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label business-label">Business</div>
+                        </div>
+                        <div class="jb-card-header">
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> Funcom</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Oslo</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> External Producer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Card 6 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+      
+                                <button class="apply-now-button apply-now-button-notLogin">APPLY NOW</button>
+                            </form>
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label business-label">Business</div>
+                        </div>
+                        <div class="jb-card-header">
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> SkillScanner</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Helsinki</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> Android Developer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Card 7 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+                            <form>
+                                <button class="apply-now-button">APPLY NOW</button>
+                            </form>
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label it-label">IT</div>
+                        </div>
+                        <div class="jb-card-header">                        
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> SkillScanner</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Helsinki</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> Android Developer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Card 8 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+                            <form>
+                                <button class="apply-now-button ">APPLY NOW</button>
+                            </form>
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label business-label">Business</div>
+                        </div>
+                        <div class="jb-card-header">
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> SkillScanner</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Helsinki</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> Android Developer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Card 9 -->
+                    <!-- <div class="job-post-card-holder">
+                        <div class="jb-card-image">
+                            <img src="assets/img/jb-card-image.jpg">
+                            <form>
+                                <button class="apply-now-button">APPLY NOW</button>
+                            </form>
+                        </div>
+                        <div class="area-label-position">
+                            <div class="area-label it-label">IT</div>
+                        </div>
+                        <div class="jb-card-header">                        
+                            <p><i class="fa fa-suitcase" aria-hidden="true"></i> SkillScanner</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Helsinki</p>
+                        </div>
+                        <div class="jb-card-title">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> Android Developer</p>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Apply job card for user-->
+
+                    <div class="apply-modal close-tab"></div>
+                    <div class="job-application-form-desktop" style="top: 50%">
+                        <input style="position: absolute; top: -9999px" id="dmb-job-current-link" type="text" tabindex="-1" aria-hidden="true">
+                        <div class="description-job">
+                            <div class="db-job-title">
+                                <p>Algorithm Test Specialist</p>
+                            </div>
+                            <div class="db-underline"></div>
+                            <div class="db-company-name">
+                                <p>Oura</p>
+                            </div>
+                            <div class="db-table-job">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Location</th>
+                                            <th>Job type</th>
+                                            <th>Salary</th>
+                                            <th>Apply latest by</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Oulu, Finland</td>
+                                            <td>Full-time</td>
+                                            <td>Paid</td>
+                                            <td>09.30.2019</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="db-requirement-holder">
+                                <div class="db-job-header">
+                                    <div class="db-red-square"></div>
+                                    <div class="db-header-text">Job Description</div>
+                                </div>
+                                <div class="db-text-holder">
+                                    <p>As an Algorithm Test Specialist, your main responsibility will be to test and verify that our algorithms will work as intended. We would appreciate if you are also able to develop test automation to improve the verification process related to algorithm testing. Most of our algorithms are developed using Matlab and then implemented into our product as embedded software. That’s why we expect you to be familiar with Matlab and C-programming. You will work as a part of our Testing team with close co-operation with our Science and Firmware teams...</p>
+                                </div>
+                                <div class="db-job-header">
+                                    <div class="db-red-square"></div>
+                                    <div class="db-header-text">Requirement</div>
+                                </div>
+                                <div class="db-text-holder db-text-holder1">
+                                    <ul>
+                                        <li>Have at least 3+ years of experience in similar roles.</li>
+                                        <li>Are fluent in Matlab and C-programming.</li>
+                                        <li>Have experience in software development processes.</li>
+                                        <li>Have an interest in human physiology.</li>
+                                        <li>Are a self-driven worker</li>
+                                        <li>Have good problem-solving skills and an analytical mindset.</li>
+                                        <li>Have a good resilience to stress under pressure.</li>
+                                        <li>Have good written and spoken English skills.</li>
+                                        <li>Preferably some familiarity with unit and functional testing (Jest, Cypress, PHPUnit).</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            
+                            
+                            <div class="job-application-footer">
+                                <p>SHARE THIS JOB</p>
+                                <div class="share-links">
+                                    <i class="fab fa-facebook-square fa-2x job-fb-share"></i>
+                                    <i class="fas fa-link fa-hx job-copy-link"></i>
+                                    <div class="copy-success">Copied!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- right job application desktop box -->
+
+                        <div class="apply-box" style="display: flex;">
+
+                            <div class="db-apply-box-header">
+                                <p>Apply now</p>
+                                <div class="db-closing-box close-tab">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            </div>
+                            <div class="db-underline"></div>
+                            <div class="db-job-form-holder">
+                                <p class="mandatory-field">* Mandatory field</p>
+                                <div class="application-filling-space">
+                                    <div>
+                                        <input type="text" placeholder="First name *" class="app-first-name" id="app-first-name" onkeyup="$('#app-first-name-warning').removeClass('show-warning-incorrect-input')" ></input>
+                                        <div class="warning-incorrect-input" id="app-first-name-warning">
+                                            <p>Please fill this</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="Last name *" class="app-last-name" id="app-last-name" onkeyup="$('#app-last-name-warning').removeClass('show-warning-incorrect-input')"></input>
+                                        <div class="warning-incorrect-input" id="app-last-name-warning">
+                                            <p>Please fill this</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="application-filling-space">
+                                    <div style="width: 100%">
+                                        <div class="warning-incorrect-input" id="db-email-warning">
+                                                <p>Please fill this</p>
+                                        </div>
+                                        <input type="email" placeholder="Email *" id="db-email" onkeyup="$('#db-email-warning').removeClass('show-warning-incorrect-input')" style="color: grey">
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="application-filling-space">
+                                    <div>
+                                        <input type="number" placeholder="Phone number *" class="app-first-name" id="app-phone-number" onkeydown="return event.keyCode !== 69" onkeyup="$('#app-phone-number-warning').removeClass('show-warning-incorrect-input')" required>
+                                        <div class="warning-incorrect-input" id="app-phone-number-warning">
+                                            <p>Please fill this</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="Location *" class="app-last-name" id="app-location" onkeyup="$('#app-location-warning').removeClass('show-warning-incorrect-input')">
+                                        <div class="warning-incorrect-input" id="app-location-warning">
+                                            <p>Please fill this</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="application-filling-space">
+                                    <div style="width: 100%">
+                                        <div class="warning-incorrect-input" id="per-link-warning">
+                                                <p>Wrong format</p>
+                                        </div>
+                                        <input type="url" placeholder="Personal link (optional)" id = "db-link" style="color: grey;" onfocus="this.setAttribute('value', 'http://');">
+                                    </div>
+                                </div>
+                                
+                                <div class="application-filling-space">
+                                        <!-- Drop cv -->
+                                        <div class="db-cv-holder db-cv-holder-cv">
+                                            <input type="file" accept="application/pdf, .doc, .docx" id="db-app" style="display: none;">
+                                            <label for="db-app" class="app-first-name app-cv">
+                                                <p style="color: grey;padding-top: 5px; padding-left: 9px;">Drop cv *(.pdf, .doc, .docx)</p>
+                                                <i class="far fa-file-alt"></i>
+                                            </label>
+                                            <div class="warning-incorrect-input" id="db-app-warning">
+                                                <p>Please insert CV</p>
+                                            </div>
+                                        </div>
+                                        <!-- dealine cover letter -->
+                                        <div class="db-cv-holder db-cv-holder-letter">
+                                            
+                                            <input type="file" id="db-cv" accept="application/pdf, .doc, .docx" style="display: none;" >
+                                            
+                                            <label for = "db-cv" class="app-first-name app-cover">
+                                                <p style="color: grey;padding-top: 1px; padding-left: 9px;">Drop cover letter *(.pdf, .doc, .docx)</p>
+                                                <i class="far fa-file-alt"></i>
+                                            </label>
+                                            <div class="warning-incorrect-input" id="db-cv-warning">
+                                                <p>Please add a letter</p>
+                                            </div>
+                                        </div>
+
+                                </div>
+                                <!-- Tell about yourself -->
+                                <div style="position: relative;">
+                                    <div class="warning-incorrect-input" id="db-about-warning">
+                                        <p>Please fill this</p>
+                                    </div>
+                                    <textarea id="db-about" placeholder="Tell us more about yourself (max 200 characters) *" onkeyup="$('#db-about-warning').removeClass('show-warning-incorrect-input')" style="color: #A5A5A5;" maxlength="1200"></textarea>
+                                    
+                                </div>
+                                <!-- term and conditions -->
+                                <div style="position: relative;display: flex;align-items: center;">
+                                    <input type="checkbox" class="accept-terms-condition" style="margin: 0">
+                                    <p style="margin: 0 auto 0 10px; font-style: normal;font-weight: normal;font-size: 14px;line-height: 18px;color: #A5A5A5;">I accept all terms &amp; conditions *
+                                    </p>
+                                    <div class="warning-incorrect-input" id="accept-terms-condition-warning">
+                                        <p>Please approve</p>
+                                    </div>                            
+                                </div>
+                                <!-- button options -->
+                                <div style="display: flex; justify-content: flex-end; width: calc(90% + 10px)">
+                                    <button type="submit" class="db-submit-button close-tab" id="db-apply-cancel" >Cancel</button>
+                                    <button type="submit" class="db-submit-button" id="db-apply-apply">Apply</button>
+                                </div>
+                            </div>
+                            
+
+                            
+                        </div>
+                        <div class="apply-box-through-company" style="display: none;">
+                            <div class="db-closing-box close-tab">
+                                    <i class="fas fa-times" style="color: white"></i>
+                            </div>
+                            <h2>Apply for this job via the company website</h2>
+                            <button class="through-company-apply-button">APPLY HERE</button>
+                        </div>
+
+                    </div>
+
+                    <!-- Apply successfully card-->
+                    
+                    <div class="success-apply-box" id="success-box">
+                        <div class="close-holder close-tab">
+                            <i class="close-modal fas fa-times"></i>
+                        </div>
+
+                        <div class="congrats-holder">
+                            <p class="big-congrats">CONGRATULATIONS!</p>
+                            <p class="small-info">Your application has been submitted successfully</p>
+                        </div>
+
+                        <div class="join-globuzzer-community-ad">
+                            <p>JOIN GLOBUZZER COMMUNITY</p>
+                        </div>
+                        <div class="join-globuzzer-community-benefits-holder">
+                            <div class="join-globuzzer-community-benefits-line">
+                                <p class="benefits-text">BENEFITS:</p>
+                            </div>
+                            <div class="join-globuzzer-community-benefits-line">
+                                <div class="dmb-red-point"></div>
+                                <p>Connect with other expats near you</p>
+                            </div>
+
+                            <div class="join-globuzzer-community-benefits-line">
+                                <div class="dmb-red-point"></div>
+                                <p>Easy way for networking</p>
+                            </div>
+
+                            <div class="join-globuzzer-community-benefits-line">
+                                <div class="dmb-red-point"></div>
+                                <p>Get notifications on recruitment events</p>
+                            </div>
+
+                            <div class="join-globuzzer-community-benefits-line">
+                                <div class="dmb-red-point"></div>
+                                <p>Totally free of charge</p>
+                            </div>
+
+                            <button class="sab-join-us-button">Join Us</button>
+                        </div>
+
+                        <div class="continue-search-job-holder close-tab">
+                            <p style="margin-bottom: 0.5rem">Continue searching for jobs</p>
+                            <div style="width: 80%; height: 1px; background-color: rgb(255, 32, 32);">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                    <!-- View more card -->
+                    <div class="job-post-card-holder jb-view-more" id="viewMore" style="height: 280px">
+                        <p>VIEW MORE</p>
+                    </div>
+
+                    
+                </div>  
+            </div>
+            <!-- All partners go here -->
+            <div class="Partners">
+                <div class="partner-title-holder">
+                    <h2>Our Partners</h2>
+                    <div class="partner-underline"></div>
+                </div>
+                <div class="partner-holder">
+                    <!-- arrow left for mobile -->
+                    <!-- <div class="arrow" style="left: 5%">
+                        <div class="arrow-top arrow-left-top"></div>
+                        <div class="arrow-bottom arrow-left-bottom"></div>
+                    </div> -->
+                    <!-- Arrow left for desk top -->
+                    <a class="partner-scroll partner-scroll-left">
+                        <i class="fas fa-chevron-left fa-2x"></i>
+                    </a>
+                    <!-- Partners holder -->
+                    <div class="PartnerItems">
+                        <div class="partner--box--group">
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner2.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner2.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner2.png" alt="partner"/></a>
+                            <a class="partner--box" href="#"><img src="assets/img/partner.png" alt="partner"/></a>
+                        </div>
+                    </div>
+                    <!-- Arrow right for mobile -->
+                    <!-- <div class="arrow" style="left: 95%">
+                        <div class="arrow-top arrow-right-top"></div>
+                        <div class="arrow-bottom arrow-right-bottom"></div>
+                    </div> -->
+                    <!-- Arrow right for desk top -->
+                    <a class="partner-scroll partner-scroll-right">
+                        <i class="fas fa-chevron-right fa-2x"></i>
+                    </a>                 
+                </div> 
+            </div>
+            <!-- Articles display -->
+            <div class="Articles" id="Articles">
+                <div class="article-title-holder">
+                    <h2>Latest articles</h2>
+                    <div class="partner-underline"></div>
+                </div>
+                <div class="swiper-container articles--section">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide ArticleItems">
+                            <div class="article--cover"></div>
+                            <div class="article--info">
+                                <h3>Things you need to know about business etiquette in Sweden</h3>
+                                <p>If you are moving to Sweden for work and attending your first business meeting, read SkillScanner's tips for business etiquette...</p>
+                                <a href="https://globuzzer.mn.co/posts/employees-rights-and-obligations-in-finland" target="_blank">Read more</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide ArticleItems">
+                            <div class="article--cover"></div>
+                            <div class="article--info">
+                                <h3>Things you need to know about business etiquette in Sweden</h3>
+                                <p>If you are moving to Sweden for work and attending your first business meeting, read SkillScanner's tips for business etiquette...</p>
+                                <a href="#">Read more</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide ArticleItems">
+                            <div class="article--cover"></div>
+                            <div class="article--info">
+                                <h3>Things you need to know about business etiquette in Sweden</h3>
+                                <p>If you are moving to Sweden for work and attending your first business meeting, read SkillScanner's tips for business etiquette...</p>
+                                <a href="#">Read more</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide ArticleItems">
+                            <div class="article--cover"></div>
+                            <div class="article--info">
+                                <h3>Things you need to know about business etiquette in Sweden</h3>
+                                <p>If you are moving to Sweden for work and attending your first business meeting, read SkillScanner's tips for business etiquette...</p>
+                                <a href="#">Read more</a>
+                            </div>
+                        </div>
+    
+                        <!-- FOR MOBILE ONLY  -->
+                        <div class="swiper-slide ArticleItems">
+                            <div class="view-all-articles">
+                                <div>View more</div>  
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div> -->
+                </div>
+            </div>
+
+            <!--FOR DESKTOP-->
+                <div class="more-article-holder">
+                    <div class="left-line"></div>
+                    <div class="more-article-button">
+                        <a href="https://globuzzer.mn.co/topics/196924" target="_blank">More articles</a>
+                    </div>
+                    <div class="right-line"></div>
+                    
+                </div>
+            <!--FOR MOBILE ONLY-->
+            <div class="article-nav">
+                <div id="0" class="article-nav-point"></div>
+                <div id="1" class="article-nav-point"></div>
+                <div id="2" class="article-nav-point"></div>
+                <div id="3" class="article-nav-point"></div>
+                <div id="4" class="article-nav-point">
+                    <div class="inner-nav-point"></div>
+                </div>
+            </div>            
+        </main>
+
+
+        <!-- Footer -->
+        <!-- Mobile -->
+        <footer class="Footer">
+            <div class="info-1 info">
+                <p>SKILLSCANNER</p>
+                <p>Skyttevägen 29, Saltsjöbaden,Sweden</p>
+                <p>+46 73 555 5134</p>
+                <p>info@globuzzer.com</p>
+            </div>
+
+            <div class="info-2 info">
+                <a href="#">- Jobs</a>
+                <a href="#">- Articles</a>
+                <a href="company-dashboard/company-dashboard.html">- Pricing</a>
+                <a href="./company-login/sign-in.html">- Sign in</a>
+            </div>
+
+            <div class="info-3 info">
+                <a href="#">Terms and conditions</a>
+                <a href="#">Privacy policy</a>
+            </div>
+
+            <div class="info-4 info">
+                <a class="footer-contact" target="_blank" href="https://globuzzer.mn.co/">
+                    <i class="fas fa-globe-americas"></i>
+                </a>
+                <a class="footer-contact" target="_blank" href="https://www.facebook.com/TheSkillScanner/">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a class="footer-contact" target="_blank" href="https://twitter.com/globuzzer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="footer-contact" target="_blank" href="https://www.youtube.com/channel/UC4u8N-QBDMWG6OqzSni8clw">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="footer-contact" target="_blank" href="https://www.linkedin.com/company/35442644/admin/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a class="footer-contact" target="_blank" href="https://www.pinterest.se/globuzzer/">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a class="footer-contact" target="_blank" href="https://www.instagram.com/globuzzer/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <div class="rights-reserved-holder">
+                <p>© 2019 All rights reserved.</p>
+            </div>
+        </footer>
+        <!-- Desktop -->
+            <!-- Footer container place holder -->
+            <div class="footer-container">
+                <!-- Footer 1 -->
+                <div class="footer-info1">
+                    <p>SKILLSCANNER</p>
+                    <p>Skyttevägen 29, Saltsjöbaden,Sweden</p>
+                    <p>+46 73 555 5134</p>
+                    <p>info@globuzzer.com</p>
+                </div>
+                <!-- Footer 2 -->
+                <div class="footer-info2">
+                    <a href="#JobBoard1">- Jobs</a>
+                    <a href="#Articles">- Articles</a>
+                    <a href="company-dashboard/company-dashboard.html" target="_blank">- Pricing</a>
+                    <a href="company-login/sign-in.html">- Sign in</a>
+                </div>
+                <!-- Footer 3 -->
+                <div class="footer-info3">
+                    <a href="https://www.mightynetworks.com/terms-of-use" target="_blank">Terms and conditions</a>
+                    <a href="https://www.mightynetworks.com/privacy-policy" target="_blank">Privacy policy</a>
+                </div>
+                <!-- Footer 4 -->
+                <div class="footer-info4">
+                    <a class="footer-contact" target="_blank" href="https://globuzzer.mn.co/">
+                        <i class="fas fa-globe-americas"></i>
+                    </a>
+                    <a class="footer-contact" target="_blank" href="https://www.facebook.com/TheSkillScanner/">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a class="footer-contact" target="_blank" href="https://twitter.com/globuzzer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="footer-contact" target="_blank" href="https://www.youtube.com/channel/UC4u8N-QBDMWG6OqzSni8clw">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a class="footer-contact" target="_blank" href="https://www.linkedin.com/company/35442644/admin/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a class="footer-contact" target="_blank" href="https://www.pinterest.se/globuzzer/">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                    <a class="footer-contact" target="_blank" href="https://www.instagram.com/globuzzer/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <!-- Footer all rights reserved -->
+                <div class="all-rights-container">
+                    <p>© 2019 All rights reserved.</p>
+                </div>
+            </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#config-web-app -->
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAisALLkUhfJbh7Yl6LHChutBhs9EqA418",
+            authDomain: "onyx-sequencer-243717.firebaseapp.com",
+            databaseURL: "https://onyx-sequencer-243717.firebaseio.com",
+            projectId: "onyx-sequencer-243717",
+            storageBucket: "onyx-sequencer-243717.appspot.com",
+            messagingSenderId: "475878920363",
+            appId: "1:475878920363:web:0df76e8e5a9283a0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        </script>
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Google map api JS and key -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4&amp;libraries=places"></script>
+        <script src="Google-API/google-api.js"></script>
+        <!-- Cookies consent -->
+        <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+        <script>
+        window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+            "background": "#1d8a8a"
+            },
+            "button": {
+            "background": "#62ffaa"
+            }
+        }
+        });
+        </script>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/5efb6e6d64.js"></script>
+        <!-- Jquery and JS file -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://itemslide.github.io/dist/itemslide.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+        <script src="js/form-validation.js"></script> 
+        <script src="js/firebase.js"></script>
+        <script type="text/javascript" src="js/index.js"></script> 
+    </body>
+</html>

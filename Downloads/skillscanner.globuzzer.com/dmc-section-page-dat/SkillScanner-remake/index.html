@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillScanner</title>
+    <!--link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/gb-style.css">
+    <link rel="stylesheet" href="css/skillscanner.css">
+</head>
+<body>
+<!-- Modal -->
+<div id="filter-modal" class="modal"></div>
+<div id="nav-modal" class="modal"></div>
+<div id="apply-modal" class="modal"></div>
+<!-- Apply box start -->
+<div id="apply-modal-box" class="modal-box">
+    <div class="modal-box-header">
+        <h2>Work with us</h2>
+        <i class="close-modal fas fa-times"></i>
+    </div>
+    <form method="post" id="apply-form" class="white-box-form">
+        <div class="modal-box-content">
+            <input id="applied_job" type="text" name="job" title="job" style="display: none;">
+            <input id="company_mail" type="text" name="companyMail" title="companyMail" style="display: none;">
+            <input id="job_id" type="text" name="jobId" title="jobId" style="display: none;">
+            <div class="two-input-wrapper">
+                <div class='gb-input-wrapper-relative'>
+                    <input class="gb-input-primary gb-input-background-transparent" type="text" name="first-name"
+                           title="first-name" placeholder="Enter first name*" required>
+                </div>
+                <div class='gb-input-wrapper-relative'>
+                    <input class="gb-input-primary gb-input-background-transparent" type="text" name="last-name"
+                           title="last-name" placeholder="Enter last name*" required>
+                </div>
+            </div>
+            <div class='gb-input-wrapper-relative'>
+                <input class="gb-input-primary gb-input-background-transparent" type="email" name="email" title="email"
+                       placeholder="Enter eMail*" required>
+            </div>
+            <div class='gb-input-wrapper-relative'>
+                <input class="gb-input-primary gb-input-background-transparent" type="text" name="phone" title="phone"
+                       placeholder="Enter phone number*" required>
+            </div>
+            <div class='gb-input-wrapper-relative'>
+                <input class="gb-input-primary gb-input-background-transparent" type="text" name="location"
+                       title="location"
+                       placeholder="Enter location*" required>
+            </div>
+            <div class='gb-input-wrapper-relative'>
+                <input class="gb-input-primary gb-input-background-transparent" type="text" name="linkedin"
+                       title="linkedin"
+                       placeholder="Enter your CV/LinkedIn URL*" required>
+            </div>
+            <div class='gb-input-wrapper-relative'>
+            <textarea class="gb-input-textarea-primary gb-input-background-transparent" name="cover-letter"
+                      title="cover-letter" placeholder="Enter your cover letter (max. 300 characters)*" maxlength="300"
+                      required></textarea>
+            </div>
+            <!-- Captcha -->
+            <div class="gb-input-wrapper-relative">
+                <div class="g-recaptcha" data-sitekey="6Lf8cowUAAAAAHRjZ00PQGOtV6e1HM7g1_Kj-3n5"></div>
+            </div>
+            <!-- Captcha end -->
+            <div class="two-input-wrapper">
+                <div class='gb-input-wrapper-relative'>
+                    <input class="gb-input-primary gb-input-background-transparent" type="text" name="portfolio-url"
+                           title="portfolio-url"
+                           placeholder="Enter your portfolio URL">
+                </div>
+                <div class='gb-input-wrapper-relative'>
+                    <input class="gb-input-primary gb-input-background-transparent" type="text" name="cover-letter-url"
+                           title="cover-letter-url"
+                           placeholder="Enter your cover letter URL">
+                </div>
+            </div>
+            <div class="error-msg"></div>
+        </div>
+        <div class="modal-box-footer">
+            <input type="submit" value="Apply" class="red-btn">
+        </div>
+    </form>
+</div>
+<!-- apply box end -->
+<!-- successful application box -->
+<div class="modal-box" id="success-box">
+    <div class="modal-box-header">
+        <h2>Success!</h2>
+    </div>
+    <div class="modal-box-content">
+        Thank you for your application! We will contact you as soon as possible, if your profile matches the open
+        position.
+    </div>
+    <div class="modal-box-footer">
+        <button class="red-btn" id="find-jobs">Find more jobs</button>
+    </div>
+</div>
+<!-- successful box end -->
+<!-- Visible content -->
+<div class="nav-bar">
+    <div class="logo">
+        <a href="#"><img src="./images/ss-logo-version_Fotor.png" alt="logo"></a>
+    </div>
+    <div class="right-content">
+        <svg class='open-side-bar gb-icon-medium gb-icon-white' version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+            <use xlink:href='#menu'></use>
+        </svg>
+        <div class="mobile-view">
+            <svg class='nav-aside-close-icon gb-icon-medium gb-icon-white-opacity-50'
+                 version="1.1"
+                 xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#close'></use>
+            </svg>
+            <ul class="list">
+                <li><a href="#" class="scroll-to-section" id="to-section">JOBS</a></li>
+                <li><a href="#about-us" class="scroll-to-section" id="to-about-us">ABOUT US</a></li>
+                <li><a href="#contact-us" class="scroll-to-section" id="to-contact-us">CONTACT</a></li>
+                <li><a href="pricing.html">EMPLOYERS</a></li>
+                <li><a href="https://globuzzer.mn.co/sign_in">SIGN IN</a></li>
+            </ul>
+            <div class="selectCountry">
+                <div class="select">
+                    <div class="country-container">
+                        <div>
+                            <img src="./icons/sweden.png" alt="sweden">
+                            <span>Sweden</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+                <div class="countryList">
+                    <div id="DK" class="country-option-li">
+                        <img src="./icons/denmark.png" alt="denmark">
+                        <span>Denmark</span>
+                    </div>
+                    <div id="FI" class="country-option-li">
+                        <img src="./icons/finland.png" alt="finland">
+                        <span>Finland</span>
+                    </div>
+                    <div id="NO" class="country-option-li">
+                        <img src="./icons/norway.png" alt="norway">
+                        <span>Norway</span>
+                    </div>
+                    <div style="display: none;" id="SE" class="country-option-li">
+                        <img src="./icons/sweden.png" alt="sweden">
+                        <span>Sweden</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header fixed">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+        <h2>We connect international talents <br> with growth-seeking nordic employers.</h2>
+        <!--p>We connect international talents with <br>growth-seeking nordic employers.</p-->
+        <div class="btn-container">
+            <a id="join-link" href="http://www.globuzzer.com/skill-scanner-se.php"
+               class="red-btn gb-text-uppercase btn-large">Create my profile</a>
+            <button class="red-btn red-transparent-btn scroll-to-section" id="tt-section">View jobs</button>
+        </div>
+    </div>
+</div>
+<div id='parteners'
+     class='gb-padding-top-phone-24 gb-padding-top-tablet-32 gb-padding-top-desktop-48 gb-padding-bottom-phone-56 gb-padding-bottom-tablet-48 gb-padding-bottom-desktop-56'>
+
+    <div class="gb-exapndable-box">
+        <a target="_blank" href="https://bagbnb.com/" class="inner-boxes parteners">
+            <img src="images/partners/BagBnbB.png" alt="BagBnB logo">
+        </a>
+
+        <a target="_blank" href="https://www.arbetsformedlingen.se/" class="inner-boxes parteners">
+            <img src="images/partners/Arbetsformedlingen.png" alt="Arbetsformedlingen logo">
+        </a>
+
+        <a target="_blank" href="https://www.smun.se/" class="inner-boxes parteners">
+            <img src="images/partners/SMUN.png" alt="SMUN logo">
+        </a>
+        <a target="_blank" href="https://www.vikingline.se/" class="inner-boxes parteners">
+            <img src="images/partners/viking-line-partner.png" alt="Viking Line logo">
+        </a>
+
+        <a target="_blank" href="https://www.kth.se/" class="inner-boxes parteners">
+            <img src="images/partners/KTH-partner.png" alt="KTH logo">
+        </a>
+
+        <a target="_blank" href="http://www.uksw.edu/en.php" class="inner-boxes parteners">
+            <img src="images/partners/logo-university-partner.png" alt="University logo">
+        </a>
+
+        <a target="_blank" href="https://www.lunduniversity.lu.se/" class="inner-boxes parteners">
+            <img src="images/partners/Lund-University.png" alt="Lunduniversity logo">
+        </a>
+
+        <a target="_blank" href="https://www.zuyd.nl/en" class="inner-boxes parteners">
+            <img src="images/partners/ZUYD.png" alt="ZUYD logo">
+        </a>
+
+        <a href="#" class="inner-boxes parteners">
+            <img src="images/partners/CPH-Business-School.png" alt="CPH Business School logo">
+        </a>
+
+        <a target="_blank" href="https://mightynetworks.com/" class="inner-boxes parteners">
+            <img src="images/partners/mighty-network-partner.png" alt="Mighty network logo">
+        </a>
+        <a target="_blank" href="http://www.friidesigns.com" class="inner-boxes parteners">
+            <img src="images/partners/Frii-Designs-partner.png" alt="Frii design logo">
+        </a>
+    </div>
+    <div class="expand-button-wrapper parteners">
+        <div class="expand-button parteners">
+            <div class="gb-show-more-icon gb-big">
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class='more active'>Show More</p>
+            <p class='less'>Show Less</p>
+        </div>
+    </div>
+</div>
+
+<h2 class="underline-header margin-top-50">Explore SkillScanner</h2>
+<p class="centered-grey-paragraph">Explore our sections and find jobs, articles, and much more that will help you to
+    start your career in the nordics.</p>
+<ul id="card-categories" class="categories">
+    <li id="show-jobs" class="active category-box">
+        <div class="overlay"></div>
+        <h2>Jobs</h2>
+        <img src="https://images.pexels.com/photos/461077/pexels-photo-461077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    </li>
+    <li id="show-articles" class="category-box">
+        <div class="overlay"></div>
+        <h2>Articles</h2>
+        <img src="https://images.pexels.com/photos/920115/pexels-photo-920115.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    </li>
+    <li id="show-events" class="category-box">
+        <div class="overlay"></div>
+        <h2>Events</h2>
+        <img src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    </li>
+    <li id="show-team" class="category-box">
+        <div class="overlay"></div>
+        <h2>Join our team</h2>
+        <img src="https://images.pexels.com/photos/872955/pexels-photo-872955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    </li>
+    <!--li id="show-feeds" class="category-box">
+        <div class="overlay"></div>
+        <h2>Feeds</h2>
+        <img src="https://images.pexels.com/photos/860379/pexels-photo-860379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+    </li-->
+</ul>
+<div class="section-container" id="section">
+    <div class="small-country-select">
+        <div class="select">
+            <img src="./icons/sweden.png" alt="sweden">
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </div>
+        <div class="countryList">
+            <div id="DK-jobs" class="country-option-li">
+                <img src="./icons/denmark.png" alt="denmark">
+            </div>
+            <div id="FI-jobs" class="country-option-li">
+                <img src="./icons/finland.png" alt="finland">
+            </div>
+            <div id="NO-jobs" class="country-option-li">
+                <img src="./icons/norway.png" alt="norway">
+            </div>
+            <div style="display: none;" id="SE-jobs" class="country-option-li">
+                <img src="./icons/sweden.png" alt="sweden">
+            </div>
+        </div>
+    </div>
+    <div class="section-content" id="jobs">
+        <h2 class="section-header">Jobs</h2>
+        <p class="centered-grey-paragraph">Latest jobs on SkillScanner.</p>
+        <div class="grey-container">
+            <!-- job filters -->
+            <div class="filter-container">
+                <div class="search-container">
+                    <input id="search-jobs" class="search-input-field" type="text" placeholder="Search here...">
+                    <i class="search-icon fas fa-search"></i>
+                </div>
+                <div class="filter-box">
+                    <div class="filter-checkbox-container">
+                        <h3 class="checkbox-heading">Job Type</h3>
+                        <div class="checkboxes">
+                            <h3 class="responsive-filter-heading">Job Type</h3>
+                            <div id="type-filters">
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="internship" class="positionFilter">
+                                    <span class="checkmark"></span>
+                                    Internship
+                                </label>
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="fulltime" class="positionFilter">
+                                    <span class="checkmark"></span>
+                                    Full time
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-checkbox-container">
+                        <h3 class="checkbox-heading">Job Category</h3>
+                        <div class="checkboxes">
+                            <h3 class="responsive-filter-heading">Job Category</h3>
+                            <div id="category-filters">
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="it" class="categoryFilter">
+                                    <span class="checkmark"></span>
+                                    IT
+                                </label>
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="marketing" class="categoryFilter">
+                                    <span class="checkmark"></span>
+                                    Marketing
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-checkbox-container">
+                        <h3 class="checkbox-heading">Location</h3>
+                        <div class="checkboxes">
+                            <h3 class="responsive-filter-heading">Location</h3>
+                            <div id="city-filters">
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="stockholm" class="cityFilter">
+                                    <span class="checkmark"></span>
+                                    Stockholm
+                                </label>
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="saltsjöbaden" class="cityFilter">
+                                    <span class="checkmark"></span>
+                                    Saltsjöbaden
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="red-btn small-btn clear-filters">Clear filters</button>
+            </div>
+            <!-- filter container end -->
+            <div class="content-container scroll-container">
+                <ul id="jobs-container" class="card-list">
+                    <!--li class="card">
+                        <img src="images/articleImge.png">
+                        <div class="card-info">
+                            <div class="card-title-bar">
+                                <h2>Job title</h2>
+                                <p class="small-grey">Company</p>
+                                <p class="small-grey">Location</p>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur, Lorem ipsum dolor sit amet, consetetur, Lorem
+                                ipsum dolor sit amet, consetetur.
+                            </p>
+                            <button class="red-btn btn-medium">Learn more</button>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/articleImge.png">
+                        <div class="card-info">
+                            <h2>Job title</h2>
+                            <p class="small-grey">Company</p>
+                            <p class="small-grey">Location</p>
+                            <button class="red-btn btn-medium">Learn more</button>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/articleImge.png">
+                        <div class="card-info">
+                            <h2>Job title</h2>
+                            <p class="small-grey">Company</p>
+                            <p class="small-grey">Location</p>
+                            <button class="red-btn btn-medium">Learn more</button>
+                        </div>
+                    </li-->
+                </ul>
+                <a href="#" id="job-link" class="gb-grey-small-link pink-link">Not found the right job? View more
+                    here...</a>
+            </div>
+        </div>
+    </div>
+    <div class="section-content" style="display: none;" id="events">
+        <h2 class="section-header">Events</h2>
+        <p class="centered-grey-paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        <div class="filter-search-container">
+            <div class="search-container">
+                <input type="text" id="search-events" class="search-input-field" placeholder="Search here...">
+                <i class="search-icon fas fa-search"></i>
+            </div>
+            <div class="filters">
+                <div class="custom-select">
+                    <div class="select-box">
+                        Filter by location...
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="option-list" id="location-filter">
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="location-1">
+                            <span class="checkmark"></span>
+                            Location 1
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="location-2">
+                            <span class="checkmark"></span>
+                            Location 2
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="location-3">
+                            <span class="checkmark"></span>
+                            Location 3
+                        </label>
+                    </div>
+                </div>
+                <div class="custom-select">
+                    <div class="select-box">
+                        Filter by month...
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="option-list" id="month-filter">
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="0" class="monthFilter">
+                            <span class="checkmark"></span>
+                            January
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="1" class="monthFilter">
+                            <span class="checkmark"></span>
+                            February
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="2" class="monthFilter">
+                            <span class="checkmark"></span>
+                            March
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="3" class="monthFilter">
+                            <span class="checkmark"></span>
+                            April
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="4" class="monthFilter">
+                            <span class="checkmark"></span>
+                            May
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="5" class="monthFilter">
+                            <span class="checkmark"></span>
+                            June
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="6" class="monthFilter">
+                            <span class="checkmark"></span>
+                            July
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="7" class="monthFilter">
+                            <span class="checkmark"></span>
+                            August
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="8" class="monthFilter">
+                            <span class="checkmark"></span>
+                            September
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="9" class="monthFilter">
+                            <span class="checkmark"></span>
+                            October
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="10" class="monthFilter">
+                            <span class="checkmark"></span>
+                            November
+                        </label>
+                        <label class="filter-checkbox checkbox-container">
+                            <input type="checkbox" value="11" class="monthFilter">
+                            <span class="checkmark"></span>
+                            December
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-container content-container">
+            <div class="event-container" id="event-container">
+                <!--div class="event-card">
+                    <div class="event-image" style="background-image:url(images/articleImge.png)">
+                        <div class="black-overlay">
+                            <h2 class="event-title">Event title</h2>
+                            <p>additional information, place, date</p>
+                        </div>
+                    </div>
+                    <div class="event-date"><p class="day">2</p>
+                        <p>Jan</p></div>
+                    <div class="event-description">
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                        <a href="http://globuzzer.com" class="red-btn">View more</a>
+                    </div>
+                </div-->
+            </div>
+            <a href="#" id="event-link" class="gb-grey-small-link pink-link">View more events here...</a>
+        </div>
+    </div>
+    <div class="section-content" style="display: none;" id="articles">
+        <h2 class="section-header">Articles</h2>
+        <p class="centered-grey-paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        <div class="filter-search-container">
+            <div class="search-container">
+                <input type="text" id="search-articles" class="search-input-field" placeholder="Search here...">
+                <i class="search-icon fas fa-search"></i>
+            </div>
+        </div>
+        <div class="article-container scroll-container">
+            <div id="article-container" class="gb-card-50-wrapper">
+                <!--li class="card">
+                    <img src="images/articleImge.png">
+                    <div class="card-info">
+                        <h2>Title</h2>
+                        <p class="small-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor
+                            sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="images/articleImge.png">
+                    <div class="card-info">
+                        <h2>Title</h2>
+                        <p class="small-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor
+                            sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="images/articleImge.png">
+                    <div class="card-info">
+                        <h2>Title</h2>
+                        <p class="small-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor
+                            sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    </div>
+                </li-->
+            </div>
+            <a href="#" id="article-link" class="gb-grey-small-link pink-link">Didn't find an article for you? View more
+                here...</a>
+        </div>
+    </div>
+    <div class="section-content" style="display: none;" id="team">
+        <h2 class="section-header">Join our team</h2>
+        <p class="centered-grey-paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        <div class="grey-container">
+            <div class="filter-container">
+                <div class="search-container">
+                    <input id="search-team" class="search-input-field" type="text" placeholder="Search here...">
+                    <i class="search-icon fas fa-search"></i>
+                </div>
+                <div class="filter-box">
+                    <div class="filter-checkbox-container">
+                        <h3 class="checkbox-heading">Job Type</h3>
+                        <div class="checkboxes">
+                            <h3 class="responsive-filter-heading">Job Type</h3>
+                            <div id="type-filters-team">
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="internship" class="positionFilter">
+                                    <span class="checkmark"></span>
+                                    Internship
+                                </label>
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="fulltime" class="positionFilter">
+                                    <span class="checkmark"></span>
+                                    Full time
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-checkbox-container">
+                        <h3 class="checkbox-heading">Job Category</h3>
+                        <div class="checkboxes">
+                            <h3 class="responsive-filter-heading">Job Category</h3>
+                            <div id="category-filters-team">
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="it" class="categoryFilter">
+                                    <span class="checkmark"></span>
+                                    IT
+                                </label>
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="marketing" class="categoryFilter">
+                                    <span class="checkmark"></span>
+                                    Marketing
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-checkbox-container">
+                        <h3 class="checkbox-heading">Location</h3>
+                        <div class="checkboxes">
+                            <h3 class="responsive-filter-heading">Location</h3>
+                            <div id="city-filters-team">
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="stockholm" class="cityFilter">
+                                    <span class="checkmark"></span>
+                                    Stockholm
+                                </label>
+                                <label class="filter-checkbox checkbox-container">
+                                    <input type="checkbox" value="saltsjöbaden" class="cityFilter">
+                                    <span class="checkmark"></span>
+                                    Saltsjöbaden
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="red-btn small-btn clear-filters">Clear filters</button>
+            </div>
+            <!--div class="filter-search-container">
+                <div class="search-container">
+                    <input type="text" id="search-team" class="search-input-field" placeholder="Search here...">
+                    <i class="search-icon fas fa-search"></i>
+                </div>
+                <div class="filters">
+                    <select>
+                        <option>Select Job Category</option>
+                        <option>Category 1</option>
+                        <option>Category 2</option>
+                    </select>
+                </div>
+            </div-->
+            <div class="content-container article-container scroll-container">
+                <ul class="card-list" id="team-container">
+                    <li class="card">
+                        <img src="images/articleImge.png">
+                        <div class="card-info">
+                            <h2>Title</h2>
+                            <p class="small-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum
+                                dolor
+                                sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing
+                                elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                            <div class="btn-container">
+                                <button class="red-transparent-btn btn-medium">Read more</button>
+                                <button class="red-btn btn-medium">Work with us</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/articleImge.png">
+                        <div class="card-info">
+                            <h2>Title</h2>
+                            <p class="small-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum
+                                dolor
+                                sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing
+                                elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                            <div class="btn-container">
+                                <button class="red-transparent-btn btn-medium">Read more</button>
+                                <button class="red-btn btn-medium">Work with us</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/articleImge.png">
+                        <div class="card-info">
+                            <h2>Title</h2>
+                            <p class="small-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum
+                                dolor
+                                sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing
+                                elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                            <div class="btn-container">
+                                <button class="red-transparent-btn btn-medium">Read more</button>
+                                <button class="red-btn btn-medium">Work with us</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="about-us" class="white-box">
+    <h3 class="underline-header">About us</h3>
+    <p class="centered-grey-paragraph line-height">SkillScanner is a network with a diverse range of English speaking
+        professionals,
+        from an array of cultural and
+        professional backgrounds, connected together through the SkillScanner platform.
+        SkillScanner is the first service that streamlines the job hunting process for international talents within the
+        Nordics. SkillScanner offers personalised, affordable services for companies looking to hire from our niche
+        market of English Speaking professionals.
+    </p>
+</div>
+<div>
+    <div id='contact-us'>
+        <div class="gb-gradient-darkred-black gb-page-content-center gb-padding-top-phone-16 gb-padding-top-tablet-32 gb-padding-top-desktop-32 gb-padding-bottom-phone-8 gb-padding-bottom-tablet-16 gb-padding-bottom-desktop-16">
+            <form class="gb-form-350" method="post" id="gb-feedback">
+                <h2 class='gb-text-white gb-title-small gb-text-center gb-text-uppercase gb-margin-bottom-phone-16 gb-margin-bottom-tablet-16 gb-margin-bottom-desktop-40 gb-margin-top-phone-16 gb-margin-top-tablet-16 gb-margin-top-desktop-40'>
+                    Contact us
+                </h2>
+                <p class='gb-paragraph-small gb-text-white gb-text-center gb-margin-bottom-phone-16 gb-margin-bottom-tablet-16 gb-margin-bottom-desktop-40 gb-margin-top-phone-16 gb-margin-top-tablet-16 gb-margin-top-desktop-40'>
+                    If you have any questions, please don't hesitate to contact us...</p>
+                <div class='gb-input-wrapper-relative'>
+                    <label for="name">
+                        <svg class="gb-input-icon-left" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <use xlink:href="#profile"></use>
+                        </svg>
+                    </label>
+                    <input class="gb-input-primary gb-input-background-transparent" id='name' name="name" type="text"
+                           placeholder="Name" required>
+                </div>
+                <div class='gb-input-wrapper-relative'>
+                    <label for="email">
+                        <svg class='gb-input-icon-left' version="1.1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <use xlink:href='#email'></use>
+                        </svg>
+                    </label>
+                    <input class="gb-input-primary gb-input-background-transparent" id='email' name="email" type="email"
+                           placeholder="Email"
+                           required>
+                </div>
+                <div class='gb-input-wrapper-relative'>
+                    <label for="subject">
+                        <svg class='gb-input-icon-left' version="1.1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <use xlink:href='#name-lines'></use>
+                        </svg>
+                    </label>
+                    <input class="gb-input-primary gb-input-background-transparent" id='subject' name="subject"
+                           type="text" placeholder="Subject"
+                           required>
+                </div>
+                <div class='gb-input-wrapper-relative'>
+                    <label for="message">
+                        <svg class='gb-input-icon-top' version="1.1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <use xlink:href='#name-lines'></use>
+                        </svg>
+                    </label>
+                    <textarea class="gb-input-textarea-primary gb-input-background-transparent" id="message"
+                              name="message" placeholder="Message"
+                              required></textarea>
+                </div>
+                <div class="gb-paragraph-medium gb-text-green gb-text-center gb-display-none" id="success-message"><p>
+                    Your message has been successfuly sent, We will get back to you soon!</p></div>
+                <div class="gb-paragraph-medium gb-text-red gb-text-center gb-display-none" id="error-message"><p>Error!
+                    there is an error sending your message, please try again.</p></div>
+
+                <div class="gb-input-wrapper-relative gb-margin-bottom-phone-40 gb-margin-bottom-tablet-40 gb-margin-bottom-desktop-48">
+                    <button type="submit" class="gb-btn gb-btn-large gb-btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="gb-footer gb-background-black-opacity-5">
+        <div class="footer-wrapper">
+            <div class='footer-top-content'>
+                <ul class='footer-nav gb-phone-hide gb-tablet-hide'>
+                    <li class="footer-nav-item gb-margin-bottom-8">
+                        <a class="gb-text-black-opacity-50 gb-subtitle-medium"
+                           href="https://mightynetworks.com/terms_of_use">
+                            Terms &amp; Conditions
+                        </a>
+                    </li>
+                    <li class="footer-nav-item gb-margin-bottom-8">
+                        <a class="gb-text-black-opacity-50 gb-subtitle-medium"
+                           href="https://mightynetworks.com/privacy_policy">
+                            Privacy Policy
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer-contact-list">
+                    <li class='footer-contact-item gb-margin-bottom-phone-8 gb-margin-bottom-tablet-8 gb-margin-bottom-desktop-8'>
+                        <a class='footer-contact-link'
+                           href='href="https://www.google.com/maps/place/Skyttev%C3%A4gen+29,+133+36+Saltsj%C3%B6baden,+Ruotsi/@59.2707216,18.2862762,17z/data=!3m1!4b1!4m5!3m4!1s0x465f7f0cd4f5b7b3:0x75deb43dec7d4645!8m2!3d59.2707216!4d18.2884649"'>
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-small" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#location"></use>
+                            </svg>
+                            <p class='gb-text-black-opacity-50 gb-subtitle-medium'>Skyttevägen 29, Saltsjöbaden,
+                                Sweden</p>
+                        </a>
+                    </li>
+                    <li class='footer-contact-item gb-margin-bottom-phone-8 gb-margin-bottom-tablet-8 gb-margin-bottom-desktop-8'>
+                        <a class='footer-contact-link' href='tel:46735555134'>
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-small" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#phone"></use>
+                            </svg>
+                            <p class='gb-text-black-opacity-50 gb-subtitle-medium'>+46 73 555 5 134</p>
+                        </a>
+                    </li>
+                    <li class='footer-contact-item gb-margin-bottom-phone-8 gb-margin-bottom-tablet-8 gb-margin-bottom-desktop-8'>
+                        <a class='footer-contact-link' href='mailto:info@globuzzer.com'>
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-small" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#envelope"></use>
+                            </svg>
+                            <p class='gb-text-black-opacity-50 gb-subtitle-medium'>info@globuzzer.com</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer-social-media-list">
+                    <li class="footer-social-media-item">
+                        <a class='footer-contact-link'
+                           href="https://globuzzer.mn.co/">
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-medium" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#gb-logo-small"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-social-media-item">
+                        <a class='footer-contact-link'
+                           href="https://www.facebook.com/SocialNetworkforStudentsandExpats/?hc_ref=ARTpukVVg9pLASlFEgSEGsyb34HwQIISr3bQWcT-CghqMvRc2ccJmEMvOT4qVL7plus&__xts__[0]=68.ARAied8czZYuUH1SnAAN-tgadfzqVniY7HZvUHyax0rpZF33Xm97dZKIPU_3iBvcxypV5tTXGHDoy1aI-ZKVuoQ2L7nhf-RjbgQrrwX3FR93GfT85bpmIWr8ObZRBGqTdv1-IYLxVty6zPOYRG-0eRTzdoIxCsrQWIt1u_gqNVOKlCpQwLTe&__tn__=%3C-R">
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-medium" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-social-media-item">
+                        <a class='footer-contact-link' href="https://twitter.com/globuzzer">
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-medium" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-social-media-item">
+                        <a class='footer-contact-link' href="https://www.youtube.com/channel/UC4u8N-QBDMWG6OqzSni8clw">
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-medium" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#youtube"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-social-media-item">
+                        <a class='footer-contact-link' href="https://www.linkedin.com/company/globuzzer/">
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-medium" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#linkedin"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-social-media-item">
+                        <a class='footer-contact-link' href="https://www.pinterest.se/globuzzer/pins/">
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-medium" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#pinterest"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-social-media-item">
+                        <a class='footer-contact-link' href="https://www.instagram.com/globuzzer/">
+                            <svg class="gb-icon-fill-black-opacity-30 gb-icon-medium" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class='footer-bottom-content'>
+                <div class="footer-rights-reserved">
+                    <div class='left-content'>
+                        <p class="gb-label gb-text-black-opacity-30">© 2018 All rights reserved.</p>
+                    </div>
+                    <ul class='right-content gb-desktop-hide'>
+                        <li class="footer-nav-item">
+                            <a class="gb-text-black-opacity-30 gb-subtitle-medium"
+                               href="https://mightynetworks.com/terms_of_use">
+                                Terms &amp; Conditions
+                            </a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a class="gb-text-black-opacity-30 gb-subtitle-medium"
+                               href="https://mightynetworks.com/privacy_policy">
+                                Privacy Policy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts-->
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<!--script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script-->
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+    authDomain: "skillscanner-73181.firebaseapp.com",
+    databaseURL: "https://skillscanner-73181.firebaseio.com",
+    projectId: "skillscanner-73181",
+    storageBucket: "skillscanner-73181.appspot.com",
+    messagingSenderId: "269557896133"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/nav-bar-black.js"></script>
+<script type="text/javascript" src="js/svgs-loader.js"></script>
+<script type="text/javascript" src="js/fetch-firebase-data.js"></script>
+<script type="text/javascript" src="js/main-script.js"></script>
+<script type="text/javascript" src="js/handle-partners-expand.js"></script>
+<script type='text/javascript' data-cfasync='false'>window.purechatApi = {
+  l: [], t: [], on: function () {
+    this.l.push(arguments);
+  }
+};
+(function () {
+  var done = false;
+  var script = document.createElement('script');
+  script.async = true;
+  script.type = 'text/javascript';
+  script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript';
+  document.getElementsByTagName('HEAD').item(0).appendChild(script);
+  script.onreadystatechange = script.onload = function (e) {
+    if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+      var w = new PCWidget({c: '4c35a227-db34-489f-b466-4b7c778739af', f: true});
+      done = true;
+    }
+  };
+})();</script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript" src="js/apply-mail-sent.js"></script>
+</body>
+</html>

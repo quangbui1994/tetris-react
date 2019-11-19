@@ -1,0 +1,30 @@
+.dz-preview{
+    position: relative;
+}
+
+.dz-image{
+    display: none;
+}
+
+.dz-size{
+    display: none;
+}
+.dz-details{
+    display: none;
+}
+.dz-filename{
+    font-size: 13px;
+    color: rgb(88, 88, 88);
+}
+
+.dz-error-message{
+    display: none;
+}
+
+.dz-success-mark{
+    display: none;
+}
+
+.dz-error-mark{
+    display: none;
+}

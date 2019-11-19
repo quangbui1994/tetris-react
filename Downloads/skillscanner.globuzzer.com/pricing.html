@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillScanner</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/gb-style.css">
+
+    <link rel="stylesheet" href="css/skillscanner.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="gdpr-cookie-message" style="display:none">
+    <h4>Cookies &amp; Privacy</h4>
+    <p>This website uses cookies to ensure you get the best experience on our website. By continuing, you accept our </p>
+    <a href="./privacy.html">cookie policy</a>
+    <button id="gdpr-cookie-accept" type="button">Accept</button>
+</div>
+
+<!-- navbar start -->
+
+<div class="nav-bar">
+
+    <div class="logo">
+
+        <a href="/"><img src="./images/ss-logo-version_Fotor.png" id="ss-logo" alt="logo"></a>
+
+    </div>
+
+    <div class="right-content">
+
+        <svg class='open-side-bar gb-icon-medium gb-icon-white' id="navbar-hamburger-button" version="1.1"
+
+             xmlns="http://www.w3.org/2000/svg"
+
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+
+            <use xlink:href='#menu'></use>
+
+        </svg>
+
+        <div class="mobile-view">
+            <div class="mobile-view-behind-layer">
+                <svg class='nav-aside-close-icon gb-icon-medium gb-icon-white-opacity-50'
+
+                    version="1.1"
+
+                    xmlns="http://www.w3.org/2000/svg"
+
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href='#close'></use>
+
+                </svg>
+
+                <ul class="list">
+
+                    <li>
+                        <div class="navside-i-icon-holder">
+                            <i class="fas fa-home fa-lg"></i>
+                        </div>
+                        <a target="_self" href="/">HOME</a>
+                    </li>
+
+                    <li>
+                        <div class="navside-svg-img-holder">
+                            <svg id="news" viewBox="0 0 50 50" width="100%" height="100%">
+                                <title>news</title>
+                                <g>
+                                    <path style="fill:white" d="M1 1H7.51064V7.83889H1V1Z" transform="translate(4 7)" stroke-width="2"></path>
+                                    <path style="fill:white" d="M1 1H7.51064V7.83889H1V1Z" transform="translate(4 21.0601)" stroke-width="2"></path>
+                                    <path style="fill:white" d="M1 1H7.51064V7.83889H1V1Z" transform="translate(4 35.1611)" stroke-width="2"></path>
+                                    <line x1="0" y1="0" x2="200" y2="0" style="stroke:white;stroke-width:2"  transform="translate(19.3191 11.3032)" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="0" y1="0" x2="200" y2="0" style="stroke:white;stroke-width:2"  transform="translate(19.3191 25.3633)" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="0" y1="0" x2="200" y2="0" style="stroke:white;stroke-width:2"  transform="translate(19.3191 38.5806)" stroke-width="2" stroke-linecap="round"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="#" class="scroll-to-section" id="to-about-us">ABOUT US</a>
+                    </li>
+
+                    <li>
+                        <div class="navside-svg-img-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 59.997 59.997" style="enable-background:new 0 0 59.997 59.997;" xml:space="preserve">
+                                <g>
+                                    <path style="fill:white" d="M59.206,0.293c-0.391-0.391-1.023-0.391-1.414,0L54.084,4H30.802L1.532,33.511c-0.667,0.666-1.034,1.553-1.034,2.495   s0.367,1.829,1.034,2.495l20.466,20.466c0.687,0.687,1.588,1.03,2.491,1.03c0.906,0,1.814-0.346,2.508-1.04l28.501-29.271V5.414   l3.707-3.707C59.596,1.316,59.596,0.684,59.206,0.293z M53.499,28.874L25.574,57.553c-0.595,0.596-1.565,0.596-2.162,0   L2.946,37.087c-0.289-0.289-0.448-0.673-0.448-1.081s0.159-0.792,0.451-1.084L31.635,6h20.45l-4.833,4.833   C46.461,10.309,45.516,10,44.499,10c-2.757,0-5,2.243-5,5s2.243,5,5,5s5-2.243,5-5c0-1.017-0.309-1.962-0.833-2.753l4.833-4.833   V28.874z M47.499,15c0,1.654-1.346,3-3,3s-3-1.346-3-3s1.346-3,3-3c0.462,0,0.894,0.114,1.285,0.301l-1.992,1.992   c-0.391,0.391-0.391,1.023,0,1.414C43.987,15.902,44.243,16,44.499,16s0.512-0.098,0.707-0.293l1.992-1.992   C47.385,14.106,47.499,14.538,47.499,15z"/>
+                                    <path style="fill:white" d="M40.412,21.131c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0l-0.746,0.746c-1.787-1.43-4.055-2.133-6.37-1.937   c-1.613,0.135-3.073,0.914-4.111,2.193c-1.068,1.317-1.561,3.039-1.35,4.724l0.761,6.09l-8.947,8.947   c-2.05-2.74-1.838-6.647,0.65-9.136c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0c-3.27,3.27-3.49,8.449-0.665,11.979   l-1.142,1.142c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l1.143-1.143   c1.593,1.273,3.566,1.972,5.611,1.972c0.251,0,0.503-0.011,0.756-0.032c1.613-0.134,3.073-0.912,4.111-2.192   c1.069-1.317,1.562-3.04,1.351-4.725l-0.761-6.09l8.947-8.947c2.049,2.74,1.838,6.648-0.651,9.137   c-0.391,0.391-0.391,1.023,0,1.414s1.023,0.391,1.414,0c3.27-3.271,3.489-8.45,0.665-11.98L40.412,21.131z M28.063,38.594   c0.144,1.147-0.191,2.319-0.919,3.217c-0.692,0.853-1.659,1.371-2.724,1.46c-1.718,0.135-3.408-0.359-4.771-1.376l7.846-7.847   L28.063,38.594z M28.404,25.195c-0.144-1.146,0.191-2.319,0.918-3.216c0.692-0.853,1.66-1.371,2.725-1.461   c1.718-0.141,3.409,0.358,4.772,1.376l-7.847,7.847L28.404,25.195z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="#" class="scroll-to-section" id="to-packages">PLANS</a>
+                    </li>
+
+                    <li>
+                        <div class="navside-svg-img-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512.003 512.003" style="enable-background:new 0 0 512.003 512.003;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path style="fill:white" d="M509.605,171.075l-99.3-99.301c-3.193-3.194-8.37-3.194-11.565,0l-49.65,49.65c-1.533,1.533-2.394,3.613-2.394,5.782    c0,2.169,0.861,4.249,2.394,5.782l4.953,4.953l-11.382,11.38c-7.389,7.386-18.854,9.402-28.528,5.011    c-9.07-4.117-19.153-6.292-29.161-6.292c-11.883,0-23.496,2.983-33.814,8.633c-4.303-1.06-8.719-1.603-13.179-1.603    c-6.45,0-12.785,1.113-18.829,3.31c-9.651,3.506-19.996,1.333-27.003-5.672L171.71,132.27l2.434-2.434    c1.533-1.533,2.394-3.613,2.394-5.782c0-2.169-0.861-4.249-2.394-5.782l-49.65-49.65c-3.195-3.194-8.371-3.194-11.565,0    L2.395,179.156c-3.193,3.194-3.193,8.371,0,11.564l49.649,49.65c1.534,1.534,3.613,2.395,5.783,2.395s4.248-0.861,5.783-2.395    l2.961-2.961l14.414,14.414c3.637,3.637,6.048,8.178,6.971,13.131c4.786,25.683,17.086,49.032,35.57,67.526l2.715,2.715    c-5.214,5.491-8.082,12.645-8.082,20.245c0,7.861,3.062,15.252,8.62,20.811c5.738,5.738,13.273,8.606,20.811,8.606    c0.491,0,0.98-0.013,1.471-0.038c-0.398,8.019,2.458,16.17,8.568,22.282c5.559,5.559,12.95,8.62,20.811,8.62    c0.219,0,0.437-0.011,0.656-0.016c-0.168,7.749,2.691,15.552,8.591,21.453c5.559,5.56,12.95,8.62,20.812,8.62    c7.861,0,15.251-3.062,20.811-8.62c0.468-0.468,0.909-0.952,1.34-1.442c2.895,1.009,5.957,1.546,9.052,1.546    c7.353,0,14.261-2.865,19.441-8.062c2.757-2.756,4.849-5.998,6.211-9.529l0.837,0.837c5.359,5.359,12.398,8.039,19.437,8.039    c7.039,0,14.078-2.68,19.437-8.039c2.848-2.848,4.988-6.211,6.344-9.878c4.797,3.489,10.476,5.236,16.158,5.236    c7.039,0,14.082-2.679,19.446-8.036c5.191-5.191,8.05-12.097,8.05-19.445c0-2.22-0.266-4.397-0.773-6.502    c5.237-1.064,10.049-3.635,13.91-7.501c5.191-5.191,8.05-12.094,8.05-19.437c0-5.785-1.782-11.292-5.073-15.91l6.56-6.56    c18.699-18.708,31.052-42.35,35.725-68.371c0.783-4.357,2.941-8.404,6.243-11.707l24.398-24.398l4.289,4.289    c1.597,1.597,3.69,2.395,5.783,2.395c2.092,0,4.186-0.798,5.783-2.395l49.65-49.65c1.533-1.533,2.394-3.613,2.394-5.782    S511.138,172.609,509.605,171.075z M57.827,223.025l-38.086-38.086L118.71,85.97l38.087,38.086L57.827,223.025z M156.836,364.689    c-5.097,5.096-13.392,5.098-18.493,0c-2.47-2.471-3.83-5.754-3.83-9.247c0-3.492,1.361-6.776,3.831-9.246    c2.549-2.549,5.896-3.824,9.245-3.824c3.348,0,6.698,1.275,9.246,3.824C161.933,351.294,161.933,359.59,156.836,364.689z     M187.684,395.537c-2.468,2.471-5.751,3.83-9.246,3.83c-3.492,0-6.776-1.361-9.245-3.83c-5.099-5.098-5.099-13.394,0-18.493    c2.549-2.549,5.896-3.824,9.246-3.824c3.347,0,6.697,1.275,9.245,3.824C192.784,382.142,192.784,390.439,187.684,395.537z     M217.742,425.594c-2.47,2.47-5.753,3.83-9.245,3.83c-3.493,0-6.777-1.361-9.246-3.83c-5.099-5.098-5.099-13.394,0-18.493    c2.549-2.549,5.896-3.824,9.246-3.824c3.347,0,6.697,1.275,9.245,3.824C222.841,412.2,222.841,420.496,217.742,425.594z     M356.63,362.822c-2.102,2.104-4.897,3.263-7.869,3.263s-5.767-1.159-7.873-3.268l-79.33-79.312    c-3.196-3.193-8.372-3.192-11.565,0.002c-3.192,3.193-3.191,8.371,0.002,11.564l85.451,85.442c2.103,2.102,3.26,4.898,3.26,7.872    c0,2.98-1.158,5.779-3.257,7.878c-4.347,4.343-11.416,4.344-15.756,0.003l-14.416-14.416c-0.08-0.083-0.158-0.167-0.241-0.249    c-0.024-0.024-0.051-0.045-0.076-0.069l-66.267-66.267c-3.195-3.193-8.371-3.193-11.565,0c-3.194,3.193-3.194,8.371,0,11.564    l66.48,66.479c2.032,2.083,3.151,4.839,3.151,7.763c0,2.974-1.159,5.77-3.261,7.872c-4.338,4.341-11.401,4.341-15.743,0    l-72.085-72.086c-3.195-3.194-8.371-3.194-11.565,0c-3.194,3.193-3.194,8.371,0,11.564l53.434,53.435    c0.015,0.015,0.027,0.032,0.043,0.046c2.101,2.097,3.257,4.888,3.257,7.859c0,2.973-1.158,5.769-3.269,7.88    c-2.099,2.104-4.893,3.263-7.87,3.263c-0.719,0-1.422-0.074-2.11-0.204c1.323-8.913-1.436-18.32-8.282-25.167    c-5.559-5.558-12.95-8.62-20.811-8.62c-0.219,0-0.437,0.011-0.656,0.016c0.168-7.749-2.69-15.552-8.591-21.453    c-5.56-5.558-12.95-8.62-20.812-8.62c-0.492,0-0.981,0.012-1.469,0.036c0.393-8.014-2.463-16.158-8.57-22.266    c-7.434-7.433-17.884-10.044-27.444-7.847l-5.864-5.864c-16.14-16.147-26.878-36.535-31.057-58.96    c-1.531-8.213-5.502-15.717-11.483-21.699l-14.415-14.415l82.01-82.01l20.438,20.438c7.856,7.856,18.552,12.06,29.507,12.06    c4.906,0,9.867-0.844,14.646-2.581c2.318-0.843,4.715-1.448,7.144-1.832l-50.632,50.633c-6.195,6.194-9.607,14.43-9.607,23.191    c0,8.76,3.412,16.996,9.606,23.19c6.394,6.394,14.79,9.59,23.19,9.589c8.398,0,16.797-3.198,23.192-9.589l25.43-25.43l6.883,6.888    c0.002,0.002,0.003,0.003,0.005,0.005l0.286,0.286l0.275,0.275c0.001,0.001,0.003,0.003,0.005,0.004l0.005,0.005    c0.079,0.078,0.156,0.152,0.233,0.226l95.881,95.881c2.103,2.102,3.26,4.898,3.26,7.872    C359.893,357.921,358.736,360.717,356.63,362.822z M408.137,240.834c-5.674,5.675-9.4,12.723-10.774,20.381    c-4.08,22.72-14.867,43.364-31.193,59.698l-6.284,6.285l-51.731-51.731c1.124,0.083,2.253,0.138,3.39,0.138    c5.238,0,10.598-0.918,15.934-3.101c4.18-1.71,6.182-6.485,4.472-10.664c-1.71-4.179-6.481-6.182-10.664-4.472    c-21.046,8.611-46.278-15.12-49.087-17.855c-0.047-0.046-0.094-0.091-0.142-0.135l-0.29-0.29    c-0.001-0.001-0.002-0.001-0.003-0.002l-0.253-0.252c-0.001-0.001-0.003-0.003-0.005-0.004l-6.884-6.889l7.806-7.807    c3.195-3.194,3.195-8.371,0.001-11.565c-3.194-3.192-8.371-3.193-11.564,0l-13.57,13.57c-0.005,0.005-0.011,0.01-0.016,0.015    c-0.005,0.005-0.01,0.011-0.015,0.016l-31.2,31.2c-6.412,6.411-16.842,6.409-23.252,0c-3.105-3.105-4.815-7.234-4.815-11.626    c0-4.392,1.71-8.521,4.816-11.626l53.852-53.854c2.996-2.995,6.326-5.63,9.905-7.837c8.503-5.256,18.324-8.034,28.401-8.034    c7.693,0,15.439,1.67,22.403,4.831c15.842,7.188,34.671,3.839,46.851-8.338l11.383-11.381l66.929,66.929L408.137,240.834z     M454.172,214.944l-87.736-87.736l38.087-38.086l87.736,87.736L454.172,214.944z"/>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <circle style="fill:white" cx="462.41" cy="183.11" r="8.177"/>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <circle style="fill:white" cx="53.567" cy="191.189" r="8.177"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="#" class="scroll-to-section" id="to-parteners">PARTNERS</a>
+                    </li>
+
+                    <li>
+                        <div class="navside-svg-img-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 511.874 511.874" style="enable-background:new 0 0 511.874 511.874;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path style="fill:white" d="M490.114,12.813H132.568c-12.012,0.014-21.746,9.748-21.76,21.76v98.62l-16.35-24.525     c-7.484-11.289-22.535-14.676-34.133-7.68l-33.638,20.224c-11.016,6.464-19.097,16.946-22.545,29.244     c-12.271,44.681-3.166,121.66,109.824,234.667C203.821,474.885,270.816,499.06,316.99,499.06     c10.69,0.049,21.339-1.34,31.659-4.13c12.293-3.448,22.775-11.518,29.252-22.519l20.198-33.673     c6.968-11.589,3.584-26.609-7.68-34.091l-80.546-53.692c-11.049-7.308-25.859-4.905-34.031,5.521l-23.45,30.148     c-2.451,3.226-6.897,4.166-10.445,2.21l-4.463-2.458c-14.686-8.004-32.964-17.971-69.879-54.886     c-3.994-3.994-7.612-7.731-11.008-11.307h333.517c11.982,0.009,21.713-9.676,21.76-21.658V34.573     C511.86,22.561,502.126,12.827,490.114,12.813z M229.318,401.362l4.335,2.381c10.897,6.093,24.614,3.266,32.213-6.639     l23.45-30.148c2.666-3.396,7.49-4.179,11.093-1.801l80.546,53.692c3.659,2.439,4.759,7.321,2.5,11.093l-20.198,33.673     c-4.218,7.233-11.071,12.553-19.123,14.848c-40.337,11.093-110.933,1.707-218.078-105.446S9.56,195.273,20.627,154.97     c2.293-8.051,7.61-14.903,14.839-19.123l33.673-20.207c3.773-2.254,8.652-1.155,11.093,2.5l53.717,80.546     c2.382,3.602,1.599,8.43-1.801,11.093l-30.157,23.458c-9.903,7.597-12.731,21.311-6.639,32.205l2.389,4.335     c8.533,15.65,19.14,35.123,57.805,73.779C194.212,382.213,213.677,392.828,229.318,401.362z M494.808,298.526     c-0.028,2.567-2.127,4.627-4.693,4.608H141.203c-11.083-12.674-20.64-26.604-28.476-41.506l-2.458-4.48     c-1.96-3.54-1.022-7.982,2.202-10.428l30.157-23.458c10.43-8.17,12.833-22.982,5.521-34.031l-20.275-30.43V34.573     c-0.014-1.249,0.476-2.451,1.359-3.334c0.883-0.883,2.085-1.373,3.334-1.359h357.547c1.249-0.014,2.451,0.476,3.334,1.359     c0.883,0.883,1.373,2.085,1.359,3.334V298.526z"/>
+                                            <path style="fill:white" d="M460.725,52.323l-142.618,108.16c-4.035,2.932-9.499,2.932-13.534,0L162.008,52.323     c-3.756-2.849-9.111-2.113-11.959,1.643c-2.849,3.756-2.113,9.111,1.643,11.959l142.583,108.151     c10.144,7.494,23.989,7.494,34.133,0L471.034,65.925c1.805-1.368,2.992-3.398,3.299-5.642c0.307-2.244-0.29-4.518-1.661-6.321     C469.824,50.213,464.478,49.48,460.725,52.323z"/>
+                                            <path style="fill:white" d="M238.517,174.793l-87.415,93.611c-3.214,3.447-3.025,8.848,0.422,12.062c3.447,3.214,8.848,3.025,12.062-0.422     l87.416-93.653c2.888-3.484,2.553-8.617-0.762-11.698C246.924,171.612,241.78,171.656,238.517,174.793z"/>
+                                            <path style="fill:white" d="M384.728,174.793c-3.214-3.447-8.614-3.637-12.062-0.422c-3.447,3.214-3.637,8.614-0.422,12.062l87.39,93.611     c3.214,3.447,8.614,3.637,12.062,0.422c3.447-3.214,3.637-8.614,0.422-12.062L384.728,174.793z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="#business" class="scroll-to-section" id="to-pricing-business-contact-holder">BUSINESS</a>
+                    </li>
+
+                    <!-- <li>
+                        <div class="navside-svg-img-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 511.874 511.874" style="enable-background:new 0 0 511.874 511.874;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path style="fill:white" d="M490.114,12.813H132.568c-12.012,0.014-21.746,9.748-21.76,21.76v98.62l-16.35-24.525     c-7.484-11.289-22.535-14.676-34.133-7.68l-33.638,20.224c-11.016,6.464-19.097,16.946-22.545,29.244     c-12.271,44.681-3.166,121.66,109.824,234.667C203.821,474.885,270.816,499.06,316.99,499.06     c10.69,0.049,21.339-1.34,31.659-4.13c12.293-3.448,22.775-11.518,29.252-22.519l20.198-33.673     c6.968-11.589,3.584-26.609-7.68-34.091l-80.546-53.692c-11.049-7.308-25.859-4.905-34.031,5.521l-23.45,30.148     c-2.451,3.226-6.897,4.166-10.445,2.21l-4.463-2.458c-14.686-8.004-32.964-17.971-69.879-54.886     c-3.994-3.994-7.612-7.731-11.008-11.307h333.517c11.982,0.009,21.713-9.676,21.76-21.658V34.573     C511.86,22.561,502.126,12.827,490.114,12.813z M229.318,401.362l4.335,2.381c10.897,6.093,24.614,3.266,32.213-6.639     l23.45-30.148c2.666-3.396,7.49-4.179,11.093-1.801l80.546,53.692c3.659,2.439,4.759,7.321,2.5,11.093l-20.198,33.673     c-4.218,7.233-11.071,12.553-19.123,14.848c-40.337,11.093-110.933,1.707-218.078-105.446S9.56,195.273,20.627,154.97     c2.293-8.051,7.61-14.903,14.839-19.123l33.673-20.207c3.773-2.254,8.652-1.155,11.093,2.5l53.717,80.546     c2.382,3.602,1.599,8.43-1.801,11.093l-30.157,23.458c-9.903,7.597-12.731,21.311-6.639,32.205l2.389,4.335     c8.533,15.65,19.14,35.123,57.805,73.779C194.212,382.213,213.677,392.828,229.318,401.362z M494.808,298.526     c-0.028,2.567-2.127,4.627-4.693,4.608H141.203c-11.083-12.674-20.64-26.604-28.476-41.506l-2.458-4.48     c-1.96-3.54-1.022-7.982,2.202-10.428l30.157-23.458c10.43-8.17,12.833-22.982,5.521-34.031l-20.275-30.43V34.573     c-0.014-1.249,0.476-2.451,1.359-3.334c0.883-0.883,2.085-1.373,3.334-1.359h357.547c1.249-0.014,2.451,0.476,3.334,1.359     c0.883,0.883,1.373,2.085,1.359,3.334V298.526z"/>
+                                            <path style="fill:white" d="M460.725,52.323l-142.618,108.16c-4.035,2.932-9.499,2.932-13.534,0L162.008,52.323     c-3.756-2.849-9.111-2.113-11.959,1.643c-2.849,3.756-2.113,9.111,1.643,11.959l142.583,108.151     c10.144,7.494,23.989,7.494,34.133,0L471.034,65.925c1.805-1.368,2.992-3.398,3.299-5.642c0.307-2.244-0.29-4.518-1.661-6.321     C469.824,50.213,464.478,49.48,460.725,52.323z"/>
+                                            <path style="fill:white" d="M238.517,174.793l-87.415,93.611c-3.214,3.447-3.025,8.848,0.422,12.062c3.447,3.214,8.848,3.025,12.062-0.422     l87.416-93.653c2.888-3.484,2.553-8.617-0.762-11.698C246.924,171.612,241.78,171.656,238.517,174.793z"/>
+                                            <path style="fill:white" d="M384.728,174.793c-3.214-3.447-8.614-3.637-12.062-0.422c-3.447,3.214-3.637,8.614-0.422,12.062l87.39,93.611     c3.214,3.447,8.614,3.637,12.062,0.422c3.447-3.214,3.637-8.614,0.422-12.062L384.728,174.793z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="#contact-us" class="scroll-to-section" id="to-footer">CONTACT</a>
+                    </li> -->
+
+                    <li>
+                        <div class="navside-svg-img-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 67 67" style="enable-background:new 0 0 67 67;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path style="fill:white" d="M4.25,35h39.899L33.86,45.478c-0.781,0.78-0.781,2.142-0.001,2.923c0.391,0.391,0.902,0.634,1.415,0.634    c0.512,0,1.023-0.171,1.414-0.562l12.815-12.801c0.375-0.375,0.586-0.878,0.586-1.408s-0.211-1.036-0.586-1.411l-0.608-0.607    c-0.138-0.2-0.312-0.374-0.513-0.511L36.689,20.042c-0.781-0.781-2.048-0.781-2.828,0c-0.781,0.781-0.781,1.856,0,2.638L42.373,31    H4.25c-1.104,0-2,0.896-2,2S3.146,35,4.25,35z"/>
+                                        <path style="fill:white" d="M64.75,59.281V9.541C64.75,4.747,60.842,0,56.003,0H30.002c-4.744,0-9.252,4.576-9.252,9.541v11.84c0,1.104,0.896,2,2,2    s2-0.896,2-2V9.541C24.75,6.792,27.471,4,30.002,4h26.001c2.647,0,4.747,2.937,4.747,5.541v49.74c0,2.663-2.203,3.719-4.747,3.719    H30.002c-2.365,0-5.252-0.887-5.252-3.719v-11.9c0-1.104-0.896-2-2-2s-2,0.896-2,2v11.9c0,4.693,4.181,7.719,9.252,7.719h26.001    C61.188,67,64.75,63.823,64.75,59.281z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="/company-login/c-sign-in-up.html">Sign In</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- nav bar end -->
+
+<!-- header start -->
+
+<div class="header-pricing parallax">
+
+    <div class="header-overlay"></div>
+
+    <div class="header-content">
+
+        <h2>Partner with us</h2>
+
+        <hr class="red-short-hr">
+
+        <p>We connect international talents with growth-seeking Nordic employers.</p>
+
+    </div>
+
+</div>
+
+<!-- header end -->
+
+<div class="arrow-container about">
+
+    <div class="row" id="about-us">
+
+        <div class="col-4">
+
+            <!-- <img class="big-icon" src="/icons/network.svg"> -->
+            <div class="pricing-about-icon-holder">
+                <i class="fas fa-search fa-2x"></i>
+            </div>
+
+            <p>SkillScanner is the first service that streamlines
+
+                the job hunting process for international talents
+
+                within the Nordics.</p>
+
+        </div>
+
+        <div class="col-4">
+
+            <!-- <img class="big-icon" src="icons/settings.svg"> -->
+            <div class="pricing-about-icon-holder">
+                <i class="fas fa-clipboard-check fa-2x"></i>
+            </div>
+
+            <p>SkillScanner offers personalised, affordable services
+
+                for companies looking to hire from our niche market
+
+                of English Speaking professionals.</p>
+
+        </div>
+
+        <div class="col-4">
+
+            <!-- <img class="big-icon" src="icons/share.svg"> -->
+            <div class="pricing-about-icon-holder">
+                <i class="fas fa-users fa-2x"></i>
+            </div>
+
+            <p>SkillScanner is a network with a diverse range of
+
+                English speaking professionals, from an array of
+
+                cultural and professional backgrounds, connected
+
+                together through the SkillScanner platform.</p>
+
+        </div>
+
+    </div>
+
+    <!-- <div class="nav-point-container">
+
+        <div class="nav-point active" id="point-0"></div>
+
+        <div class="nav-point" id="point-1"></div>
+
+        <div class="nav-point" id="point-2"></div>
+
+    </div> -->
+
+</div>
+
+<!-- Pricing start -->
+
+<h1 class="underline-header" id="packages">Our packages</h1>
+
+<div class="underline-header-highlight">
+
+</div>
+
+<p class="centered-grey-paragraph">We offer a variety of packages with different options for you</p>
+<div class="pricing-package-button-holder">
+
+    <div class="pricing-mobile-package-left" onclick="ChooseNextLeftPackage()">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+
+    <div class="pricing-packages-holder">
+
+        <div class="pricing-package-holder" id="pricing-package-holder-1">
+            <div class="pricing-card-holder">
+                <div class="pricing-card-top-line pricing-for-free"></div>
+
+                <div class="pricing-card-content">
+                    <p class="pricing-card-title">FREE</p>
+
+                    <div class="pricing-card-value">
+                        <p>0</p>
+                        <p>€/month</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>Limited job offers</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>Access to dashboard for managing job offers</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>The lifespans of job offers are limited</p>
+                    </div>
+
+                    <!-- <button class="pricing-select-button pricing-for-free">Selected</button> -->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-package-holder" id="pricing-package-holder-2">
+            <div class="pricing-card-holder">
+                <div class="pricing-card-top-line pricing-for-plus"></div>
+
+                <div class="pricing-card-content">
+                    <p class="pricing-card-title">PLUS</p>
+
+                    <div class="pricing-card-value">
+                        <p>9.99</p>
+                        <p>€/month</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>Unlimited job offers</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>Access to dashboard for managing job offers</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>The lifespans of job offers are 30 days</p>
+                    </div>
+
+                    <button class="pricing-select-button pricing-for-plus" id="pricing-select-button-for-plus">Select</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-package-holder" id="pricing-package-holder-3">
+            <div class="pricing-card-holder">
+                <div class="pricing-card-top-line pricing-for-premium"></div>
+
+                <div class="pricing-card-content">
+                    <p class="pricing-card-title">PREMIUM</p>
+
+                    <div class="pricing-card-value">
+                        <p>12.99</p>
+                        <p>€/month</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>Unlimited job offers</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>Access to dashboard for managing job offers</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>The lifespans of job offers are unlimited</p>
+                    </div>
+
+                    <div class="pricing-card-description">
+                        <p>Analytics of job offers provided</p>
+                    </div>
+
+                    <button class="pricing-select-button pricing-for-premium" id="pricing-select-button-for-premium">Select</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-mobile-package-right" onclick="ChooseNextRightPackage()">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+</div>
+
+<div class="pricing-mobile-nav-points">
+    <div class="pricing-nav-point active-pricing-nav-point" id="pricing-nav-point-1" onclick="ChooseFreePackage()">
+    </div>
+
+    <div class="pricing-nav-point" id="pricing-nav-point-2" onclick="ChoosePlusPackage()">
+    </div>
+
+    <div class="pricing-nav-point" id="pricing-nav-point-3" onclick="ChoosePremiumPackage()">
+    </div>
+</div>
+
+<h1 class="underline-header" id="packages">Our partners</h1>
+
+<div class="underline-header-highlight">
+
+</div>
+
+<!-- partners start -->
+
+<div id='parteners'
+
+     class='pricing-partners-holder partners-holder gb-padding-top-phone-24 gb-padding-top-tablet-32 gb-padding-top-desktop-48 gb-padding-bottom-phone-56 gb-padding-bottom-tablet-48 gb-padding-bottom-desktop-56'
+>
+
+     <div class="partners-scroll-left-holder" onmousedown="ScrollPartnersToLeft()">
+        <i class="fas fa-chevron-left fa-2x" ></i>
+    </div>
+
+
+
+    <div class="gb-exapndable-box" id="gb-exapndable-box">
+
+        <a target="_blank" href="https://bagbnb.com/" class="inner-boxes parteners" id="partner-1">
+
+            <img src="images/partners/BagBnbB.png" alt="BagBnB logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.arbetsformedlingen.se/" class="inner-boxes parteners" id="partner-2">
+
+            <img src="images/partners/Arbetsformedlingen.png" alt="Arbetsformedlingen logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.smun.se/" class="inner-boxes parteners" id="partner-3">
+
+            <img src="images/partners/SMUN.png" alt="SMUN logo">
+
+        </a>
+
+        <a target="_blank" href="https://www.vikingline.se/" class="inner-boxes parteners" id="partner-4">
+
+            <img src="images/partners/viking-line-partner.png" alt="Viking Line logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.kth.se/" class="inner-boxes parteners" id="partner-5">
+
+            <img src="images/partners/KTH-partner.png" alt="KTH logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="http://www.uksw.edu/en.php" class="inner-boxes parteners" id="partner-6">
+
+            <img src="images/partners/logo-university-partner.png" alt="University logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.lunduniversity.lu.se/" class="inner-boxes parteners" id="partner-7">
+
+            <img src="images/partners/Lund-University.png" alt="Lunduniversity logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.zuyd.nl/en" class="inner-boxes parteners" id="partner-8">
+
+            <img src="images/partners/ZUYD.png" alt="ZUYD logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.cphbusiness.dk/english" class="inner-boxes parteners" id="partner-9">
+
+            <img src="images/partners/CPH-Business-School.png" alt="CPH Business School logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://mightynetworks.com/" class="inner-boxes parteners" id="partner-10">
+
+            <img src="images/partners/mighty-network-partner.png" alt="Mighty network logo">
+
+        </a>
+
+        <a target="_blank" href="http://www.friidesigns.com" class="inner-boxes parteners" id="partner-11">
+
+            <img src="images/partners/Frii-Designs-partner.png" alt="Frii design logo">
+
+        </a>
+
+    </div>
+
+    <div class="partners-scroll-right-holder" onmousedown="ScrollPartnersToRight()">
+        <i class="fas fa-chevron-right fa-2x" ></i>
+    </div>
+
+    <!-- <div class="expand-button-wrapper parteners">
+
+        <div class="expand-button parteners">
+
+            <div class="gb-show-more-icon gb-big">
+
+                <i class="fas fa-angle-down"></i>
+
+            </div>
+
+            <p class='more active'>Show More</p>
+
+            <p class='less'>Show Less</p>
+
+        </div>
+
+    </div> -->
+
+</div>
+
+<!-- partners end -->
+
+<h1 class="underline-header" id="packages">Contact us for business</h1>
+
+<div class="underline-header-highlight"></div>
+
+<div class="pricing-business-contact-holder" id="pricing-business-contact-holder">
+    <div class="pricing-business-card" id="pricing-business-card-1">
+        <div class="business-card-image-holder">
+            <div class="business-card-image-overlay">
+
+            </div>
+        </div>
+
+        <div class="business-card-content">
+            <p class="business-card-country">DENMARK</p>
+
+            <p class="business-card-info-text">Amrik Soar</p>
+
+            <p class="business-card-info-text">Head of Business Development</p>
+
+            <p class="business-card-info-text">amrik.soar@globuzzer.com</p>
+
+            <p class="business-card-info-text">Phone: +45 91 1917 04</p>
+        </div>
+    </div>
+
+    <div class="pricing-business-card business-card-margin" id="pricing-business-card-2">
+        <div class="business-card-image-holder business-card-for-second">
+            <div class="business-card-image-overlay">
+
+            </div>
+        </div>
+
+        <div class="business-card-content">
+            <p class="business-card-country">SWEDEN</p>
+
+            <p class="business-card-info-text">Rami Alfasfos</p>
+
+            <p class="business-card-info-text">Head of Business Development</p>
+
+            <p class="business-card-info-text">rami@globuzzer.com</p>
+
+            <p class="business-card-info-text">Phone: +46 76 2712 220</p>
+        </div>
+    </div>
+</div>
+
+<div class="pricing-mobile-nav-points" style="margin-bottom: 50px">
+    <div class="pricing-nav-point active-pricing-nav-point" id="pricing-nav-point-business-1" onclick="ChooseBusinessCard1()">
+    </div>
+
+    <div class="pricing-nav-point" id="pricing-nav-point-business-2" onclick="ChooseBusinessCard2()">
+    </div>
+</div>
+
+<div class="footer-container" id="footer">
+    <div class="all-rights-container" >
+        <p >© 2019 All rights reserved.</p>
+    </div>
+
+    <div class="cluster-info-1">
+        <p >SKILLSCANNER</p>
+        <p >Skyttevägen 29, Saltsjöbaden,Sweden</p>
+        <p >+46 73 555 5134</p>
+        <p >info@globuzzer.com</p>
+    </div>
+
+    <div class="cluster-info-2">
+        <p style="cursor: pointer" onclick="window.location='/#job-post-container'">- Jobs</p>
+        <p style="cursor: pointer" onclick="window.location='/#new-article-content-holder'">- Articles</p>
+        <!-- <p style="cursor: pointer" onclick="window.location = './pricing.html#footer'">- Contact</p> -->
+        <p style="cursor: pointer" onclick="window.location = './pricing.html'">- Pricing</p>
+        <p style="cursor: pointer" onclick="window.location = './company-login/c-sign-in-up.html'">- Sign in</p>
+    </div>
+
+    <div class="cluster-info-3">
+        <p style="cursor: pointer" onclick="window.open('https://mightynetworks.com/terms_of_use')">Terms and conditions</p>
+        <p style="cursor: pointer" onclick="window.open('https://mightynetworks.com/privacy_policy')">Privacy policy</p>
+    </div>
+
+    <div class="cluster-info-4">
+        <a class='footer-contact-link'
+        target="_blank"
+        href="https://globuzzer.mn.co/">
+
+            <svg class="gb-icon-fill-white  gb-icon-medium" version="1.1"
+
+                xmlns="http://www.w3.org/2000/svg"
+
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <use xlink:href="#gb-logo-small"></use>
+
+            </svg>
+
+        </a>
+
+        <a class='footer-contact-link'
+            target="_blank"
+            href="https://www.facebook.com/TheSkillScanner/">
+
+            <svg class="gb-icon-fill-white  gb-icon-medium" version="1.1"
+
+                    xmlns="http://www.w3.org/2000/svg"
+
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <use xlink:href="#facebook"></use>
+
+            </svg>
+
+        </a>
+
+        <a class='footer-contact-link' target="_blank" href="https://twitter.com/globuzzer">
+
+            <svg class="gb-icon-fill-white  gb-icon-medium" version="1.1"
+
+                 xmlns="http://www.w3.org/2000/svg"
+
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <use xlink:href="#twitter"></use>
+
+            </svg>
+
+        </a>
+
+        <a class='footer-contact-link' target="_blank" href="https://www.youtube.com/channel/UC4u8N-QBDMWG6OqzSni8clw">
+
+            <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                 xmlns="http://www.w3.org/2000/svg"
+
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <use xlink:href="#youtube"></use>
+
+            </svg>
+
+        </a>
+
+        <a class='footer-contact-link' target="_blank" href="https://www.linkedin.com/company/35442644/admin/">
+
+            <svg class="gb-icon-fill-white  gb-icon-medium" version="1.1"
+
+                 xmlns="http://www.w3.org/2000/svg"
+
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <use xlink:href="#linkedin"></use>
+
+            </svg>
+
+        </a>
+
+        <a class='footer-contact-link' target="_blank" href="https://www.pinterest.se/globuzzer/pins/">
+
+            <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                 xmlns="http://www.w3.org/2000/svg"
+
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <use xlink:href="#pinterest"></use>
+
+            </svg>
+
+        </a>
+
+        <a class='footer-contact-link' target="_blank" href="https://www.instagram.com/globuzzer/">
+
+            <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                 xmlns="http://www.w3.org/2000/svg"
+
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <use xlink:href="#instagram"></use>
+
+            </svg>
+
+        </a>
+    </div>
+
+
+</div>
+
+
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a>
+
+    from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
+
+            href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0
+
+        BY</a></div> -->
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-storage.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+    authDomain: "skillscanner-73181.firebaseapp.com",
+    databaseURL: "https://skillscanner-73181.firebaseio.com",
+    projectId: "skillscanner-73181",
+    storageBucket: "skillscanner-73181.appspot.com",
+    messagingSenderId: "269557896133"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132822587-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132822587-2');
+</script>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="js/jquery.ihavecookies.js"></script>
+
+<script src="js/hammer/hammer.min.js"></script>
+<script src="js/hammer/hammer.main.js"></script>
+
+<!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
+<script type="text/javascript" src="js/slider-handler.js"></script>
+
+<script type="text/javascript" src="js/svgs-loader.js"></script>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+
+<script src="js/nav-bar-black.js"></script>
+
+<script type="text/javascript" src="js/scroll-effects.js"></script>
+
+<script type="text/javascript" src="js/handle-partners-expand.js"></script>
+
+<script type="text/javascript" src="js/nav-bar-aside.js"></script>
+
+</body>
+
+</html>

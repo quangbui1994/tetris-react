@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./preview.css">
+    </head>
+    <body>
+        <nav class="Navigation nav-bar">
+            <div class="logo">
+                <img src="../../images/ss-logo-version_Fotor.png" alt="Globuzzer Logo">
+            </div>
+            <div class="dropdown show">
+                <a style="margin-bottom: 0" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon ion-ios-contact"></i>
+                </a>
+                
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="../edit-profile.html">Edit profile</a>
+                    <a class="dropdown-item" href="#">Log out</a>
+                </div>
+            </div>
+            <div class="dropdown show">
+                <a style="margin-bottom: 0" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="DrawerToggle">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </a>
+                
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="./post-a-job/post-a-job.html">Post a job</a>
+                    <a class="dropdown-item" href="./job-list/job-list.html">Job list</a>
+                    <a class="dropdown-item" href="./job-application/job-application.html">Job applications</a>
+                    <a class="dropdown-item" href="./your-plan/your-plan.html">Your plan</a>
+                </div>
+            </div>
+        </nav>
+        <div class="left-holder">
+            <div class="left-navbar">
+                <a class="label-postJob"  href="../../post-a-job.html">
+                    <p>Post a job</p>
+                </a>
+                <a href="../../job-list.html" class="label-jobList">
+                    <p>Job list</p>
+                </a>
+                <a href="../../job-application.html" class="label-jobApp">
+                    <p>Job applications</p>
+                </a>
+                <a href="../../your-plan.html" class="label-jobPlan">
+                    <p>Your plan</p>
+                </a>
+
+            </div>
+        </div>
+        <div class="vertical-line"></div>
+        <main>
+            <ol class="breadcrumb">
+                    <i class="fas fa-home"></i>
+                   <li class="breadcrumb-item breadcrumb-dashboard"><a href="../../index.html">Dashboard</a></li>
+                   <li class="breadcrumb-item breadcrumb-dashboard active">Preview profile</li>
+            </ol>
+            <div class="preview">     
+                
+                <h2>Preview</h2>
+                <div class="desktop-extra-holder">
+                    <div class="company-logo-holder">
+                        <div class="company-logo">
+                            <p>Logo</p>
+                        </div>
+                        <div class="company-name">
+                            <p>Company name</p>
+                        </div>
+                    </div>
+                    <div class="company-info-holder">
+                        <div>
+                            <i class="icon ion-ios-pin"></i>
+                            <p id="company-location">Stockholm, Sweden</p>
+                        </div>
+                        <div>
+                            <i class="icon ion-ios-globe"></i>
+                            <p id="company-website">www.mycompany.com</p>
+                        </div>
+                        <div>
+                            <i class="icon ion-ios-mail"></i>
+                            <p id="company-email">mail@mycompany.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="preview-holder">
+                    <h3>Company description</h3>
+                    <div class="line-separator"></div>
+
+                    <p id="company-description">Please add your company description</p> 
+                </div>
+                <button class="save-btn">Save</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </main>
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-firestore.js"></script>
+
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+            authDomain: "skillscanner-73181.firebaseapp.com",
+            databaseURL: "https://skillscanner-73181.firebaseio.com",
+            projectId: "skillscanner-73181",
+            storageBucket: "skillscanner-73181.appspot.com",
+            messagingSenderId: "269557896133"
+        };
+        firebase.initializeApp(config);
+        </script>
+        <!-- Include the Quill library -->
+        <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
+        <!-- Initialize Quill editor -->
+        <!-- <script>
+            var Font = Quill.import('formats/font');
+            // We do not add Aref Ruqaa since it is the default
+            Font.whitelist = ['Montserrat', 'roboto'];
+            Quill.register(Font, true);
+            var quill = new Quill('#company-description', {
+                theme: 'snow',
+                placeholder: 'Add descriptions here (max 600 characters)'
+            });
+        </script> -->
+
+        <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="./preview-profile.js"></script>
+    </body>
+</html>

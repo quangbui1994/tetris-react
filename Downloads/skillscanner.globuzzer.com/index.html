@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillScanner</title>
+
+    <!--link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet"-->
+
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/landing-page-job-post.css">
+
+    <link rel="stylesheet" href="css/gb-style.css">
+
+    <link rel="stylesheet" href="css/skillscanner.css">
+
+    <link rel="stylesheet" href="css/dropzone.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+    <!-- Facebook Open Graph tags -->
+    <meta property="og:url"           content="https://skillscanner.globuzzer.com/?jobId=Back+End+Developer-1565803257858" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="A platform for students" />
+    <meta property="og:description"   content="Take a look " />
+    <meta property="fb:app_id"        content="2352379188372286" />
+    <meta property="og:image"         content="https://skillscanner.globuzzer.com/images/ss-logo-version_Fotor.png"/>
+    <meta property ="og:image:width"  content="600">
+    <meta property ="og:image:height" content="400">
+</head>
+
+<body>
+
+<div id="gdpr-cookie-message" style="display:none">
+    <h4>Cookies &amp; Privacy</h4>
+    <p>This website uses cookies to ensure you get the best experience on our website. By continuing, you accept our </p>
+    <a href="./privacy.html">cookie policy</a>
+    <button id="gdpr-cookie-accept" type="button">Accept</button>
+</div>
+
+<!-- Modal -->
+
+<div id="filter-modal" class="modal"></div>
+
+<div id="nav-modal" class="modal"></div>
+
+<div id="apply-modal" class="modal"></div>
+
+<!-- Apply box start -->
+
+<div class="apply-description-modal-box-holder" id="apply-modal-box">
+    <div class="apply-description-relative">
+        <p style="display: none" id="dmb-company-mail"></p>
+        <p style="display: none" id="dmb-job-id"></p>
+        <p style="display: none" id="dmb-job-category"></p>
+        <p style="display: none" id="dmb-job-country"></p>
+        <p style="display: none" id="dmb-job-city"></p>
+        <p style="display: none" id="dmb-job-salary"></p>
+        <p style="display: none" id="dmb-job-position"></p>
+        <p style="display: none" id="dmb-job-title-hidden"></p>
+        <p style="display: none" id="dmb-job-deadline"></p>
+        <p style="display: none" id="dmb-job-image-url"></p>
+        <input style="position: absolute; top: -9999px" id="dmb-job-current-link" type="text" tabindex='-1' aria-hidden='true'></p>
+
+        <div class="description-modal-box">
+
+            <div class="dmb-job-title" id="dmb-job-title">
+
+            </div>
+            <div class="dmb-underline-red">
+
+            </div>
+
+            <div class="dmb-company-name" id="dmb-company-name">
+
+            </div>
+
+            <div class="dmb-table-information">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Job type</th>
+                            <th>Salary</th>
+                            <th>Apply latest by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="td-location"></td>
+                            <td id="td-job-type"></td>
+                            <td id="td-salary"></td>
+                            <td id="td-apply-latest-by">
+                                <p>22.5.2019</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="dmb-table-information-mb">
+                <div class="dmb-table-row-mb">
+                    <div class="dmb-row-holder-mb">
+                        <div class="dmb-title-mb">
+                            <p>Location</p>
+                        </div>
+                        <div class="dmb-context-mb" id="td-location-mb">
+                        </div>
+                    </div>
+                    <div class="dmb-row-holder-mb">
+                        <div class="dmb-title-mb">
+                            <p>Job type</p>
+                        </div>
+                        <div class="dmb-context-mb" id="td-job-type-mb">
+                        </div>
+                    </div>
+                </div>
+                <div class="dmb-table-row-mb">
+                    <div class="dmb-row-holder-mb">
+                        <div class="dmb-title-mb">
+                            <p>Salary</p>
+                        </div>
+                        <div class="dmb-context-mb" id="td-salary-mb">
+                        </div>
+                    </div>
+                    <div class="dmb-row-holder-mb">
+                        <div class="dmb-title-mb">
+                            <p>Apply latest by</p>
+                        </div>
+                        <div class="dmb-context-mb" id="td-apply-latest-by-mb">
+                            <p>22.5.2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dmb-description-requirement-info-holder">
+                <div class="dmb-header-title">
+                    <div class="dmb-red-point">
+
+                    </div>
+                    <div class="dmb-header-text">
+                        <p>JOB DESCRIPTION</p>
+                    </div>
+                </div>
+
+                <div class="dmb-text-holder" id="dmb-text-holder-for-job-description">
+
+                </div>
+
+                <div class="dmb-header-title">
+                    <div class="dmb-red-point">
+
+                    </div>
+                    <div class="dmb-header-text">
+                        <p>REQUIREMENT</p>
+                    </div>
+                </div>
+
+                <div class="dmb-text-holder" id="dmb-text-holder-for-job-requirement">
+                </div>
+            </div>
+
+            <div class="dmb-footer">
+                <p>SHARE THIS JOB: </p>
+                <!-- <i class="fas fa-envelope fa-2x"></i>
+                <i class="fab fa-twitter fa-2x"></i> -->
+                <i class="fab fa-facebook-square fa-2x" onclick="OpenFBShareDialog()"></i>
+                <div style="position: relative" onclick="CopyCurrentUrl()">
+                    <div class="link-copied" id="link-copied">
+                        <p>Link copied!</p>
+                        <i class="fas fa-caret-down fa-lg"></i>
+                    </div>
+                    <i class="fas fa-link fa-lg"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="apply-modal-box" style="display: none;" id="apply-modal-box-for-none-skillscanner">
+            <div class="modal-box-header">
+
+                <p>APPLY NOW</p>
+                <div class="close-modal apply-modal-box-close-icon-holder">
+                    <i class="fas fa-times"></i>
+                </div>
+
+            </div>
+
+            <div class="dmb-underline-red">
+
+            </div>
+
+            <div class="apply-form" id="apply-form">
+
+                <p class="mandatory-fields">* Mandatory fields</p>
+
+                <div class="apply-form-field-line">
+                    <div style="position: relative">
+                        <input type="text" placeholder="First name *" class="amb-first-name" id="amb-first-name" onkeyup="$('#apply-first-name').removeClass('show-warning-incorrect-input')">
+                        <div class="warning-incorrect-input" id="apply-first-name">
+                            <p >Please fill this</p>
+                        </div>
+                    </div>
+
+                    <div style="position: relative">
+                        <input type="text" placeholder="Last name *" class="amb-last-name" id="amb-last-name" onkeyup="$('#apply-last-name').removeClass('show-warning-incorrect-input')">
+
+                        <div class="warning-incorrect-input" id="apply-last-name">
+                            <p >Please fill this</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position: relative;">
+                    <input type="email" placeholder="Email *" id="amb-email" onkeyup="$('#apply-email').removeClass('show-warning-incorrect-input')">
+
+                    <div class="warning-incorrect-input" id="apply-email">
+                        <p >Wrong format</p>
+                    </div>
+                </div>
+
+                <div class="apply-form-field-line">
+                    <div style="position: relative">
+                        <div class="instruction-for-field">
+                            <i class="fas fa-info-circle" onclick="ShowPhoneInstruction()"></i>
+                        </div>
+                        <div class="instruction-content-holder" id="phone-instruction-content" style="display: none">
+                            <div>
+                                <p>Example: (+358)123456789</p>
+                            </div>
+                        </div>
+                        <input type="tel" placeholder="Phone (Country code) + number"
+                        class="amb-first-name" onkeyup="$('#apply-phone').removeClass('show-warning-incorrect-input');DontAllowWord(this)"
+
+                        id="amb-phone"
+                        >
+
+                        <div class="warning-incorrect-input" id="apply-phone">
+                            <p>Phone format</p>
+                        </div>
+                    </div>
+
+                    <div style="position: relative">
+                        <input type="text" placeholder="Location *" class="amb-last-name" onkeyup="$('#apply-location').removeClass('show-warning-incorrect-input')" id="amb-location">
+
+                        <div class="warning-incorrect-input" id="apply-location">
+                            <p >Please fill this</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apply-form-field-line">
+                    <input type="text" placeholder="Personal link (optional)" id="amb-link">
+                </div>
+
+
+                <div class="apply-form-field-line">
+                    <div class="cv-cover-holder" style="flex-direction: column">
+                        <div class="cv-description-holder">
+                            <div class="instruction-for-field">
+                                <i class="fas fa-info-circle" onclick="ShowMaxFileSizeCV()"></i>
+                            </div>
+                            <div class="instruction-content-holder" id="cv-max-file-size" style="display: none">
+                                <div>
+                                    <p>Max. file size is 5MB.</p>
+                                </div>
+                            </div>
+                            <p>Add your CV * (*.pdf, *.doc, *.docx)</p>
+                        </div>
+                        <div class="cv-holder">
+                            <p id="cv-inform">Drop file here</p>
+
+                            <div class="cloud-upload-browse-row">
+                                <i class="fas fa-cloud-upload-alt fa-2x"></i>
+
+                                <button>Browse file</button>
+                            </div>
+                        </div>
+
+                        <div class="cv-holder" id="cv-file" style="border: 1px dashed #E5E5E5;">
+
+                        </div>
+
+                        <div class="warning-incorrect-input" id="apply-cv">
+                            <p >Add a file</p>
+                        </div>
+                    </div>
+
+
+                    <div class="cv-cover-holder" style="flex-direction: column">
+                        <div class="cover-description-holder">
+                            <div class="instruction-for-field">
+                                <i class="fas fa-info-circle" onclick="ShowMaxFileSizeCover()"></i>
+                            </div>
+                            <div class="instruction-content-holder" id="cover-max-file-size" style="display: none">
+                                <div>
+                                    <p>Max. file size is 5MB.</p>
+                                </div>
+                            </div>
+
+                            <p>Add a cover letter * (*.pdf, *.doc, *.docx)</p>
+                        </div>
+                        <div class="cv-holder">
+                            <p id="cover-inform">Drop file here</p>
+
+                            <div class="cloud-upload-browse-row">
+                                <i class="fas fa-cloud-upload-alt fa-2x"></i>
+
+                                <button>Browse file</button>
+                            </div>
+                        </div>
+
+                        <div class="cv-holder" id="cover-file" style="border: 1px dashed #E5E5E5;">
+
+                        </div>
+                        <div class="warning-incorrect-input" id="apply-cover-letter">
+                            <p >Add a file</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position: relative;">
+                    <textarea  id="amb-about" placeholder="Tell us more about yourself (max 200 characters)" onkeyup="$('#apply-about').removeClass('show-warning-incorrect-input')"></textarea>
+
+                    <div class="warning-incorrect-input" id="apply-about">
+                        <p >Please fill this</p>
+                    </div>
+                </div>
+
+                <div style="position: relative; display: flex; align-items: center;">
+                    <input class="accept-all-terms-conditions" id="accept-all-terms-conditions"
+                     onchange="$('#apply-approve').removeClass('show-warning-incorrect-input')" type="checkbox" style="margin: 0"
+                     ></input>
+                    <p style="
+                    margin-left: 10px;
+                    color: gray;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #A5A5A5;">I accept all terms & conditions *</p>
+
+                    <div class="warning-incorrect-input" id="apply-approve">
+                        <p >Please approve</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; width: calc(90% + 10px)">
+                    <button type="submit" class="amb-submit-button" onclick="closeApplyModal()">Cancel</button>
+                    <button type="submit" class="amb-submit-button" onclick="SubmitApplication()">Apply</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="skillscanner-apply-form" id="skillscanner-apply-form">
+            <div class="skillscanner-close-apply-form" onclick="closeApplyModal()">
+                <i class="fas fa-times"></i>
+            </div>
+            <p>Apply via the company website</p>
+
+            <button type="submit" class="" id="skillscanner-apply-button">Apply here</button>
+        </div>
+    </div>
+</div>
+<!-- apply box end -->
+
+
+<!-- loading box-->
+<div class="loading-box" id="loading-box">
+    <div class="loading-box-content">
+        <p>We are submitting your application</p>
+
+        <div class="loading-ani"></div>
+
+    </div>
+</div>
+
+
+<!-- error box-->
+<div class="error-box" id="error-box">
+
+    <div class="loading-box-content">
+        <div class="error-close-box" onclick="closeApplyModal()">
+            <i class="fas fa-times"></i>
+        </div>
+        <p>Sorry, there was something wrong with the process. Please apply later.</p>
+    </div>
+</div>
+
+<!-- successful application box -->
+
+<div class="success-apply-box" id="success-box">
+    <div class="close-holder" onclick="closeApplyModal()">
+        <i class="close-modal fas fa-times"></i>
+    </div>
+
+    <div class="congrats-holder">
+        <p class="big-congrats">CONGRATULATIONS!</p>
+        <p class="small-info">Your application has been submitted successfully</p>
+    </div>
+
+    <div class="join-globuzzer-community-ad">
+        <p>JOIN GLOBUZZER COMMUNITY</p>
+    </div>
+    <div class="join-globuzzer-community-benefits-holder">
+        <div class="join-globuzzer-community-benefits-line">
+            <p class="benefits-text">BENEFITS:</p>
+        </div>
+        <div class="join-globuzzer-community-benefits-line">
+            <div class="dmb-red-point">
+
+            </div>
+            <p>Connect with other expats near you</p>
+        </div>
+
+        <div class="join-globuzzer-community-benefits-line">
+            <div class="dmb-red-point">
+
+            </div>
+            <p>Easy way for networking</p>
+        </div>
+
+        <div class="join-globuzzer-community-benefits-line">
+            <div class="dmb-red-point">
+
+            </div>
+            <p>Get notifications on recruitment events</p>
+        </div>
+
+        <div class="join-globuzzer-community-benefits-line">
+            <div class="dmb-red-point">
+
+            </div>
+            <p>Totally free of charge</p>
+        </div>
+
+        <button class="sab-join-us-button" onclick="closeApplyModal(); JoinTheCommunity()">Join Us</button>
+    </div>
+
+    <div class="continue-search-job-holder">
+        <p onclick="closeApplyModal();">Continue searching for jobs</p>
+        <div style="width: 100%; height: 1px; background-color: rgb(255, 32, 32);">
+        </div>
+    </div>
+</div>
+
+<!-- successful box end -->
+
+<!-- Visible content -->
+
+<div class="nav-bar">
+
+    <div class="logo">
+
+        <a href="/"><img src="./images/ss-logo-version_Fotor.png" alt="logo" id="ss-logo"></a>
+
+
+    </div>
+
+    <div class="right-content">
+
+        <svg class='open-side-bar gb-icon-medium gb-icon-white' id="navbar-hamburger-button" version="1.1"
+
+             xmlns="http://www.w3.org/2000/svg"
+
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+
+            <use xlink:href='#menu'></use>
+
+        </svg>
+
+        <div class="mobile-view">
+            <div class="mobile-view-behind-layer">
+                <svg class='nav-aside-close-icon gb-icon-medium gb-icon-white-opacity-50'
+
+                    version="1.1"
+
+                    xmlns="http://www.w3.org/2000/svg"
+
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href='#close'></use>
+
+                </svg>
+
+                <ul class="list">
+
+                    <li>
+                        <div class="navside-i-icon-holder">
+                            <i class="fas fa-suitcase fa-lg"></i>
+                        </div>
+                        <a href="#job-post-container" class="scroll-to-section" id="to-job-section">
+                            JOBS
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <div class="navside-svg-img-holder">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 465 465" enable-background = "0 0 500 500"  xml:space="preserve">
+                                <g>
+                                    <path style="fill:white" d="M405.437,0h-10c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h2.5v435h-2.5c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5
+                                        h10c4.143,0,7.5-3.358,7.5-7.5V7.5C412.937,3.358,409.579,0,405.437,0z"/>
+                                    <path style="fill:white" d="M315.437,140H109.563c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h205.873c4.143,0,7.5-3.358,7.5-7.5
+                                        S319.579,140,315.437,140z"/>
+                                    <path style="fill:white" d="M315.437,260H109.563c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h205.873c4.143,0,7.5-3.358,7.5-7.5
+                                        S319.579,260,315.437,260z"/>
+                                    <path style="fill:white" d="M315.437,300H232.5c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h82.937c4.143,0,7.5-3.358,7.5-7.5
+                                        S319.579,300,315.437,300z"/>
+                                    <path style="fill:white" d="M365.437,0H129.563c-0.251,0-0.501,0.013-0.749,0.038c-0.184,0.019-0.365,0.05-0.545,0.082
+                                        c-0.06,0.011-0.122,0.016-0.182,0.028c-0.215,0.043-0.425,0.098-0.632,0.159c-0.025,0.008-0.052,0.012-0.077,0.02
+                                        c-0.212,0.064-0.419,0.141-0.623,0.223c-0.022,0.009-0.044,0.015-0.066,0.024c-0.195,0.081-0.383,0.172-0.569,0.269
+                                        c-0.031,0.016-0.064,0.029-0.094,0.045c-0.173,0.093-0.339,0.196-0.504,0.301c-0.042,0.027-0.086,0.049-0.127,0.077
+                                        c-0.154,0.103-0.3,0.216-0.446,0.33c-0.048,0.038-0.098,0.07-0.145,0.109c-0.173,0.142-0.338,0.293-0.498,0.451
+                                        c-0.015,0.015-0.031,0.027-0.046,0.042l-70,70c-0.018,0.018-0.033,0.039-0.051,0.057c-0.153,0.156-0.301,0.317-0.44,0.486
+                                        c-0.044,0.054-0.082,0.112-0.125,0.167c-0.108,0.138-0.215,0.277-0.313,0.423c-0.033,0.049-0.06,0.101-0.092,0.151
+                                        c-0.1,0.157-0.199,0.315-0.287,0.48c-0.02,0.037-0.035,0.075-0.054,0.112c-0.093,0.181-0.182,0.363-0.261,0.552
+                                        c-0.011,0.026-0.019,0.054-0.03,0.081c-0.08,0.2-0.155,0.402-0.218,0.61c-0.008,0.026-0.013,0.053-0.021,0.08
+                                        c-0.061,0.207-0.116,0.416-0.158,0.63c-0.012,0.059-0.017,0.119-0.027,0.178c-0.032,0.182-0.064,0.363-0.082,0.549
+                                        c-0.025,0.248-0.038,0.498-0.038,0.749v380c0,4.142,3.357,7.5,7.5,7.5h305.873c4.143,0,7.5-3.358,7.5-7.5V7.5
+                                        C372.937,3.358,369.579,0,365.437,0z M122.063,25.606V70H77.67L122.063,25.606z M357.937,450H67.063V85h62.5
+                                        c4.143,0,7.5-3.358,7.5-7.5V15h220.873V450z"/>
+                                    <path style="fill:white" d="M159.563,85h155.873c4.143,0,7.5-3.358,7.5-7.5s-3.357-7.5-7.5-7.5H159.563c-4.143,0-7.5,3.358-7.5,7.5
+                                        S155.421,85,159.563,85z"/>
+                                    <path style="fill:white" d="M315.437,180H232.5c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h82.937c4.143,0,7.5-3.358,7.5-7.5
+                                        S319.579,180,315.437,180z"/>
+                                    <path style="fill:white" d="M315.437,220H232.5c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h82.937c4.143,0,7.5-3.358,7.5-7.5
+                                        S319.579,220,315.437,220z"/>
+                                    <path style="fill:white" d="M192.5,315c4.143,0,7.5-3.358,7.5-7.5s-3.357-7.5-7.5-7.5h-82.937c-4.143,0-7.5,3.358-7.5,7.5v80
+                                        c0,4.142,3.357,7.5,7.5,7.5H192.5c4.143,0,7.5-3.358,7.5-7.5v-50c0-4.142-3.357-7.5-7.5-7.5s-7.5,3.358-7.5,7.5V380h-67.937v-65
+                                        H192.5z"/>
+                                    <path style="fill:white" d="M109.563,235H192.5c4.143,0,7.5-3.358,7.5-7.5s-3.357-7.5-7.5-7.5h-82.937c-4.143,0-7.5,3.358-7.5,7.5
+                                        S105.421,235,109.563,235z"/>
+                                    <path style="fill:white" d="M265.437,380H232.5c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h32.937c4.143,0,7.5-3.358,7.5-7.5
+                                        S269.579,380,265.437,380z"/>
+                                    <path style="fill:white" d="M315.437,340H232.5c-4.143,0-7.5,3.358-7.5,7.5s3.357,7.5,7.5,7.5h82.937c4.143,0,7.5-3.358,7.5-7.5
+                                        S319.579,340,315.437,340z"/>
+                                    <path style="fill:white" d="M109.563,195H192.5c4.143,0,7.5-3.358,7.5-7.5s-3.357-7.5-7.5-7.5h-82.937c-4.143,0-7.5,3.358-7.5,7.5
+                                        S105.421,195,109.563,195z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="#card-categories" class="scroll-to-section" id="to-article-section">
+
+                            ARTICLES
+                        </a>
+                    </li>
+
+                    <!-- <li><a href="#about-us" class="scroll-to-section" id="to-about-us">ABOUT US</a></li> -->
+
+                    <!-- <li>
+                        <div class="navside-svg-img-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 511.874 511.874" style="enable-background:new 0 0 511.874 511.874;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path style="fill:white" d="M490.114,12.813H132.568c-12.012,0.014-21.746,9.748-21.76,21.76v98.62l-16.35-24.525     c-7.484-11.289-22.535-14.676-34.133-7.68l-33.638,20.224c-11.016,6.464-19.097,16.946-22.545,29.244     c-12.271,44.681-3.166,121.66,109.824,234.667C203.821,474.885,270.816,499.06,316.99,499.06     c10.69,0.049,21.339-1.34,31.659-4.13c12.293-3.448,22.775-11.518,29.252-22.519l20.198-33.673     c6.968-11.589,3.584-26.609-7.68-34.091l-80.546-53.692c-11.049-7.308-25.859-4.905-34.031,5.521l-23.45,30.148     c-2.451,3.226-6.897,4.166-10.445,2.21l-4.463-2.458c-14.686-8.004-32.964-17.971-69.879-54.886     c-3.994-3.994-7.612-7.731-11.008-11.307h333.517c11.982,0.009,21.713-9.676,21.76-21.658V34.573     C511.86,22.561,502.126,12.827,490.114,12.813z M229.318,401.362l4.335,2.381c10.897,6.093,24.614,3.266,32.213-6.639     l23.45-30.148c2.666-3.396,7.49-4.179,11.093-1.801l80.546,53.692c3.659,2.439,4.759,7.321,2.5,11.093l-20.198,33.673     c-4.218,7.233-11.071,12.553-19.123,14.848c-40.337,11.093-110.933,1.707-218.078-105.446S9.56,195.273,20.627,154.97     c2.293-8.051,7.61-14.903,14.839-19.123l33.673-20.207c3.773-2.254,8.652-1.155,11.093,2.5l53.717,80.546     c2.382,3.602,1.599,8.43-1.801,11.093l-30.157,23.458c-9.903,7.597-12.731,21.311-6.639,32.205l2.389,4.335     c8.533,15.65,19.14,35.123,57.805,73.779C194.212,382.213,213.677,392.828,229.318,401.362z M494.808,298.526     c-0.028,2.567-2.127,4.627-4.693,4.608H141.203c-11.083-12.674-20.64-26.604-28.476-41.506l-2.458-4.48     c-1.96-3.54-1.022-7.982,2.202-10.428l30.157-23.458c10.43-8.17,12.833-22.982,5.521-34.031l-20.275-30.43V34.573     c-0.014-1.249,0.476-2.451,1.359-3.334c0.883-0.883,2.085-1.373,3.334-1.359h357.547c1.249-0.014,2.451,0.476,3.334,1.359     c0.883,0.883,1.373,2.085,1.359,3.334V298.526z"/>
+                                            <path style="fill:white" d="M460.725,52.323l-142.618,108.16c-4.035,2.932-9.499,2.932-13.534,0L162.008,52.323     c-3.756-2.849-9.111-2.113-11.959,1.643c-2.849,3.756-2.113,9.111,1.643,11.959l142.583,108.151     c10.144,7.494,23.989,7.494,34.133,0L471.034,65.925c1.805-1.368,2.992-3.398,3.299-5.642c0.307-2.244-0.29-4.518-1.661-6.321     C469.824,50.213,464.478,49.48,460.725,52.323z"/>
+                                            <path style="fill:white" d="M238.517,174.793l-87.415,93.611c-3.214,3.447-3.025,8.848,0.422,12.062c3.447,3.214,8.848,3.025,12.062-0.422     l87.416-93.653c2.888-3.484,2.553-8.617-0.762-11.698C246.924,171.612,241.78,171.656,238.517,174.793z"/>
+                                            <path style="fill:white" d="M384.728,174.793c-3.214-3.447-8.614-3.637-12.062-0.422c-3.447,3.214-3.637,8.614-0.422,12.062l87.39,93.611     c3.214,3.447,8.614,3.637,12.062,0.422c3.447-3.214,3.637-8.614,0.422-12.062L384.728,174.793z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="./pricing.html#gb-feedback" class="scroll-to-section" id="to-contact-us">CONTACT</a>
+                    </li> -->
+
+                    <li>
+                        <div class="navside-svg-img-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 59.997 59.997" style="enable-background:new 0 0 59.997 59.997;" xml:space="preserve">
+                                <g>
+                                    <path style="fill:white" d="M59.206,0.293c-0.391-0.391-1.023-0.391-1.414,0L54.084,4H30.802L1.532,33.511c-0.667,0.666-1.034,1.553-1.034,2.495   s0.367,1.829,1.034,2.495l20.466,20.466c0.687,0.687,1.588,1.03,2.491,1.03c0.906,0,1.814-0.346,2.508-1.04l28.501-29.271V5.414   l3.707-3.707C59.596,1.316,59.596,0.684,59.206,0.293z M53.499,28.874L25.574,57.553c-0.595,0.596-1.565,0.596-2.162,0   L2.946,37.087c-0.289-0.289-0.448-0.673-0.448-1.081s0.159-0.792,0.451-1.084L31.635,6h20.45l-4.833,4.833   C46.461,10.309,45.516,10,44.499,10c-2.757,0-5,2.243-5,5s2.243,5,5,5s5-2.243,5-5c0-1.017-0.309-1.962-0.833-2.753l4.833-4.833   V28.874z M47.499,15c0,1.654-1.346,3-3,3s-3-1.346-3-3s1.346-3,3-3c0.462,0,0.894,0.114,1.285,0.301l-1.992,1.992   c-0.391,0.391-0.391,1.023,0,1.414C43.987,15.902,44.243,16,44.499,16s0.512-0.098,0.707-0.293l1.992-1.992   C47.385,14.106,47.499,14.538,47.499,15z"/>
+                                    <path style="fill:white" d="M40.412,21.131c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0l-0.746,0.746c-1.787-1.43-4.055-2.133-6.37-1.937   c-1.613,0.135-3.073,0.914-4.111,2.193c-1.068,1.317-1.561,3.039-1.35,4.724l0.761,6.09l-8.947,8.947   c-2.05-2.74-1.838-6.647,0.65-9.136c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0c-3.27,3.27-3.49,8.449-0.665,11.979   l-1.142,1.142c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l1.143-1.143   c1.593,1.273,3.566,1.972,5.611,1.972c0.251,0,0.503-0.011,0.756-0.032c1.613-0.134,3.073-0.912,4.111-2.192   c1.069-1.317,1.562-3.04,1.351-4.725l-0.761-6.09l8.947-8.947c2.049,2.74,1.838,6.648-0.651,9.137   c-0.391,0.391-0.391,1.023,0,1.414s1.023,0.391,1.414,0c3.27-3.271,3.489-8.45,0.665-11.98L40.412,21.131z M28.063,38.594   c0.144,1.147-0.191,2.319-0.919,3.217c-0.692,0.853-1.659,1.371-2.724,1.46c-1.718,0.135-3.408-0.359-4.771-1.376l7.846-7.847   L28.063,38.594z M28.404,25.195c-0.144-1.146,0.191-2.319,0.918-3.216c0.692-0.853,1.66-1.371,2.725-1.461   c1.718-0.141,3.409,0.358,4.772,1.376l-7.847,7.847L28.404,25.195z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="./pricing.html" target="_blank">PRICING</a>
+                    </li>
+
+                    <li>
+                        <div class="navside-svg-img-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 67 67" style="enable-background:new 0 0 67 67;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path style="fill:white" d="M4.25,35h39.899L33.86,45.478c-0.781,0.78-0.781,2.142-0.001,2.923c0.391,0.391,0.902,0.634,1.415,0.634    c0.512,0,1.023-0.171,1.414-0.562l12.815-12.801c0.375-0.375,0.586-0.878,0.586-1.408s-0.211-1.036-0.586-1.411l-0.608-0.607    c-0.138-0.2-0.312-0.374-0.513-0.511L36.689,20.042c-0.781-0.781-2.048-0.781-2.828,0c-0.781,0.781-0.781,1.856,0,2.638L42.373,31    H4.25c-1.104,0-2,0.896-2,2S3.146,35,4.25,35z"/>
+                                        <path style="fill:white" d="M64.75,59.281V9.541C64.75,4.747,60.842,0,56.003,0H30.002c-4.744,0-9.252,4.576-9.252,9.541v11.84c0,1.104,0.896,2,2,2    s2-0.896,2-2V9.541C24.75,6.792,27.471,4,30.002,4h26.001c2.647,0,4.747,2.937,4.747,5.541v49.74c0,2.663-2.203,3.719-4.747,3.719    H30.002c-2.365,0-5.252-0.887-5.252-3.719v-11.9c0-1.104-0.896-2-2-2s-2,0.896-2,2v11.9c0,4.693,4.181,7.719,9.252,7.719h26.001    C61.188,67,64.75,63.823,64.75,59.281z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <a href="./company-login/c-sign-in-up.html" id='navbar-sign-in-button'>Sign In</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="header fixed" id="header-fixed">
+
+    <div class="left-overlay" id="left-overlay">
+        <div class="darken-layer" id="left-darken-layer">
+            <div class="left-banner" id="left-banner">
+                <p class="banner-title">For Jobseekers</p>
+                <p>SkillScanner connects English Speaking Talents with job opportunities in the Nordics!</p>
+                <div style="height: 100px;">
+                    <div class="button-section-holder" style="cursor: pointer" onclick="ScrollToViewJobs()">
+                        <p>View jobs</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="right-overlay" id="right-overlay">
+        <div class="darken-layer" id="right-darken-layer">
+            <div class="right-banner" id="right-banner">
+                <p class="banner-title">For Companies</p>
+                <p>Post your job offers for free and connect opportunities with passionate talents on SkillScanner!</p>
+                <div style="height: 100px; display: flex; flex-direction: column; align-items: center">
+                    <div class="button-section-holder" id="register-button">
+                        <p>Register</p>
+                    </div>
+                    <div class="company-sign-in-holder">
+                        <a class="company-sign-in" href="./company-login/c-sign-in-up.html" >or Sign in</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right-overlay-main-context" id="right-overlay-main-context">
+                <div class="step-navigator-holder">
+                    <p>For companies</p>
+                    <div class="step-nav-points-holder">
+                        <div class="step-nav-point choose-step-nav-point" id="step-nav-point-1">
+                            <p>1</p>
+                            <div class="step-nav-point-title">
+                                <p>Register your company</p>
+                            </div>
+                        </div>
+                        <div class="step-straight-line">
+
+                        </div>
+                        <div class="step-nav-point" id="step-nav-point-2">
+                            <p>2</p>
+                            <div class="step-nav-point-title">
+                                <p>Publish your first job advert</p>
+                            </div>
+                        </div>
+                        <div class="step-straight-line">
+
+                        </div>
+                        <div class="step-nav-point" id="step-nav-point-3">
+                            <p>3</p>
+                            <div class="step-nav-point-title">
+                                <p>Access your dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="company-registration-holder" id="company-registration-holder">
+                    <p>* Mandatory fields</p>
+
+                    <div class="company-regist-fields-holder">
+                        <div style="position: relative">
+                            <input type="text" id="crf-company-name" placeholder="Company name *" onkeyup="$('#company-name-validation').removeClass('show-warning-incorrect-input')">
+                            <div class="warning-incorrect-input" id="company-name-validation">
+                                <p >Please fill this</p>
+                            </div>
+                        </div>
+
+                        <div style="position: relative">
+                            <input type="email" id="crf-company-email" placeholder="Email *" onkeyup="$('#company-email-validation').removeClass('show-warning-incorrect-input')">
+                            <div class="warning-incorrect-input" id="company-email-validation">
+                                <p >Please fill this</p>
+                            </div>
+                        </div>
+
+                        <div style="position: relative">
+                            <div class="company-regist-select-country" id="company-regist-select-country" onclick="ChooseCompanyRegistSelectCountry()">
+                                <p>Select country *</p>
+
+                                <div class="company-regist-select-country-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+
+                                <div class="company-regist-select-country-dropdown" id="company-regist-select-country-dropdown">
+                                    <div class="cr-country-holder" onclick="ChooseCountryCompanyRegist('Finland')">
+                                        <p>Finland</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseCountryCompanyRegist('Denmark')">
+                                        <p>Denmark</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseCountryCompanyRegist('Norway')">
+                                        <p>Norway</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseCountryCompanyRegist('Sweden')">
+                                        <p>Sweden</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="warning-incorrect-input" id="company-country-validation">
+                                <p >Please select one</p>
+                            </div>
+                        </div>
+
+                        <div style="position: relative">
+                            <input type="text" id="crf-company-city" placeholder="City *" onkeyup="$('#company-city-validation').removeClass('show-warning-incorrect-input')">
+                            <div class="warning-incorrect-input" id="company-city-validation">
+                                <p >Please fill this</p>
+                            </div>
+                        </div>
+
+                        <div style='position: relative; display: flex; align-items: center;'>
+                            <input type="password"  id="crf-company-password" placeholder="Password *" onkeyup="CheckPasswordIfValid()">
+                            <p id="password-security-warning"></p>
+                            <div class="warning-incorrect-input" id="company-pass-validation">
+                                <p >Please fill this</p>
+                            </div>
+                        </div>
+
+                        <div style="position: relative">
+                            <input type="password"  id="crf-company-repassword" placeholder="Repeat password *" onkeyup="$('#company-repass-validation').removeClass('show-warning-incorrect-input')">
+                            <div class="warning-incorrect-input" id="company-repass-validation">
+                                <p >Please fill this</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="company-create-account-button-holder">
+                        <button class="company-create-account-button" onclick="CreateAccount()">
+                            Create account
+                        </button>
+
+                        <div class="company-sign-in-holder">
+                            <a class="company-sign-in" href="./company-login/c-sign-in-up.html" >Sign in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company-post-first-job-holder" id="company-post-first-job-holder">
+                    <p>* Mandatory fields</p>
+
+                    <div class="company-pfj-fields-holder">
+                        <div style="position: relative">
+                            <input type="text" id="pfj-job-title" placeholder="Job title *" onkeyup="$('#first-job-title-validation').removeClass('show-warning-incorrect-input')">
+                            <div class="warning-incorrect-input" id="first-job-title-validation">
+                                <p >Please fill this</p>
+                            </div>
+                        </div>
+                        <div style="position: relative">
+                            <div class="company-pfj-select-category" id="pfj-category-button" onclick="ChoosePfjCategoryButton()">
+                                <p>Category *</p>
+
+                                <div class="company-regist-select-country-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+
+                                <div class="company-regist-select-country-dropdown" id="pfj-category-holder" >
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Back End Developer')">
+                                        <p>Back End Developer</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Front End Developer')">
+                                        <p>Front End Developer</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Full Stack Developer')">
+                                        <p>Full Stack Developer</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Android Developer')">
+                                        <p>Android Developer</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('iOS Developer')">
+                                        <p>iOS Developer</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Business Development')">
+                                        <p>Business Development</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Business Intelligence')">
+                                        <p>Business Intelligence</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Customer Service')">
+                                        <p>Customer Service</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Design')">
+                                        <p>Design</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Marketing & Communication')">
+                                        <p>Marketing & Communication</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Project Management')">
+                                        <p>Project Management</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Sales')">
+                                        <p>Sales</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCategory('Others')">
+                                        <p>Others</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="warning-incorrect-input" id="first-job-category-validation">
+                                <p >Please select one</p>
+                            </div>
+                        </div>
+
+                        <div style="position: relative">
+                            <div class="company-pfj-select-country" id="pfj-country-button" onclick="ChoosePfjCountryButton()">
+                                <p>Country *</p>
+
+                                <div class="company-regist-select-country-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+
+                                <div class="company-regist-select-country-dropdown" id="pfj-country-holder">
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCountry('Finland')">
+                                        <p>Finland</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCountry('Denmark')">
+                                        <p>Denmark</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCountry('Norway')">
+                                        <p>Norway</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobCountry('Sweden')">
+                                        <p>Sweden</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="warning-incorrect-input" id="first-job-country-validation">
+                                <p >Please select one</p>
+                            </div>
+                        </div>
+
+                        <div style="position: relative">
+                            <input type="text" id="pfj-job-city" placeholder="City *" onkeyup="$('#first-job-city-validation').removeClass('show-warning-incorrect-input')">
+
+                            <div class="warning-incorrect-input" id="first-job-city-validation">
+                                <p >Please fill this</p>
+                            </div>
+                        </div>
+
+                        <div style="position: relative">
+                            <div class="company-pfj-select-job-type" id="pfj-type-button" onclick="ChoosePfjTypeButton()">
+                                <p>Position *</p>
+
+                                <div class="company-regist-select-country-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+
+                                <div class="company-regist-select-country-dropdown" id="pfj-type-holder">
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobPosition('Intern')">
+                                        <p>Intern</p>
+                                        </div>
+                                        <div class="cr-country-holder" onclick="ChooseFirstJobPosition('Trainee')">
+                                        <p>Trainee</p>
+                                        </div>
+                                        <div class="cr-country-holder" onclick="ChooseFirstJobPosition('Full-time')">
+                                            <p>Full-time</p>
+                                        </div>
+                                        <div class="cr-country-holder" onclick="ChooseFirstJobPosition('Part-time')">
+                                            <p>Part-time</p>
+                                        </div>
+                                        <div class="cr-country-holder" onclick="ChooseFirstJobPosition('Contract')">
+                                        <p>Contract</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="warning-incorrect-input" id="first-job-type-validation">
+                                <p >Please select one</p>
+                            </div>
+                        </div>
+
+
+                        <div style="position: relative">
+                            <div class="company-pfj-select-salary" id="pfj-salary-button" onclick="ChoosePfjSalaryButton()">
+                                <p>Salary *</p>
+
+                                <div class="company-regist-select-country-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+
+                                <div class="company-regist-select-country-dropdown" id="pfj-salary-holder">
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobSalary('Paid')">
+                                        <p>Paid</p>
+                                    </div>
+                                    <div class="cr-country-holder" onclick="ChooseFirstJobSalary('Unpaid')">
+                                        <p>Unpaid</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="warning-incorrect-input" id="first-job-salary-validation">
+                                <p >Please select one</p>
+                            </div>
+                        </div>
+
+                        <div style="position: relative">
+                            <div class="company-pfj-add-image" id="company-pfj-add-image">
+                                <p>Drop an image *</p>
+
+                                <div id="first-job-image-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="24" height="24" fill="url(#pattern0)"/>
+                                        <defs>
+                                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0" transform="scale(0.02)"/>
+                                        </pattern>
+                                        <image id="image0" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAADmwAAA5sBPN8HMQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEwSURBVGiB7ZoxTsQwEEXfIM5AQ71V4ASOUixcmgaaJBcIK3GG5Q4eCiTEIjZKbAcPq3lVJFuTPH3HGUsBxxYyN9j3vW5470lEHkMIxxLFrkoUSeQe6MdxvC1RbFEibdvOzlvLj6QPIrLPTaZmIgBvQKOqz8Mw3OQUqioSY+yACWjIXGZVRbque48xPgCTqu5U9SVVpvbSKiZTXQROZF5TZUyIwKeMiCTLmBEBCCEcU2VMicCJzGGNjDkR+JLZs0Lm+o+e7VfmejlV/X69U9Un4O7cfJOJnKGZG6ySyNrebUkX/p8SmcVFrOEi1sjatUqf6XNOop4IlD/L53AxibiINaruWiXfMU8EfNfaBBexhvda1vBdyxouYg0XsYaLWMNFrLHoy77xPylFuJhEHGt8AESwokKKYFIZAAAAAElFTkSuQmCC"/>
+                                        </defs>
+                                    </svg>
+                                </div>
+
+                                <div class="company-pfj-add-image-dropzone-init" id="company-pfj-add-image-dropzone-init"></div>
+                            </div>
+
+                            <div class="warning-incorrect-input" id="first-job-image-validation">
+                                <p >Add image</p>
+                            </div>
+                        </div>
+
+
+                        <div class="application-deadline-hover pfj-choose-deadline-holder">
+                            <input id="pfj-choose-deadline" class="company-pfj-choose-deadline"
+                            type="date"
+                            onchange="ApplicationDeadLineOnChange()"
+                            >
+
+                            <div class="application-deadline-holder" id="application-deadline-holder">
+                                <p class="application-deadline-inform">Application deadline *</p>
+
+                                <i class="far fa-calendar-alt fa-lg"></i>
+                            </div>
+
+
+                            <!-- <div class="application-deadline-icon">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="22" height="22" fill="url(#pattern0)"/>
+                                    <defs>
+                                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0" transform="scale(0.02)"/>
+                                    </pattern>
+                                    <image id="image0" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAADmwAAA5sBPN8HMQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFmSURBVGiB7ZlNTsMwEIWfLU4BrRC9DuIAiS/QLpC4CkKCEyQ5AILjdMPPMWwW2FUSGhirGXWY+lslTjzx8/OMpdiASNd11977BwBXsWkL4NY590qNwRnfUj/kvX/qfQQAVgAeqf2545OFAFgCgHPOOOdMbLvM6M8aP0eIaM7SRdu2NyGEewzt/ZOmacLso6LF3xpj7uq6fgaGjozXqHRWIYRdDu0cCSFcAN9rdF+vqZmZej+X3Pjx/UW615cjBN4BLEYz9zbjWA6KT3bEWrs2xnyk+3i9pvbnjk92pKqqF/TW5NwcGl9NjqgR8mNpcW9wXOh1ZK4NjpvxylHjSBEiDfKGeKxqRs3Z03MksW+Gklscz6iocaQIkYYaIdnJ/lsScjyjcrqOlPLLTBEiDTVCSvmVRim/0ihCpKFGSCm/0iA7Iv1XqhpHihBp9HPkE8D5fzro6R+e2l7j4FRVOnGsm2OPozDFF2+au9dEfLImAAAAAElFTkSuQmCC"/>
+                                    </defs>
+                                </svg>
+                            </div> -->
+
+                            <div class="warning-incorrect-input" id="first-job-deadline-validation">
+                                <p >Please select a date</p>
+                            </div>
+                            <!-- <input id="pfj-choose-deadline" class="company-pfj-choose-deadline" type="text" data-role="calendarpicker" data-input-format="%d/%m/%y" value="21/12/1972"> -->
+                        </div>
+
+                        <div class="pfj-job-description">
+                            <textarea id="pfj-job-description" placeholder="Add description here (max 150 words)" onkeyup="$('#first-job-description-validation').removeClass('show-warning-incorrect-input')"></textarea>
+                            <div class="warning-incorrect-input" id="first-job-description-validation">
+                                <p >Please select a date</p>
+                            </div>
+                        </div>
+
+                        <div class="pfj-job-requirements">
+                            <textarea id="pfj-job-requirement" placeholder="Add requirements here (max 75 words)" onkeyup="$('#first-job-requirements-validation').removeClass('show-warning-incorrect-input')"></textarea>
+                            <div class="warning-incorrect-input" id="first-job-requirements-validation">
+                                <p >Please select a date</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skip-publish-holder">
+                        <button style="cursor: pointer" onclick="GoToFinalStep()">Skip</button>
+                        <button style="cursor: pointer" onclick="PublishFirstJob()">Publish</button>
+                    </div>
+                </div>
+
+                <div class="company-access-dashboard" id="company-access-dashboard">
+                    <div class="preview-job-go-dashboard-holder">
+                        <button>Preview your job post <i class="fas fa-chevron-right"></i></button>
+                        <button onclick="window.open('./company-dashboard/')">Go to your dashboard <i class="fas fa-chevron-right"></i></button>
+                    </div>
+
+                    <p class="see-our-packages">See our packages for companies</p>
+
+                    <div class="mobile-our-packages-holder">
+                        <div class="mobile-left-indicator" onclick="SlideToLeft()">
+                            <i class="fas fa-chevron-left" ></i>
+                        </div>
+
+                        <div class="our-packages-holder" id="mobile-our-packages-holder">
+                            <div class="mobile-package-holder mph1" id="mobile-package-holder-free">
+                                <div class="our-package">
+                                    <div class="top-line-1">
+                                    </div>
+
+                                    <p class="big-title">FREE</p>
+
+                                    <div class="price-line-holder">
+                                        <p>0</p>
+                                        <p>€/month</p>
+                                    </div>
+
+                                    <div class="package-content-holder">
+                                        <div class="content-separate">
+                                            <p>1 job offer per week</p>
+                                        </div>
+                                        <div class="content-separate">
+                                            <p>The job offer's life is 7 days</p>
+                                        </div>
+                                        <div class="content-separate">
+                                            <p>Dashboard access to manage job offers</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-package-holder mph2" id="mobile-package-holder-plus">
+                                <div class="our-package">
+                                    <div class="top-line-2">
+                                    </div>
+
+                                    <p class="big-title">PLUS</p>
+
+                                    <div class="price-line-holder">
+                                        <p>9.99</p>
+                                        <p>€/month</p>
+                                    </div>
+
+                                    <div class="package-content-holder">
+                                        <div class="content-separate">
+                                            <p>Unlimited job offers</p>
+                                        </div>
+                                        <div class="content-separate">
+                                            <p>Job offer life is 30 days</p>
+                                        </div>
+                                        <div class="content-separate">
+                                            <p>Dashboard access to manage job offers</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="upgrade-button-holder-2">
+                                        <button onclick="window.location = '/company-dashboard/plan-payment.html?purchaseType=upgradeToPlus'">Upgrade</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-package-holder mph3" id="mobile-package-holder-premium">
+                                <div class="our-package">
+                                    <div class="top-line-3">
+                                    </div>
+
+                                    <p class="big-title">PREMIUM</p>
+
+                                    <div class="price-line-holder">
+                                        <p>12.99</p>
+                                        <p>€/month</p>
+                                    </div>
+
+                                    <div class="package-content-holder">
+                                        <div class="content-separate">
+                                            <p>Unlimited job offers</p>
+                                        </div>
+                                        <div class="content-separate">
+                                            <p>Job offer life is unlimited</p>
+                                        </div>
+                                        <div class="content-separate">
+                                            <p>Dashboard access to manage job offers</p>
+                                        </div>
+                                        <div class="content-separate">
+                                            <p>Job analytics</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="upgrade-button-holder-3">
+                                        <button onclick="window.location = '/company-dashboard/plan-payment.html?purchaseType=upgradeToPremium'">Upgrade</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-right-indicator" onclick="SlideToRight()">
+                            <i class="fas fa-chevron-right" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-step-navigator-holder">
+                    <p id="mobile-step-name">Register your company</p>
+
+                    <div class="mobile-step-nav-points-holder">
+                        <div class="mobile-step-nav-point choose-step-nav-point" id="mobile-step-nav-point-1">
+                            <p>1</p>
+                        </div>
+                        <div class="mobile-step-nav-point" id="mobile-step-nav-point-2">
+                            <p>2</p>
+                        </div>
+                        <div class="mobile-step-nav-point" id="mobile-step-nav-point-3">
+                            <p>3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="subscriber-partner-location-banners-holder">
+    <div class="left-arrow-displaying">
+        <i class="fas fa-chevron-left fa-2x" ></i>
+    </div>
+
+    <div class="main-context-displaying">
+
+        <div class="banner-holder">
+            <h1>+15 000</h1>
+            <p>SUBSCRIBERS</p>
+        </div>
+
+        <div class="banner-holder">
+            <h1>26</h1>
+            <p>PARTNERS</p>
+        </div>
+
+        <div class="banner-holder">
+            <h1>4</h1>
+            <p>LOCATIONS</p>
+        </div>
+    </div>
+
+    <div class="right-arrow-displaying">
+        <i class="fas fa-chevron-right fa-2x" ></i>
+    </div>
+</div>
+
+
+
+
+<div class="job-post-container" id="job-post-container">
+    <div class="jp-filter-bar-container">
+        <div class="jp-fb-filter-options">
+            <div class="jp-fb-filter-option">
+                <div class="jp-fb-category-button" id="jp-fb-category-button">
+                    <p>ALL CATEGORIES</p>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="jp-fb-category-holder" id="jp-fb-category-holder">
+
+                </div>
+            </div>
+
+            <div class="jp-fb-filter-option">
+                <div class="jp-fb-location-button" id="jp-fb-country-button">
+                    CHOOSE A COUNTRY
+
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div style="-webkit-overflow-scrolling: touch;overflow-y: scroll;" class="jp-fb-location-holder" id="jp-fb-country-holder">
+
+                </div>
+                <!-- <div class="selectCountry">
+
+                    <div class="select" id="selectCountry">
+
+                        <div class="country-container" id="country-container">
+
+                            <div>
+
+                                <span>CHOOSE A COUNTRY</span>
+
+                            </div>
+
+                        </div>
+
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+
+                    </div>
+
+                    <div class="countryList" id="filter-country-list">
+
+                        <div id="DK" class="country-option-li">
+
+                            <img src="./icons/denmark.png" alt="denmark">
+
+                            <span>Denmark</span>
+
+                        </div>
+
+                        <div id="FI" class="country-option-li">
+
+                            <img src="./icons/finland.png" alt="finland">
+
+                            <span>Finland</span>
+
+                        </div>
+
+                        <div id="NO" class="country-option-li">
+
+                            <img src="./icons/norway.png" alt="norway">
+
+                            <span>Norway</span>
+
+                        </div>
+
+                        <div id="SE" class="country-option-li">
+
+                            <img src="./icons/sweden.png" alt="sweden">
+
+                            <span>Sweden</span>
+
+                        </div>
+
+                    </div>
+
+                </div> -->
+            </div>
+            <div class="jp-fb-filter-option">
+                <div class="jp-fb-location-button" id="jp-fb-location-button">
+                    CHOOSE A LOCATION
+
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="jp-fb-location-holder" id="jp-fb-location-holder">
+                    
+                </div>
+            </div>
+            <!-- <div class="jp-fb-filter-option jp-fb-filter-option-published-filter">
+                PUBLISHED THIS MONTH
+            </div> -->
+
+            <!-- <div class="jp-fb-search-bar-holder">
+                <input class="search-input-field" type="text" placeholder="Search Job ..."/>
+            </div> -->
+        </div>
+        <div class="search-holder">
+            <input type="text" onkeyup="searchJob()" placeholder="Search jobs" class="jb-fb-post-job-offer-button search-input-field"></input>
+            <i class="icon ion-ios-search" onclick="searchJob()"></i>
+        </div>
+    </div>
+
+    <div class="jp-main-content-container" id="jobs-container" data-simplebar>
+
+    </div>
+
+    <button class="jp-show-more-job-button" onclick="ShowMoreJobs()" id="jp-show-more-job-button">
+        Show more jobs
+    </button>
+</div>
+
+<div class="partner-title-holder">
+    <p>Our Partners</p>
+    <div class="underline-red-highlight">
+
+    </div>
+</div>
+
+<div id='parteners'
+
+     class='partners-holder gb-padding-top-phone-24 gb-padding-top-tablet-32 gb-padding-top-desktop-48 gb-padding-bottom-phone-56 gb-padding-bottom-tablet-48 gb-padding-bottom-desktop-56'
+>
+
+     <div class="partners-scroll-left-holder" onmousedown="ScrollPartnersToLeft()">
+        <i class="fas fa-chevron-left fa-2x" ></i>
+    </div>
+
+
+
+    <div class="gb-exapndable-box" id="gb-exapndable-box">
+
+        <a target="_blank" href="https://bagbnb.com/" class="inner-boxes parteners" id="partner-1">
+
+            <img src="images/partners/BagBnbB.png" alt="BagBnB logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.arbetsformedlingen.se/" class="inner-boxes parteners" id="partner-2">
+
+            <img src="images/partners/Arbetsformedlingen.png" alt="Arbetsformedlingen logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.smun.se/" class="inner-boxes parteners" id="partner-3">
+
+            <img src="images/partners/SMUN.png" alt="SMUN logo">
+
+        </a>
+
+        <a target="_blank" href="https://www.vikingline.se/" class="inner-boxes parteners" id="partner-4">
+
+            <img src="images/partners/viking-line-partner.png" alt="Viking Line logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.kth.se/" class="inner-boxes parteners" id="partner-5">
+
+            <img src="images/partners/KTH-partner.png" alt="KTH logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="http://www.uksw.edu/en.php" class="inner-boxes parteners" id="partner-6">
+
+            <img src="images/partners/logo-university-partner.png" alt="University logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.lunduniversity.lu.se/" class="inner-boxes parteners" id="partner-7">
+
+            <img src="images/partners/Lund-University.png" alt="Lunduniversity logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.zuyd.nl/en" class="inner-boxes parteners" id="partner-8">
+
+            <img src="images/partners/ZUYD.png" alt="ZUYD logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://www.cphbusiness.dk/english" class="inner-boxes parteners" id="partner-9">
+
+            <img src="images/partners/CPH-Business-School.png" alt="CPH Business School logo">
+
+        </a>
+
+
+
+        <a target="_blank" href="https://mightynetworks.com/" class="inner-boxes parteners" id="partner-10">
+
+            <img src="images/partners/mighty-network-partner.png" alt="Mighty network logo">
+
+        </a>
+
+        <a target="_blank" href="http://www.friidesigns.com" class="inner-boxes parteners" id="partner-11">
+
+            <img src="images/partners/Frii-Designs-partner.png" alt="Frii design logo">
+
+        </a>
+
+    </div>
+
+    <div class="partners-scroll-right-holder" onmousedown="ScrollPartnersToRight()">
+        <i class="fas fa-chevron-right fa-2x" ></i>
+    </div>
+
+    <!-- <div class="expand-button-wrapper parteners">
+
+        <div class="expand-button parteners">
+
+            <div class="gb-show-more-icon gb-big">
+
+                <i class="fas fa-angle-down"></i>
+
+            </div>
+
+            <p class='more active'>Show More</p>
+
+            <p class='less'>Show Less</p>
+
+        </div>
+
+    </div> -->
+
+</div>
+
+<div class="latest-articles-title-holder">
+    <p>Lastest articles</p>
+    <div class="underline-red-highlight">
+
+    </div>
+</div>
+
+<div class="new-article-content-holder" id="new-article-content-holder">
+
+</div>
+
+<div class="more-articles-holder">
+    <div class="left-line">
+
+    </div>
+    <div class="middle-box-content" onclick="window.open('https://globuzzer.mn.co/topics/196924')">
+        <p>More articles</p>
+    </div>
+    <div class="right-line">
+
+    </div>
+</div>
+
+<div class="article-nav-points-holder-mb">
+    <div class ="article-nav-point active-chosen-article-nav-point" onclick="ChooseArticleNumber(1)" id="article-nav-point-1">
+
+    </div>
+    <div class ="article-nav-point" onclick="ChooseArticleNumber(2)" id="article-nav-point-2">
+
+    </div>
+    <div class ="article-nav-point" onclick="ChooseArticleNumber(3)" id="article-nav-point-3">
+
+    </div>
+    <div class ="article-nav-point" onclick="ChooseArticleNumber(4)" id="article-nav-point-4">
+
+    </div>
+    <div class ="article-nav-point" onclick="ChooseArticleNumber(5)" id="article-nav-point-5">
+        <div class="inner-article-nav-point">
+
+        </div>
+    </div>
+</div>
+
+<div class="section-container" id="section">
+    <div class="small-country-select" style="display: none">
+
+        <div class="select">
+
+            <img src="./icons/sweden.png" alt="sweden">
+
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+
+        </div>
+
+        <div class="countryList">
+
+            <div id="DK-jobs" class="country-option-li">
+
+                <img src="./icons/denmark.png" alt="denmark">
+
+            </div>
+
+            <div id="FI-jobs" class="country-option-li">
+
+                <img src="./icons/finland.png" alt="finland">
+
+            </div>
+
+            <div id="NO-jobs" class="country-option-li">
+
+                <img src="./icons/norway.png" alt="norway">
+
+            </div>
+
+            <div style="display: none;" id="SE-jobs" class="country-option-li">
+
+                <img src="./icons/sweden.png" alt="sweden">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- <div class="section-content" style="display: none;" id="events">
+
+        <h2 class="section-header">Events</h2>
+
+        <p class="centered-grey-paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+
+        <div class="filter-search-container">
+
+            <div class="search-container" style="display:none">
+
+                <input type="text" id="search-events" class="search-input-field" placeholder="Search here...">
+
+                <i class="search-icon fas fa-search"></i>
+
+            </div>
+
+            <div class="filters">
+
+                <div class="custom-select">
+
+                    <button class="select-box" id="event-location-filter-button">
+
+                        Filter by location...
+
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="option-list" id="location-filter">
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="location-1">
+
+                            <span class="checkmark"></span>
+
+                            Location 1
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="location-2">
+
+                            <span class="checkmark"></span>
+
+                            Location 2
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="location-3">
+
+                            <span class="checkmark"></span>
+
+                            Location 3
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="custom-select">
+
+                    <button class="select-box" id="event-month-filter-button">
+
+                        Filter by month...
+
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="option-list" id="month-filter">
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="0" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            January
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="1" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            February
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="2" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            March
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="3" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            April
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="4" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            May
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="5" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            June
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="6" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            July
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="7" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            August
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="8" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            September
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="9" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            October
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="10" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            November
+
+                        </label>
+
+                        <label class="filter-checkbox checkbox-container">
+
+                            <input type="checkbox" value="11" class="monthFilter">
+
+                            <span class="checkmark"></span>
+
+                            December
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="scroll-container content-container">
+
+            <div class="event-container" id="event-container">
+
+
+            </div>
+
+            <a href="https://globuzzer.mn.co/feed" id="event-link" class="gb-grey-small-link pink-link">View more events here...</a>
+
+        </div>
+
+    </div> -->
+
+    <!-- <div class="section-content" style="display: none;" id="articles">
+
+        <h2 class="section-header">Articles</h2>
+
+        <p class="centered-grey-paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+
+        <div class="filter-search-container">
+
+            <div class="search-container">
+
+                <input type="text" id="search-articles" class="search-input-field" placeholder="Search here...">
+
+                <i class="search-icon fas fa-search"></i>
+
+            </div>
+
+        </div>
+
+        <div class="article-container scroll-container">
+
+            <div id="article-container" class="gb-card-50-wrapper">
+
+
+
+            </div>
+
+            <a href="https://globuzzer.mn.co/feed" id="article-link" class="gb-grey-small-link pink-link">Didn't find an article for you? View more
+
+                here...</a>
+
+        </div>
+
+    </div> -->
+</div>
+
+
+
+
+    <div class="footer-container" id="footer">
+        <div class="all-rights-container">
+            <p>© 2019 All rights reserved.</p>
+        </div>
+
+        <div class="cluster-info-1">
+            <p>SKILLSCANNER</p>
+            <p>Skyttevägen 29, Saltsjöbaden,Sweden</p>
+            <p>+46 73 555 5134</p>
+            <p>info@globuzzer.com</p>
+        </div>
+
+        <div class="cluster-info-2">
+            <p style="cursor: pointer" onclick="ScrollToViewJobs()">- Jobs</p>
+            <p style="cursor: pointer" onclick="ScrollToViewArticles()">- Articles</p>
+            <!-- <p style="cursor: pointer" onclick="window.location = './pricing.html#gb-feedback'">- Contact</p> -->
+            <p style="cursor: pointer" onclick="window.location = './pricing.html'">- Pricing</p>
+            <p style="cursor: pointer" onclick="window.location = './company-login/c-sign-in-up.html'">- Sign in</p>
+        </div>
+
+        <div class="cluster-info-3">
+            <p style="cursor: pointer" onclick="window.open('https://mightynetworks.com/terms_of_use')">Terms and conditions</p>
+            <p style="cursor: pointer" onclick="window.open('https://mightynetworks.com/privacy_policy')">Privacy policy</p>
+        </div>
+
+        <div class="cluster-info-4">
+            <a class='footer-contact-link'
+            target="_blank"
+            href="https://globuzzer.mn.co/">
+
+                <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                    xmlns="http://www.w3.org/2000/svg"
+
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href="#gb-logo-small"></use>
+
+                </svg>
+
+            </a>
+
+            <a class='footer-contact-link'
+                target="_blank"
+                href="https://www.facebook.com/TheSkillScanner/">
+
+                <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                        xmlns="http://www.w3.org/2000/svg"
+
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href="#facebook"></use>
+
+                </svg>
+
+            </a>
+
+            <a class='footer-contact-link' target="_blank" href="https://twitter.com/globuzzer">
+
+                <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                     xmlns="http://www.w3.org/2000/svg"
+
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href="#twitter"></use>
+
+                </svg>
+
+            </a>
+
+            <a class='footer-contact-link' target="_blank" href="https://www.youtube.com/channel/UC4u8N-QBDMWG6OqzSni8clw">
+
+                <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                     xmlns="http://www.w3.org/2000/svg"
+
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href="#youtube"></use>
+
+                </svg>
+
+            </a>
+
+            <a class='footer-contact-link' target="_blank" href="https://www.linkedin.com/company/35442644/admin/">
+
+                <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                     xmlns="http://www.w3.org/2000/svg"
+
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href="#linkedin"></use>
+
+                </svg>
+
+            </a>
+
+            <a class='footer-contact-link' target="_blank" href="https://www.pinterest.se/globuzzer/pins/">
+
+                <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                     xmlns="http://www.w3.org/2000/svg"
+
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href="#pinterest"></use>
+
+                </svg>
+
+            </a>
+
+            <a class='footer-contact-link' target="_blank" href="https://www.instagram.com/globuzzer/">
+
+                <svg class="gb-icon-fill-white gb-icon-medium" version="1.1"
+
+                     xmlns="http://www.w3.org/2000/svg"
+
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <use xlink:href="#instagram"></use>
+
+                </svg>
+
+            </a>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- Scripts-->
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-storage.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+    authDomain: "skillscanner-73181.firebaseapp.com",
+    databaseURL: "https://skillscanner-73181.firebaseio.com",
+    projectId: "skillscanner-73181",
+    storageBucket: "skillscanner-73181.appspot.com",
+    messagingSenderId: "269557896133"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<!-- Facebook SDK -->
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '2352379188372286',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v3.3'
+      });
+
+      FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132822587-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132822587-2');
+</script>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4&libraries=places"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+<script src="js/hammer/hammer.min.js"></script>
+<script src="js/hammer/hammer.main.js"></script>
+
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.js"></script>
+
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js.map"></script>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="js/dropzone/dropzone.js"></script>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/jquery.ihavecookies.js"></script>
+
+<script src="js/nav-bar-black.js"></script>
+
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
+
+<script src="perfect-scrollbar/dist/perfect-scrollbar.js"></script>
+
+<script src="js/myDropzone.js"></script>
+
+<script type="text/javascript" src="js/svgs-loader.js"></script>
+
+<script type="text/javascript" src="js/google-places/google-places.js"></script>
+
+<script type="text/javascript" src="js/personal-company-header/personal-company-header.js"></script>
+
+<script type="text/javascript" src="js/fetch-firebase-data.js"></script>
+
+<script type="text/javascript" src="js/main-script.js"></script>
+
+<script type="text/javascript" src="js/handle-partners-expand.js"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script> -->
+
+
+<!-- <script type='text/javascript' data-cfasync='false'>window.purechatApi = {
+
+  l: [], t: [], on: function () {
+
+    this.l.push(arguments);
+
+  }
+
+};
+
+(function () {
+
+  var done = false;
+
+  var script = document.createElement('script');
+
+  script.async = true;
+
+  script.type = 'text/javascript';
+
+  script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript';
+
+  document.getElementsByTagName('HEAD').item(0).appendChild(script);
+
+  script.onreadystatechange = script.onload = function (e) {
+
+    if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+
+      var w = new PCWidget({c: '4c35a227-db34-489f-b466-4b7c778739af', f: true});
+
+      done = true;
+
+    }
+
+  };
+
+})();</script> -->
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+
+
+</body>
+
+</html>

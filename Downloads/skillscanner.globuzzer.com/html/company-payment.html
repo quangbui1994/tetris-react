@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>SkillScanner's Company Payment</title>
+
+        <link rel="stylesheet" href="../css/company-payment.css">
+    </head>
+
+    <body>
+        <div class="payment-form" id="payment-form">
+            <div class="billing-title">
+                <h2>Billing Information</h2>
+            </div>
+
+            
+            <div class="line-break"></div>
+
+            <div class="billing-information" id="billing-information">
+                <div class="space-break"></div>
+                <div class="form-grid-container">
+                    <div class="form-grid-item">
+                        <input id="card-holder" type="text" placeholder="Card Holder*">
+                    </div>
+                    
+                    <div class="form-grid-item">
+                        <input id="address" type="text" placeholder="Address (optional)">
+                    </div>
+
+                    <div class="form-grid-item">
+                        <input id="vat-number" type="text" placeholder="VAT Number (optional)">
+                    </div>
+
+                    <div class="form-grid-item">
+                        <input id="phone-number" type="text" placeholder="Phone Number (optional)">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="card-element">
+                    Credit or debit card
+                    </label>
+                    <div class="label-seperate"></div>
+                    <div id="card-element">
+                    <!-- A Stripe Element will be inserted here. -->
+                    </div>
+                
+                    <!-- Used to display form errors. -->
+                    <div id="card-errors" role="alert"></div>
+                </div>
+            </div>
+
+            <div class="client-old-billing-information client-old-billing-information-disable" id="client-old-billing-information">
+                <span><span id="card-type"></span> 4 Ending Digits <span id="4-end-digits"></span> - Expired Date: <span id="exp-date"></span></span>
+
+                <button class="choose-other-payment-method-button" onclick="ChooseOtherCard()">Choose other card</button>
+            </div>
+
+            <button class="submit-payment-button" id="submit-payment-button">Pay</button>
+        </div>
+
+        <!-- Scripts-->
+
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-storage.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+            authDomain: "skillscanner-73181.firebaseapp.com",
+            databaseURL: "https://skillscanner-73181.firebaseio.com",
+            projectId: "skillscanner-73181",
+            storageBucket: "skillscanner-73181.appspot.com",
+            messagingSenderId: "269557896133"
+        };
+        firebase.initializeApp(config);
+        </script>
+
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.js"></script>
+
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js.map"></script>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <script src="https://js.stripe.com/v3/"></script>
+
+        <script src="../js/jquery-3.1.1.min.js"></script>
+
+        <script type="text/javascript" src="../js/personal-company-header/company-payment/company-payment.js"></script>
+
+    </body>
+</html>

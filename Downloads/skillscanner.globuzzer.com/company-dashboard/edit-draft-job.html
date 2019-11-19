@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+    <link rel="stylesheet" href="./css/dropzone.css">
+
+    <link href="./scripts/window-date-picker-master/dist/css/window-date-picker.css" rel="stylesheet">
+
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="loading-box" id="loading-box">
+        <div class="loading-box-content">
+            <p>We are processing your job...</p>
+    
+            <div class="loading-ani"></div>
+        </div>
+    </div>
+
+    <div class="error-box" id="error-box">
+        <div class="loading-box-content">
+            <div class="error-close-box" onclick="CloseErrorBox()">
+                <i class="fas fa-times"></i>
+            </div>
+            <p>Sorry, there was something wrong with the process. Please apply later.</p>
+        </div>
+    </div>
+
+
+    <div class="nav-bar-container">
+        <a class="ss-logo" target="_blank" href="/"></a>
+    
+        <div class="my-account-holder">
+            <!-- <p>My account</p> -->
+    
+            <div onclick="openAccountSettingsMobile()">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="42" height="42" fill="url(#pattern0)"/>
+                <defs>
+                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0" transform="scale(0.02)"/>
+                </pattern>
+                <image id="image0" width="50" height="50" xlink:href="data:image/png;base64,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"/>
+                </defs>
+            </svg>
+            </div>
+            
+            <p onclick="Logout()">Log out</p>
+
+            <div class="mobile-bars-icon" onclick="openCategoriesMobile()">
+            <i class="fas fa-bars fa-lg"></i>
+            </div>
+        </div>
+    
+        <div class="mobile-account-settings-content-holder">
+            <div class="mobile-account-settings-holder" id="mobile-account-settings-holder">
+            <div class="mobile-account-setting-button">
+                <p>Edit profile</p>
+            </div>
+    
+            <div class="mobile-account-setting-button" onclick="Logout()">
+                <p>Log out</p>
+            </div>
+            </div>
+        </div>
+    
+        <div class="mobile-categories-content-holder">
+            <div class="mobile-categories-holder" id="mobile-categories-holder">
+                <div class="mobile-category-option-button" onclick="window.location='/company-dashboard/post-a-job.html'">
+                <p>Post a job</p>
+                </div>
+                <div class="mobile-category-option-button" onclick="window.location='/company-dashboard/job-list.html'">
+                <p>Job list</p>
+                </div>
+                <div class="mobile-category-option-button" onclick="window.location='/company-dashboard/job-application.html'">
+                <p>Job applications</p>
+                </div>
+                <div class="mobile-category-option-button" onclick="window.location='/company-dashboard/my-plan.html'">
+                <p>Your plan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-holder" id="main-holder">
+        <div class="you-are-here-holder">
+            <i class="fas fa-home"></i>
+            <p class="you-are-here-reset-text-style" style="cursor: pointer" onclick="window.location='/company-dashboard/'">Dashboard</p>
+            <i class="fas fa-caret-right your-are-here-highlight"></i>
+            <p class="you-are-here-reset-text-style" style="cursor: pointer" onclick="window.location='/company-dashboard/job-list.html'">Job list</p>
+            <i class="fas fa-caret-right your-are-here-highlight"></i>
+            <p class="your-are-here-highlight" id="yah-post-job" style="cursor: pointer" onclick="window.location=window.location.href">Edit draft job</p>
+            <i class="fas fa-caret-right your-are-here-highlight" id="yah-preview-job-icon" style="display: none"></i>
+            <p class="your-are-here-highlight" id="yah-preview-job" style="display: none">Preview job</p>
+            <i class="fas fa-caret-right your-are-here-highlight" id="yah-published-job-icon" style="display: none"></i>
+            <p class="your-are-here-highlight" id="yah-published-job" style="display: none">Job published</p>
+        </div>
+
+
+        <div class="right-side-categories-holder">
+            <div class="right-side-category" onclick="window.location='/company-dashboard/post-a-job.html'">
+                <p>Post a job</p>
+            </div>
+            <div class="right-side-category" onclick="window.location='/company-dashboard/job-list.html'">
+                <p>Job list</p>
+            </div>
+            <div class="right-side-category" onclick="window.location='/company-dashboard/job-application.html'">
+                <p>Job applications</p>
+            </div>
+            <div class="right-side-category" onclick="window.location='/company-dashboard/my-plan.html'">
+                <p>Your plan</p>
+            </div>
+        </div>
+
+        <div class="vertical-separator-line">
+
+        </div>
+
+        <div class="post-a-job-holder" id="post-a-job-holder">
+            <p class="post-a-job-title">Edit draft job</p>
+            <div class="post-a-job-underline"></div>
+
+            <div class="inline-fields post-a-job-job-information-holder">
+                <p class="post-a-job-job-information">Job information</p>
+                <p class="post-a-job-mandatory-fields">* Mandatory fields</p>
+            </div>
+
+            <div class="section-separator-line"></div>
+
+            <div class="inline-fields">
+                <div style="position: relative;">
+                    <input type="text" id="job-title-field" onkeyup="$('#warning-empty-field-job-title').removeClass('show-warning-empty-field')" class="job-title-field" placeholder="Job title *">
+
+                    <div class="warning-empty-field" id="warning-empty-field-job-title">
+                        <p>Please fill this</p>
+                    </div>
+                </div>
+                <div style="position: relative">
+                    <div class="category-field">
+                        <div class="category-field-button" onclick="ToggleCategoryDropdown()">
+                            <p id="show-category-job">Category *</p>
+                        </div>
+
+                        <div class="dropdown-icon" onclick="ToggleCategoryDropdown()">
+                            <i class="fas fa-chevron-down fa-xs"></i>
+                        </div>
+
+                        <div class="field-dropdown-content" id="category-dropdown-content">
+                            <div class="field-option" onclick="ChooseJobCategory('Back End Developer')">
+                                <p>Back End Developer</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Front End Developer')">
+                                <p>Front End Developer</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Full Stack Developer')">
+                                <p>Full Stack Developer</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Android Developer')">
+                                <p>Android Developer</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('iOS Developer')">
+                                <p>iOS Developer</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Business Development')">
+                                <p>Business Development</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Business Intelligence')">
+                                <p>Business Intelligence</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Customer Service')">
+                                <p>Customer Service</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Design')">
+                                <p>Design</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Marketing & Communication')">
+                                <p>Marketing & Communication</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Project Management')">
+                                <p>Project Management</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Sales')">
+                                <p>Sales</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCategory('Others')">
+                                <p>Others</p> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-empty-field" id="warning-empty-field-job-category">
+                        <p>Select one</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inline-fields">
+                <div style="position: relative">
+                    <div class="job-type-field">
+                        <div class="job-type-button" onclick="ToggleJobTypeDropdown()">
+                            <p id="show-job-type-job">Job type *</p>
+                        </div>
+
+                        <div class="dropdown-icon" onclick="ToggleJobTypeDropdown()">
+                            <i class="fas fa-chevron-down fa-xs"></i>
+                        </div>
+
+                        <div class="field-dropdown-content" id="job-type-dropdown-content">
+                            <div class="field-option" onclick="ChooseJobType('Intern')">
+                                <p>Intern</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobType('Trainee')">
+                                <p>Trainee</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobType('Full-time')">
+                                <p>Full-time</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobType('Part-time')">
+                                <p>Part-time</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobType('Contract')">
+                                <p>Contract</p> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-empty-field" id="warning-empty-field-job-type">
+                        <p>Select one</p>
+                    </div>
+                </div>
+
+                <div style="position: relative">
+                    <div class="salary-field">
+                        <div class="salary-field-button" onclick="ToggleSalaryDropdown()">
+                            <p id="show-salary-job">Salary *</p>
+                        </div>
+
+                        <div class="dropdown-icon" onclick="ToggleSalaryDropdown()">
+                            <i class="fas fa-chevron-down fa-xs"></i>
+                        </div>
+
+                        <div class="field-dropdown-content" id="salary-dropdown-content">
+                            <div class="field-option" onclick="ChooseJobSalary('Paid')">
+                                <p>Paid</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobSalary('Unpaid')">
+                                <p>Unpaid</p> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-empty-field" id="warning-empty-field-job-salary">
+                        <p>Select one</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inline-fields">
+                <div class="job-image-field" id="job-image-field">
+                    <p>Add an image (only jpg, png)</p>
+
+                    <div class="dropdown-icon-for-image">
+                        <i class="far fa-file-alt fa-lg"></i>
+                    </div>
+
+                    <div class="dropzone-init" id="dropzone-init">
+                    </div>
+                </div>
+
+                <div style="position: relative">
+                    <div class="application-deadline-field" id="application-deadline-field">
+                        <input id="application-deadline-date-picker-value" placeholder="Application deadline *" readonly>
+
+                        <div class="application-deadline-picker-holder" id="application-deadline-picker-holder"></div>
+
+                        <div class="dropdown-icon-for-image" id="application-deadline-dp-button" onclick="$('#warning-empty-field-dateline').removeClass('show-warning-empty-field')">
+                            <i class="far fa-calendar-alt fa-lg"></i>
+                        </div>
+                    </div>
+                    <div class="warning-empty-field" id="warning-empty-field-dateline">
+                        <p>Please fill this</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="position: relative">
+                <div class="job-description-field" id="job-description-field">
+
+                </div>
+                <div class="warning-empty-field" id="warning-empty-field-job-description">
+                    <p>Please fill this</p>
+                </div>
+            </div>
+
+            <div style="position: relative">
+                <div class="job-requirement-field" id="job-requirement-field">
+
+                </div>
+                <div class="warning-empty-field" id="warning-empty-field-job-requirement">
+                    <p>Please fill this</p>
+                </div>
+            </div>
+
+            <p class="company-information-text">Company information</p>
+
+            <div class="section-separator-line"></div>
+
+            <div class="inline-fields">
+                <input type="text" id="job-company-name-field" class="job-company-name-field" placeholder="Company name">
+
+
+                <input type="email" id="job-company-email-field" class="job-company-email-field" placeholder="Contact e-mail">
+            </div>
+
+            <div class="inline-fields">
+                <input type="text" id="job-company-website-field" class="job-company-website-field" placeholder="Website">
+
+                <div class="job-company-image-field" id="job-company-image-field">
+                    <p>Company logo (only jpg, png)</p>
+
+                    <div class="dropdown-icon-for-image">
+                        <i class="far fa-file-alt fa-lg"></i>
+                    </div>
+
+                    <div class="dropzone-init" id="dropzone-init-for-company-img">
+                    </div>
+                </div>
+            </div>
+
+            <p class="location-text">Location</p>
+
+            <div class="section-separator-line"></div>
+
+            <div class="inline-fields">
+                <div style="position: relative">
+                    <div class="job-country-field">
+                        <div class="job-country-button" onclick="ToggleJobCountryDropdown()">
+                            <p id="show-job-country-job">Select country *</p>
+                        </div>
+
+                        <div class="dropdown-icon" onclick="ToggleJobCountryDropdown()">
+                            <i class="fas fa-chevron-down fa-xs"></i>
+                        </div>
+
+                        <div class="field-dropdown-content" id="job-country-dropdown-content">
+                            <div class="field-option" onclick="ChooseJobCountry('Sweden')">
+                                <p>Sweden</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCountry('Finland')">
+                                <p>Finland</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCountry('Denmark')">
+                                <p>Denmark</p> 
+                            </div>
+                            <div class="field-option" onclick="ChooseJobCountry('Norway')">
+                                <p>Norway</p> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-empty-field" id="warning-empty-field-job-country">
+                        <p>Select one</p>
+                    </div>
+                </div>
+
+                <div style="position: relative">
+                    <input type="text" id="job-city-field" class="job-city-field" placeholder="City *" onkeyup="$('#warning-empty-field-job-city').removeClass('show-warning-empty-field')">
+                    <div class="warning-empty-field" id="warning-empty-field-job-city">
+                        <p>Please fill this</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="membership-plan-text">Membership plan</p>
+
+            <div class="section-separator-line"></div>
+
+            <div class="membership-plan">
+                <div class="membership-plan-icon-text-holder">
+                    <div class="membership-plan-free-circular-icon"></div>
+                    <p class="membership-plan-value-text" id="membership-plan-value-text"></p>
+                </div>
+
+                <div class="membership-plan-description-holder" id="membership-plan-description-holder">
+                </div>
+
+                <div class="membership-plan-price-tag" >
+                    <p id="membership-plan-price-tag"></p>
+                </div>
+
+                
+                <a href="/company-dashboard/my-plan.html" class="see-all-plans-here">See all plans here</a>
+            </div>
+
+            <!-- <div class="membership-plan">
+                <label>
+                    <input type="checkbox" id="plus-value-checkbox">
+                    PLUS
+                </label>
+
+                <div class="visible-holder">
+                    <i class="far fa-clock"></i>
+                    <p>Visible 30 days</p>
+                </div>
+
+                <div class="membership-value-label">
+                    <p>€ 9,99 / month</p>
+                </div>
+
+                <div class="membership-read-more" onclick="window.open('/company-dashboard/my-plan.html')">
+                    <p>read more</p>
+                </div>
+            </div>
+
+            <div class="membership-plan">
+                <label>
+                    <input type="checkbox" id="premium-value-checkbox">
+                    PREMIUM
+                </label>
+
+                <div class="visible-holder">
+                    <i class="far fa-clock"></i>
+                    <p>Never expires</p>
+                </div>
+
+                <div class="membership-value-label">
+                    <p>€ 12,99 / month</p>
+                </div>
+
+                <div class="membership-read-more" onclick="window.open('/company-dashboard/my-plan.html')">
+                    <p>read more</p>
+                </div>
+            </div> -->
+
+            <div class="end-separator-line"></div>
+
+            <div class="job-published-preview-reset-holder">
+                <div class="preview-button" onclick="PreviewJob()">
+                    <p>Preview</p>
+                </div>
+
+                <p class="or-text">or</p>
+
+                <div class="reset-form-holder">
+                    <p>reset-form</p>
+                    <div class="underline-reset-form"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-job-holder " id="preview-job-holder">
+            <p class="preview-job-title">Preview job</p>
+
+            <div class="preview-job-underline">
+            </div>
+
+            <div class="preview-content-holder">
+                <p class="preview-job-content-title" id="preview-job-title">PHOTOGRAPHER</p>
+
+                <div class="preview-job-title-underline"></div>
+
+                <p class="preview-job-company-name" id="preview-job-company-name">Globuzzer Oy</p>
+
+                <table class="preview-job-info-table">
+                    <thead>
+                        <tr>
+                            <td>Location</td>
+                            <td>Job type</td>
+                            <td>Salary</td>
+                            <td>Apply latest by</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td id="preview-job-city"></td>
+                            <td id="preview-job-type"></td>
+                            <td id="preview-job-salary"></td>
+                            <td id="preview-job-deadline"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mobile-preview-job-info-table">
+                    <tr class="mobile-thead">
+                        <td>Location</td>
+                        <td>Job type</td>
+                    </tr>
+                    <tr class="mobile-tbody">
+                        <td id="mobile-preview-job-city"></td>
+                        <td id="mobile-preview-job-type"></td>
+                    </tr>
+                    <tr class="mobile-thead">
+                        <td>Salary</td>
+                        <td>Apply latest by</td>
+                    </tr>
+
+                    <tr class="mobile-tbody">
+                        <td id="mobile-preview-job-salary"></td>
+                        <td id="mobile-preview-job-deadline"></td>
+                    </tr>
+                </table>
+
+                <div style="overflow: hidden; overflow-y: scroll; -webkit-overflow-scrolling: touch">
+                    <div class="preview-job-content-header">
+                        <div class="red-bullet"></div>
+                        <p>JOB DESCRIPTION</p>
+                    </div>
+
+                    <div class="preview-job-description-content" id="preview-job-description-content">
+                    </div>
+
+                    <div class="preview-job-content-header">
+                        <div class="red-bullet"></div>
+                        <p>Requirements</p>
+                    </div>
+
+                    <div class="preview-job-description-content" id="preview-job-requirement-content">
+                    </div>
+                </div>
+            </div>
+
+            <div class="job-published-preview-reset-holder">
+                <div class="preview-edit-job-post" onclick="EditJobPost()">
+                    <i class="fas fa-chevron-left"></i>
+                    <p>Edit job post</p>
+                </div>
+    
+                <div class="preview-publish-job-post" id="preview-publish-job-post">
+                    <p>Publish job post</p>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="job-published-holder" id="job-published-holder">
+            <p class="job-published-text">Job published</p>
+
+            <div class="job-published-underline"></div>
+
+            <div class="job-published-content">
+                <div class="job-published-checkmark-icon">
+                    <i class="fas fa-check fa-lg"></i>
+                </div>
+
+                <p class="job-published-inform-text">Your job post has been published successfully</p>
+
+                <div class="job-published-preview-reset-holder ">
+                    <p class="your-job-post-is-live">Your job post is live now.</p>
+                    <p class="click-here-to-view-it" onclick="window.location='/'">Click here to view it</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-storage.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDyddX6wQCk9PY-jxHnZj_8X3M3RbzuJy4",
+    authDomain: "skillscanner-73181.firebaseapp.com",
+    databaseURL: "https://skillscanner-73181.firebaseio.com",
+    projectId: "skillscanner-73181",
+    storageBucket: "skillscanner-73181.appspot.com",
+    messagingSenderId: "269557896133"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="./scripts/dropzone/dropzone.js"></script>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.js"></script>
+
+<!-- <script src ="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js.map"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="./scripts/quill/quillScript.js"></script>
+
+<script src="./scripts/edit-draft-job/editDraftJob.js"></script>
+
+<script src="./scripts/window-date-picker-master/dist/js/window-date-picker.js"></script>
+
+<script src="./scripts/datepicker/datepicker.js"></script>
+
+</html>

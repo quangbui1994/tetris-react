@@ -1,0 +1,1362 @@
+
+/* mobile S */
+@media only screen and (max-width: 320px){
+    .jp-main-content-container{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        padding-top: 20px;
+    }
+
+    .job-post-container{
+        width: 100%;
+        /* height: 100vh; */
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease;
+    }
+
+    .jp-mc-job-post-card{
+        position: relative;
+        width: 100%;
+        height: 330px;
+        margin: 1px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .jp-mc-jpc-image-holder{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .jp-mc-jpc-image-area-tags{
+        position: absolute;
+        height: 23px;
+        width: 100%;
+        top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 13;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    .jp-mc-jpc-image-cate-tag, .jp-mc-jpc-image-time-tag, .jp-mc-jpc-image-paid-tag{
+        height: 100%;
+        width: 120px;
+        font-size: 12px;
+        display: flex;
+        background-color: rgb(252, 13, 28);
+        color: white;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.45s ease-in;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-view-button{
+        position: absolute;
+        height: 23px;
+        width: 70px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 3;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-apply-button{
+        height: 23px;
+        width: 70px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 12;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+}
+
+/* mobile M/L */
+@media only screen and (min-width: 321px){
+    .jp-main-content-container{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+        padding-top: 20px;
+    }
+
+    .job-post-container{
+        width: 100%;
+        /* height: 100vh; */
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease;
+    }
+    .jp-mc-job-post-card{
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin: 1px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .jp-mc-jpc-image-holder{
+        position: relative;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .jp-mc-jpc-image-cate-tag, .jp-mc-jpc-image-time-tag, .jp-mc-jpc-image-paid-tag{
+        height: 100%;
+        width: 120px;
+        font-size: 12px;
+        display: flex;
+        background-color: rgb(252, 13, 28);
+        color: white;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.45s ease-in;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-area-tags{
+        position: absolute;
+        height: 30px;
+        width: 100%;
+        top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 13;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    
+    .jp-mc-jpc-image-view-button{
+        position: absolute;
+        height: 30px;
+        width: 80px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 3;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-apply-button{
+        height: 30px;
+        width: 80px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 12;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px){
+    .jp-main-content-container{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 30px;
+        padding-top: 20px;
+    }
+
+    .job-post-container{
+        width: 100%;
+        /* height: 100vh; */
+        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease;
+    }
+    .jp-mc-job-post-card{
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin: 1px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .jp-mc-view-more-job-card{
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+
+    .jp-mc-jpc-image-holder{
+        position: relative;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .jp-mc-jpc-image-area-tags{
+        position: absolute;
+        height: 35px;
+        width: 100%;
+        top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 13;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    
+    .jp-mc-jpc-image-cate-tag, .jp-mc-jpc-image-time-tag, .jp-mc-jpc-image-paid-tag{
+        height: 100%;
+        width: 120px;
+        font-size: 15px;
+        display: flex;
+        background-color: rgb(252, 13, 28);
+        color: white;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.45s ease-in;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-view-button{
+        position: absolute;
+        height: 35px;
+        width: 90px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 3;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-apply-button{
+        height: 35px;
+        width: 90px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 12;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+}
+
+/* Laptop */
+@media only screen and (min-width: 1024px){
+    .jp-main-content-container{
+        /* height: 100%; */
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        padding-top: 20px;
+    }
+
+    .job-post-container{
+        width: 100%;
+        /* height: 100vh; */
+        padding: 20px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease;
+    }
+    .jp-mc-job-post-card{
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin: 1px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .jp-mc-view-more-job-text-holder {
+        position: relative;
+        width: 100%;
+        height: 70%;
+        background-color: rgba(252, 13, 28, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .jp-mc-view-more-job-text-holder p {
+        color: white;
+        font-size: 24px;
+    }
+
+    .jp-mc-jpc-image-holder{
+        position: relative;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .jp-mc-jpc-image-area-tags{
+        position: absolute;
+        height: 35px;
+        width: 100%;
+        top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 13;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    
+    .jp-mc-jpc-image-cate-tag, .jp-mc-jpc-image-time-tag, .jp-mc-jpc-image-paid-tag{
+        height: 100%;
+        width: 120px;
+        font-size: 15px;
+        display: flex;
+        background-color: rgb(252, 13, 28);
+        color: white;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.45s ease-in;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-view-button{
+        position: absolute;
+        height: 35px;
+        width: 90px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 3;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-apply-button{
+        height: 35px;
+        width: 90px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 12;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }    
+}
+
+/* Laptop L */
+@media only screen and (min-width: 1440px){
+    .jp-main-content-container{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        padding-top: 20px;
+    }
+
+    .job-post-container{
+        width: 100%;
+        /* height: 100vh; */
+        padding: 20px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease;
+    }
+    .jp-mc-job-post-card{
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin: 1px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    
+
+    .jp-mc-view-more-job-text-holder {
+        position: relative;
+        width: 100%;
+        height: 70%;
+        background-color: rgba(252, 13, 28, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .jp-mc-view-more-job-text-holder p {
+        color: white;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .jp-mc-jpc-image-holder{
+        position: relative;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .jp-mc-jpc-image-area-tags{
+        position: absolute;
+        height: 35px;
+        width: 100%;
+        top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 13;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    
+    .jp-mc-jpc-image-cate-tag, .jp-mc-jpc-image-time-tag, .jp-mc-jpc-image-paid-tag{
+        height: 100%;
+        width: 30%;
+        font-size: 13px;
+        display: flex;
+        background-color: rgb(252, 13, 28);
+        color: white;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.45s ease-in;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-view-button{
+        position: absolute;
+        height: 35px;
+        width: 90px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 3;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+
+    .jp-mc-jpc-image-apply-button{
+        height: 35px;
+        width: 90px;
+        color: white;
+        background-color: rgb(252, 13, 28);
+        z-index: 12;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+    }    
+}
+
+@media only screen and (max-width: 767px){
+    .jp-mc-view-more-job-card{
+        position: relative;
+        width: 100%;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .jp-mc-view-more-job-text-holder{
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        color: #A5A5A5;
+        border-radius: 7px;
+        border: 1px solid #C4C4C4;
+        background: #F9F9F9;
+    }
+}
+
+.jp-mc-view-more-job-text-holder{
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 767px){
+    .jp-mc-view-more-job-text-holder{
+        text-transform: unset;
+    }
+}
+
+.jp-mc-jpc-image-view-button{
+    border-radius: unset;
+    bottom: 60px;
+    background-color: rgba(252, 13, 28, 0.9);
+    width: 140px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    border-radius: 7px;
+    height: 40px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.jp-mc-jpc-image-view-button:hover{
+    background-color: rgba(252, 65, 78, 0.9);
+}
+
+@media only screen and (max-width: 767px){
+    .jp-mc-jpc-image-view-button{
+        top: 40%;
+        width: 140px;
+        height: 40px;
+    }
+}
+
+.jp-main-content-container{
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.jp-filter-bar-container{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.jp-fb-filter-options{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jp-fb-filter-option{
+    position: relative;
+    height: 40px;
+    width: 200px;
+    color: black;
+    background-color: white;
+    border-top: 1px solid rgb(201, 201, 201);
+    border-bottom: 1px solid rgb(201, 201, 201);
+    border-left: 1px solid rgb(201, 201, 201);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.jp-fb-filter-option:nth-child(3){
+    border-right: 1px solid rgb(201, 201, 201);
+}
+
+
+.selectCountry{
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    position: relative;
+}
+
+.selectCountry .select{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.countryList{
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    margin-top: 2px;
+}
+
+.countryList div{
+    display: flex;
+    align-items: center;
+    margin: 10px 5px;
+}
+
+.countryList div img{
+    width: 50px;
+    height: 25px;
+}
+
+.countryList div span{
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 767px){
+    .jp-filter-bar-container{
+        height: 200px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .jp-fb-filter-options{
+        height: 100%;
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .jp-fb-filter-option{
+        position: relative;
+        height: 30px;
+        width: 100%;
+        margin: 5px;
+        color: black;
+        background: #F9F9F9;
+        border: 1px solid #C5C5C5;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 7px;
+    }
+}
+
+
+
+.jp-fb-filter-option-published-filter{
+    border-right: 1px solid rgb(201, 201, 201);
+}
+
+.jp-fb-category-button{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: #555555;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.jp-fb-category-holder{
+    position: absolute;
+    width: 100%;
+    top: 38px;
+    z-index: 15;
+    border: 1px solid gainsboro;
+    background-color: white;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    /* max-height: 100px; */
+    padding: 10px 0px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.jp-fb-category-holder label{
+    display: flex;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.jp-fb-category-holder label p {
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 22px;
+    color: #555555;
+}
+
+.jp-fb-category-holder label span{
+    left: 10px;
+    font-size: 9px !important;
+}
+
+.jp-fb-location-button{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 39px;
+    color: #555555;
+}
+
+.jp-fb-location-holder{
+    position: absolute;
+    width: 100%;
+    top: 38px;
+    z-index: 15;
+    border: 1px solid gainsboro;
+    background-color: white;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    padding: 10px 0px;
+    max-height: 400px;
+    /* overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; */
+}
+
+.jp-fb-location-holder label{
+    display: flex;
+    font-size: 16px;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.jp-fb-location-holder label p {
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 29px;
+    color: #555555;
+}
+
+.jp-fb-location-holder label span{
+    left: 10px;
+}
+
+@media only screen and (max-width: 767px){
+    .jp-fb-category-button{
+        font-size: 12px;
+        /* background-color: #F9F9F9; */
+        color: #A5A5A5;
+    }
+
+    .jp-fb-location-button{
+        font-size: 12px;
+        /* background-color: #F9F9F9; */
+        color: #A5A5A5;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .jp-fb-location-holder{
+        position: relative;
+        width: 100%;
+        top: 0px;
+        z-index: 15;
+        border: 1px solid gainsboro;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #555555;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .jp-fb-category-holder{
+        position: relative;
+        width: 100%;
+        top: 0px;
+        z-index: 15;
+        border: 1px solid gainsboro;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #555555;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        /* max-height: 100px; */
+    }
+}
+
+.jp-fb-filter-button{
+    height: 40px;
+    width: 100px;
+    color: white;
+    background-color: black;
+}
+
+.jb-fb-post-job-offer-button{
+    padding: 0 20px;
+    height: 40px;
+    width: 200px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 100px;
+    color: #555;
+}
+
+.search-holder {
+    position: relative;
+}
+
+.ion-ios-search {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 767px){
+    .search-holder {
+        height: 30px;
+    }
+    .jb-fb-post-job-offer-button{
+        height: 100%;
+        width: 100%;
+        color: #555;
+        background-color: #fff;
+        margin-top: 0;
+        position: relative;
+    }
+}
+
+.jp-fb-search-bar-holder{
+    height: 100%;
+    width: 500px;
+    display: none;
+    align-items: center;
+}
+
+.jp-fb-search-bar-holder input{
+    height: 40px;
+    width: 100%;
+    border: 1px solid rgb(201, 201, 201);
+    padding: 0px 10px;
+}
+
+/* .jp-main-content-container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 80px;
+    grid-row-gap: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding-top: 20px;
+} */
+
+
+
+.jp-mc-jpc-image-holder{
+    position: relative;
+    width: 100%;
+    height: 70%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    background-color:  rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 767px){
+    .jp-mc-jpc-image-holder{
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.jp-mc-jpc-image-holder img{
+    height: 100%;
+    width: 100%;
+    filter: grayscale(50%);
+    /* border: 1px solid gainsboro; */
+}
+
+.jp-mc-jpc-image-cate-tag{
+    height: 30px;
+    background-color: rgba(252, 13, 28, 0.8);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+@media only screen and (max-width: 767px){
+    .jp-mc-jpc-image-cate-tag{
+        height: 100%;
+        width: 90px;
+    }
+
+    .jp-mc-jpc-image-area-tags{
+        height: 32px;
+        top: 30px;
+    }
+}
+
+.jp-mc-jpc-image-time-tag{
+    transform: translateX(300%);
+    border-radius: 10px;
+}
+
+.jp-mc-jpc-image-paid-tag{
+    transform: translateX(300%);
+    border-radius: 10px 0px 0px 10px;
+}
+
+
+
+.jp-mc-jpc-header-holder{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.jp-mc-jpc-header-holder i {
+    margin-right: 5px;
+}
+
+
+.jp-mc-jpc-title-holder{
+    height: 20%;
+    width: 100%;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 767px){
+    .jp-mc-jpc-header-holder, .jp-mc-jpc-title-holder{
+        display: none;
+    }
+
+    
+}
+
+
+.jp-mc-jpc-title-holder i {
+    margin-right: 5px;
+}
+
+.jp-mc-jpc-header-holder-mb{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(252, 13, 28, 0.7);
+
+}
+
+@media only screen and (min-width: 768px){
+    .jp-mc-jpc-header-holder-mb{
+        display: none;
+    }
+}
+
+.jp-mc-jpc-company-holder-mb{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding-left: 25px;
+
+}
+
+.jp-mc-jpc-company-holder-mb i{
+    margin-right: 5px;
+}
+
+.jp-mc-jpc-company-holder-mb p{
+    font-size: 13px;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: 500;
+    color:white;
+}
+
+.jp-show-more-job-button{
+    display: none;
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: rgb(252, 13, 28);
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+}
+
+.jp-mc-jpc-image-more-description-holder{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(252, 13, 28);
+    transform: translateY(100%);
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 10;
+}
+
+
+
+.jp-mc-jpc-appy-button-area{
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    bottom: 10px;
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: center;
+    z-index: 13;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+}
+
+.jp-mc-jpc-appy-button-area i{
+    position: absolute;
+    float: right;
+    color:white;
+    right: 30px;
+}
+
+.jp-mc-jpc-image-cate-tag-change-color{
+    background-color: white;
+    color: rgb(252, 13, 28);
+}
+
+.jp-mc-jpc-image-time-tag-show{
+    background-color: white;
+    color: rgb(252, 13, 28);
+    transform: translateX(0%);
+}
+
+.jp-mc-jpc-image-paid-tag-show{
+    background-color: white;
+    color: rgb(252, 13, 28);
+    transform: translateX(0%);
+}
+
+.jp-mc-jpc-image-more-description-holder-show{
+    transform: translateY(0%);
+}
+
+.jp-mc-jpc-appy-button-area-show{
+    transform: translateX(0%)
+}
+
+.jp-mc-jpc-appy-button-change-color{
+    background-color: white;
+    color: rgb(252, 13, 28);
+}
+
+@media only screen and (max-width: 768px){
+    .article-event-container{
+        width: 100%;
+        height: 1000px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+}
+
+@media only screen and (min-width: 769px){
+    .article-event-container{
+        width: 100%;
+        height: 1000px;
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+}
+
+.article-event-selector-bar-holder{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    font-weight: 700;
+    position: relative;
+    border-left: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+}
+
+.article-selector-bar-holder{
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease;
+    color: rgb(252, 13, 28);
+    background-color: white;
+    cursor: pointer;
+}
+
+.aes-highlight{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100px;
+    background-color: gray;
+    transform: translateX(0);
+    transition: all 0.4s ease;
+}
+
+.aes-highlight-move-right{
+    transform: translateX(100%)
+}
+
+.event-selector-bar-holder{
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(252, 13, 28);
+    background-color: white;
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+
+.aes-section-selected-background-color{
+    background-color: rgb(252, 13, 28);
+    color: white;
+}
+
+.article-event-content-holder{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 50px);
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.article-content-holder{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    overflow: auto;
+    transform: translateX(0%);
+    transition: all 1s ease;
+    position: relative;
+}
+
+.event-content-holder{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    transform: translateX(150%);
+    transition: all 1s ease;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+}
+
+@media only screen and (max-width: 425px){
+    .article-content-holder{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        display: block;
+    }
+
+    .event-content-holder{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        top: 0;
+        transform: translateX(150%);
+        transition: all 1s ease;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .article-content-holder{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+        overflow: auto;
+    }
+
+    .event-content-holder{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        top: 0;
+        transform: translateX(150%);
+        transition: all 1s ease;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .article-content-holder{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        overflow: auto;
+    }
+
+    .event-content-holder{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        top: 0;
+        transform: translateX(150%);
+        transition: all 1s ease;
+        display: flex;
+        flex-flow: column wrap;
+    }
+}
+
+.article-content-holder-invisible{
+    transform: translateX(-150%)
+}
+
+.event-content-holder-visible{
+    transform: translateX(0)
+}
+
+.warning-empty-field {
+    /* border: 5px solid rgb(15, 13, 13) !important; */
+    /* background-color: rgba(253, 46, 46, 0.76) !important; */
+    box-shadow: inset 0 0 10px 5px rgb(248, 69, 69);
+    color: red;
+  }

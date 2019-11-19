@@ -1,0 +1,14 @@
+RewriteEngine on
+FileETag none
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} /+[^\.]+$
+    RewriteRule ^([a-zA-Z-]+) section.php?section=$1 [NC,L]
+</IfModule>
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+<IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript 
+</IfModule>
