@@ -1,0 +1,75 @@
+.Navbar, .changedNavBar {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: .5rem 10%;
+}
+
+.changedNavBar {
+    background-color: rgba(128, 128, 128, 0.6);
+    box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.63);
+}
+
+.logo {
+    height: 100%;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 100%;
+}
+
+.Navbar button,
+.changedNavBar button {
+    background-color: transparent;
+    padding: 1rem;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 300;
+}
+
+.link {
+    padding: .5rem;
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    color: floralwhite;
+    text-decoration: none;
+    letter-spacing: .5px;
+    position: relative;
+}
+
+.changedNavBar .link {
+    color: floralwhite;
+}
+
+.changedNavBar .link::after,
+.link:after,
+.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e67e22;
+    opacity: 0;
+    transition: all ease .2s;
+}
+
+.changedNavBar .link:hover:after,
+.link:hover:after {
+    opacity: 1;
+}
+
+.active::after {
+    opacity: 1;
+}

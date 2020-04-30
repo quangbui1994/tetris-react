@@ -1,0 +1,12 @@
+.NotFoundPage {
+    margin-top: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.NotFoundPage img {
+    width: 45%;
+}

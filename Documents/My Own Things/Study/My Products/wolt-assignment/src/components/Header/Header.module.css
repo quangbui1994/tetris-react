@@ -1,0 +1,36 @@
+.Header {
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('../../assets/img/ella-olsson-C1Q3qOTlegg-unsplash.jpg'); */
+    /* background-size: cover;
+    background-position: top; */
+    display: flex;
+    justify-content: center;
+    padding-top: 13rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-weight: 300;
+    color: white;
+    user-select: none;
+    animation: fadeIn 2s ease;
+    text-align: center;
+    font-size: 4rem;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    };
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
