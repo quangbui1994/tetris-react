@@ -13,7 +13,7 @@
     "express": "^4.17.0",
     "firebase": "^6.2.2",
     "leaflet": "^1.5.1",
-    "mongoose": "^5.5.11",
+    "mongoose": "^5.7.5",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
     "react": "^16.8.6",
